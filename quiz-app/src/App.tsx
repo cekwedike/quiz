@@ -428,6 +428,18 @@ function App() {
               >
                 Back to Main Menu
               </button>
+              <button 
+                className="delete-stats-button"
+                onClick={() => {
+                  if (window.confirm('Are you sure you want to delete all statistics? This action cannot be undone.')) {
+                    storageManager.clearStats();
+                    setStats(storageManager.getStats());
+                  }
+                }}
+                style={{ marginTop: '1rem' }}
+              >
+                Delete Statistics
+              </button>
             </div>
           ) : (
             <div className="welcome-screen">

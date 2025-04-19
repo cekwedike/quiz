@@ -79,6 +79,10 @@ class StorageManager {
     localStorage.removeItem(this.HIGH_SCORES_KEY);
     localStorage.removeItem(this.STATS_KEY);
   }
+
+  clearStats() {
+    localStorage.removeItem(this.STATS_KEY);
+  }
 }
 
 export const storageManager = new StorageManager(); 
