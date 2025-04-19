@@ -53,6 +53,8 @@ const questions: Question[] = [
   { id: 30, question: "Which TV series features dragons and is based on George R.R. Martin's novels?", options: ["The Witcher", "Game of Thrones", "Lord of the Rings", "The Last Kingdom"], correctAnswer: "Game of Thrones", category: "Entertainment" }
 ];
 
+const categories = Array.from(new Set(questions.map(q => q.category)));
+
 function App() {
   const [isStarted, setIsStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -61,11 +63,60 @@ function App() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(30); // 30 seconds per question
+  const [totalTime, setTotalTime] = useState(0);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [isSelectingCategories, setIsSelectingCategories] = useState(false);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isStarted && !showResult && !isAnswered) {
+      timer = setInterval(() => {
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            handleTimeUp();
+            return 0;
+          }
+          return prev - 1;
+        });
+        setTotalTime((prev) => prev + 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [isStarted, showResult, isAnswered]);
+
+  const handleTimeUp = () => {
+    setIsAnswered(true);
+    setTimeout(() => {
+      if (currentQuestionIndex < quizQuestions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedAnswer(null);
+        setIsAnswered(false);
+        setTimeLeft(30);
+      } else {
+        setShowResult(true);
+      }
+    }, 1000);
+  };
+
+  const toggleCategory = (category: string) => {
+    setSelectedCategories(prev => 
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
+  };
 
   const startQuiz = () => {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    let filteredQuestions = questions;
+    if (selectedCategories.length > 0) {
+      filteredQuestions = questions.filter(q => selectedCategories.includes(q.category));
+    }
+    const shuffled = [...filteredQuestions].sort(() => Math.random() - 0.5);
     setQuizQuestions(shuffled);
     setIsStarted(true);
+    setTimeLeft(30);
+    setTotalTime(0);
   };
 
   const handleAnswerSelect = (answer: string) => {
@@ -83,6 +134,7 @@ function App() {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setSelectedAnswer(null);
         setIsAnswered(false);
+        setTimeLeft(30);
       } else {
         setShowResult(true);
       }
@@ -90,37 +142,88 @@ function App() {
   };
 
   const restartQuiz = () => {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
-    setQuizQuestions(shuffled);
+    setIsSelectingCategories(true);
     setCurrentQuestionIndex(0);
     setScore(0);
     setSelectedAnswer(null);
     setShowResult(false);
     setIsAnswered(false);
-    setIsStarted(true);
+    setTimeLeft(30);
+    setTotalTime(0);
+    setIsStarted(false);
   };
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
 
   return (
     <div className="App">
       <div className="quiz-container">
         {!isStarted ? (
-          <div className="welcome-screen">
-            <h1>Welcome to the Quiz App!</h1>
-            <p>Test your knowledge with our interactive quiz</p>
-            <button 
-              className="start-button"
-              onClick={startQuiz}
-            >
-              Start Quiz
-            </button>
-          </div>
+          isSelectingCategories ? (
+            <div className="category-selection">
+              <h2>Select Categories</h2>
+              <p>Choose one or more categories (or none for all categories)</p>
+              <div className="categories-grid">
+                {categories.map(category => (
+                  <button
+                    key={category}
+                    className={`category-button ${selectedCategories.includes(category) ? 'selected' : ''}`}
+                    onClick={() => toggleCategory(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+              <button 
+                className="start-button"
+                onClick={() => {
+                  setIsSelectingCategories(false);
+                  startQuiz();
+                }}
+              >
+                Start Quiz
+              </button>
+            </div>
+          ) : (
+            <div className="welcome-screen">
+              <h1>Welcome to the Quiz App!</h1>
+              <p>Test your knowledge with our interactive quiz</p>
+              <button 
+                className="start-button"
+                onClick={() => setIsSelectingCategories(true)}
+              >
+                Choose Categories
+              </button>
+            </div>
+          )
         ) : showResult ? (
           <div className="result-screen">
             <h2>Quiz Completed!</h2>
-            <p>Your Score: {score} out of {questions.length}</p>
-            <p>Percentage: {((score / questions.length) * 100).toFixed(1)}%</p>
+            <p>Your Score: {score} out of {quizQuestions.length}</p>
+            <p>Percentage: {((score / quizQuestions.length) * 100).toFixed(1)}%</p>
+            <p>Total Time: {formatTime(totalTime)}</p>
+            <div className="category-breakdown">
+              {categories.map(category => {
+                const categoryQuestions = quizQuestions.filter(q => q.category === category);
+                const categoryScore = quizQuestions.filter((q, index) => 
+                  q.category === category && 
+                  index < currentQuestionIndex && 
+                  quizQuestions[index].correctAnswer === selectedAnswer
+                ).length;
+                return categoryQuestions.length > 0 ? (
+                  <div key={category} className="category-score">
+                    <span>{category}:</span>
+                    <span>{categoryScore}/{categoryQuestions.length}</span>
+                  </div>
+                ) : null;
+              })}
+            </div>
             <button 
               className="restart-button"
               onClick={restartQuiz}
@@ -131,8 +234,9 @@ function App() {
         ) : (
           <div className="quiz-content">
             <div className="quiz-header">
+              <div className="timer">Time Left: {formatTime(timeLeft)}</div>
               <p className="category">{currentQuestion.category}</p>
-              <p className="progress">Question {currentQuestionIndex + 1} of {questions.length}</p>
+              <p className="progress">Question {currentQuestionIndex + 1} of {quizQuestions.length}</p>
               <p className="score">Score: {score}</p>
             </div>
             <h2>{currentQuestion.question}</h2>
