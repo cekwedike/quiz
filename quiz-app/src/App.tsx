@@ -418,6 +418,16 @@ function App() {
               >
                 Back to Categories
               </button>
+              <button 
+                className="secondary-button"
+                onClick={() => {
+                  setShowStats(false);
+                  setIsSelectingCategories(false);
+                }}
+                style={{ marginTop: '1rem' }}
+              >
+                Back to Main Menu
+              </button>
             </div>
           ) : (
             <div className="welcome-screen">
