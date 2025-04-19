@@ -81,6 +81,7 @@ function App() {
   const [showStats, setShowStats] = useState(false);
   const [categoryResults, setCategoryResults] = useState<{[key: string]: {correct: number, total: number}}>({});
   const [stats, setStats] = useState(storageManager.getStats());
+  const [selectedDifficulty, setSelectedDifficulty] = useState<'all' | 'simple' | 'complex' | 'extremely complex'>('all');
   const [highScores, setHighScores] = useState(storageManager.getHighScores());
 
   useEffect(() => {
@@ -108,6 +109,12 @@ function App() {
     }
     return () => clearInterval(timer);
   }, [isStarted, showResult, isAnswered, timeLeft]);
+
+  useEffect(() => {
+    if (showStats) {
+      setHighScores(storageManager.getHighScores());
+    }
+  }, [showStats]);
 
   const handleTimeUp = () => {
     setIsAnswered(true);
@@ -144,9 +151,17 @@ function App() {
 
   const startQuiz = () => {
     let filteredQuestions = questions;
+    
+    // Filter by selected categories
     if (selectedCategories.length > 0) {
-      filteredQuestions = questions.filter(q => selectedCategories.includes(q.category));
+      filteredQuestions = filteredQuestions.filter(q => selectedCategories.includes(q.category));
     }
+    
+    // Filter by selected difficulty
+    if (selectedDifficulty !== 'all') {
+      filteredQuestions = filteredQuestions.filter(q => q.difficulty === selectedDifficulty);
+    }
+    
     const shuffled = [...filteredQuestions].sort(() => Math.random() - 0.5);
     setQuizQuestions(shuffled);
     setIsStarted(true);
@@ -235,7 +250,6 @@ function App() {
 
     // Update local stats state
     setStats(storageManager.getStats());
-    setHighScores(storageManager.getHighScores());
   };
 
   const restartQuiz = () => {
@@ -306,6 +320,35 @@ function App() {
               <div className="quiz-header-modern">
                 <h2>Choose Your Categories</h2>
                 <p>Select one or more categories to customize your quiz experience</p>
+              </div>
+              <div className="difficulty-selection">
+                <h3>Select Difficulty Level</h3>
+                <div className="difficulty-buttons">
+                  <button
+                    className={`difficulty-button ${selectedDifficulty === 'all' ? 'selected' : ''}`}
+                    onClick={() => setSelectedDifficulty('all')}
+                  >
+                    All Levels
+                  </button>
+                  <button
+                    className={`difficulty-button ${selectedDifficulty === 'simple' ? 'selected' : ''}`}
+                    onClick={() => setSelectedDifficulty('simple')}
+                  >
+                    Simple
+                  </button>
+                  <button
+                    className={`difficulty-button ${selectedDifficulty === 'complex' ? 'selected' : ''}`}
+                    onClick={() => setSelectedDifficulty('complex')}
+                  >
+                    Complex
+                  </button>
+                  <button
+                    className={`difficulty-button ${selectedDifficulty === 'extremely complex' ? 'selected' : ''}`}
+                    onClick={() => setSelectedDifficulty('extremely complex')}
+                  >
+                    Extremely Complex
+                  </button>
+                </div>
               </div>
               <div className="categories-grid">
                 {categories.map(category => (
@@ -523,6 +566,9 @@ function App() {
               <div className="quiz-info">
                 <p className="category-badge">{currentQuestion.category}</p>
                 <p className="score-badge">Score: {score}</p>
+                <p className={`difficulty-badge difficulty-${currentQuestion.difficulty.replace(' ', '-')}`}>
+                  {currentQuestion.difficulty}
+                </p>
               </div>
               <div className="timer-container">
                 <div className="timer" style={{ 

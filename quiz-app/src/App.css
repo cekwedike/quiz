@@ -190,9 +190,9 @@
 
 .quiz-info {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
-  margin: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .category-badge {
@@ -614,4 +614,68 @@
 .delete-stats-button:hover {
   background: #a93226;
   transform: translateY(-1px);
+}
+
+/* Add difficulty selection styles */
+.difficulty-selection {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.difficulty-selection h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.difficulty-button {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.difficulty-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.difficulty-button.selected {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Add difficulty badge styles */
+.difficulty-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.difficulty-simple {
+  background: #2ecc71;
+  color: white;
+}
+
+.difficulty-complex {
+  background: #f39c12;
+  color: white;
+}
+
+.difficulty-extremely-complex {
+  background: #e74c3c;
+  color: white;
 }
