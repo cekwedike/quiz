@@ -57,18 +57,16 @@ function App() {
   const [isStarted, setIsStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
+  const [quizQuestions, setQuizQuestions] = useState<Question[]>(questions);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
 
-  useEffect(() => {
-    // Shuffle questions when the quiz starts
-    if (isStarted) {
-      const shuffled = [...questions].sort(() => Math.random() - 0.5);
-      setQuizQuestions(shuffled);
-    }
-  }, [isStarted]);
+  const startQuiz = () => {
+    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    setQuizQuestions(shuffled);
+    setIsStarted(true);
+  };
 
   const handleAnswerSelect = (answer: string) => {
     if (isAnswered) return;
@@ -92,15 +90,17 @@ function App() {
   };
 
   const restartQuiz = () => {
-    setIsStarted(true);
+    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    setQuizQuestions(shuffled);
     setCurrentQuestionIndex(0);
     setScore(0);
     setSelectedAnswer(null);
     setShowResult(false);
     setIsAnswered(false);
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
-    setQuizQuestions(shuffled);
+    setIsStarted(true);
   };
+
+  const currentQuestion = quizQuestions[currentQuestionIndex];
 
   return (
     <div className="App">
@@ -111,7 +111,7 @@ function App() {
             <p>Test your knowledge with our interactive quiz</p>
             <button 
               className="start-button"
-              onClick={() => setIsStarted(true)}
+              onClick={startQuiz}
             >
               Start Quiz
             </button>
@@ -131,22 +131,22 @@ function App() {
         ) : (
           <div className="quiz-content">
             <div className="quiz-header">
-              <p className="category">{quizQuestions[currentQuestionIndex].category}</p>
+              <p className="category">{currentQuestion.category}</p>
               <p className="progress">Question {currentQuestionIndex + 1} of {questions.length}</p>
               <p className="score">Score: {score}</p>
             </div>
-            <h2>{quizQuestions[currentQuestionIndex].question}</h2>
+            <h2>{currentQuestion.question}</h2>
             <div className="options">
-              {quizQuestions[currentQuestionIndex].options.map((option, index) => (
+              {currentQuestion.options.map((option, index) => (
                 <button
                   key={index}
                   className={`option-button ${
                     selectedAnswer === option 
-                      ? option === quizQuestions[currentQuestionIndex].correctAnswer 
+                      ? option === currentQuestion.correctAnswer 
                         ? 'correct' 
                         : 'incorrect'
                       : ''
-                  } ${isAnswered && option === quizQuestions[currentQuestionIndex].correctAnswer ? 'correct' : ''}`}
+                  } ${isAnswered && option === currentQuestion.correctAnswer ? 'correct' : ''}`}
                   onClick={() => handleAnswerSelect(option)}
                   disabled={isAnswered}
                 >
