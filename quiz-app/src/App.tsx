@@ -87,6 +87,12 @@ function App() {
   const [categoryResults, setCategoryResults] = useState<{[key: string]: {correct: number, total: number}}>({});
 
   useEffect(() => {
+    if (currentQuestion) {
+      setAvailableOptions([...currentQuestion.options]);
+    }
+  }, [currentQuestionIndex, quizQuestions]);
+
+  useEffect(() => {
     let timer: NodeJS.Timeout;
     if (isStarted && !showResult && !isAnswered && timeLeft > 0) {
       timer = setInterval(() => {
@@ -105,21 +111,6 @@ function App() {
     }
     return () => clearInterval(timer);
   }, [isStarted, showResult, isAnswered, timeLeft]);
-
-  useEffect(() => {
-    if (currentQuestion) {
-      setAvailableOptions([...currentQuestion.options]);
-    }
-  }, [currentQuestionIndex, quizQuestions]);
-
-  useEffect(() => {
-    const handleUserInteraction = () => {
-      soundManager.initializeAudio();
-      document.removeEventListener('click', handleUserInteraction);
-    };
-    document.addEventListener('click', handleUserInteraction);
-    return () => document.removeEventListener('click', handleUserInteraction);
-  }, []);
 
   const handleTimeUp = () => {
     setIsAnswered(true);

@@ -7,21 +7,28 @@ const SOUNDS = {
 };
 
 class SoundManager {
-  private audio: HTMLAudioElement | null = null;
+  private audio: HTMLAudioElement;
   private isMuted: boolean = false;
 
   constructor() {
     this.audio = new Audio();
+    // Try to initialize with a silent sound
+    this.audio.volume = 0;
+    this.audio.src = SOUNDS.tick;
   }
 
   playSound(soundType: keyof typeof SOUNDS) {
     if (this.isMuted) return;
     
-    if (this.audio) {
+    try {
+      this.audio.volume = 1;
       this.audio.src = SOUNDS[soundType];
       this.audio.play().catch(() => {
         // Ignore errors - audio might not play due to browser restrictions
+        console.log('Audio playback failed');
       });
+    } catch (error) {
+      console.log('Error playing sound:', error);
     }
   }
 
