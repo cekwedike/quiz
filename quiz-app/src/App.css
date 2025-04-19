@@ -49,6 +49,29 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   width: 90%;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .welcome-screen h1 {
@@ -61,7 +84,7 @@
   margin-bottom: 2rem;
 }
 
-.start-button, .restart-button {
+.start-button, .restart-button, .back-button, .stats-button {
   background-color: #3498db;
   color: white;
   border: none;
@@ -69,11 +92,13 @@
   border-radius: 5px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  margin: 0.5rem;
 }
 
-.start-button:hover, .restart-button:hover {
+.start-button:hover, .restart-button:hover, .back-button:hover, .stats-button:hover {
   background-color: #2980b9;
+  transform: translateY(-2px);
 }
 
 .quiz-content {
@@ -91,6 +116,19 @@
   font-weight: bold;
   color: #e74c3c;
   margin-bottom: 1rem;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .category {
@@ -107,6 +145,53 @@
 .score {
   font-weight: bold;
   color: #27ae60;
+}
+
+.lifelines {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.lifeline-button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lifeline-button:hover:not(:disabled) {
+  background-color: #d35400;
+  transform: translateY(-2px);
+}
+
+.lifeline-button.used {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.sound-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.sound-button:hover {
+  transform: scale(1.1);
+}
+
+.hint {
+  color: #f39c12;
+  margin-bottom: 1rem;
+  font-style: italic;
+  animation: slideIn 0.3s ease-out;
 }
 
 .quiz-content h2 {
@@ -129,23 +214,51 @@
   cursor: pointer;
   transition: all 0.3s;
   font-size: 1rem;
+  animation: slideIn 0.3s ease-out;
 }
 
 .option-button:hover:not(:disabled) {
   background-color: #e9ecef;
   border-color: #dee2e6;
+  transform: translateX(5px);
 }
 
 .option-button.correct {
   background-color: #27ae60;
   border-color: #27ae60;
   color: white;
+  animation: correctAnswer 0.5s ease-out;
+}
+
+@keyframes correctAnswer {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .option-button.incorrect {
   background-color: #e74c3c;
   border-color: #e74c3c;
   color: white;
+  animation: incorrectAnswer 0.5s ease-out;
+}
+
+@keyframes incorrectAnswer {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px);
+  }
+  40%, 80% {
+    transform: translateX(5px);
+  }
 }
 
 .option-button:disabled {
@@ -204,6 +317,7 @@
 .category-button:hover {
   background-color: #e9ecef;
   border-color: #3498db;
+  transform: translateY(-2px);
 }
 
 .category-button.selected {
@@ -237,4 +351,54 @@
 
 .category-score span:last-child {
   color: #27ae60;
+}
+
+.stats-screen {
+  text-align: center;
+}
+
+.stats-screen h2 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.stats-content {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stats-content h3 {
+  color: #2c3e50;
+  margin: 1.5rem 0 1rem;
+}
+
+.category-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.high-scores {
+  margin-top: 1rem;
+}
+
+.high-score {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.high-score span:first-child {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.high-score span:last-child {
+  color: #7f8c8d;
 }

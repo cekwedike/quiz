@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { soundManager } from './sounds';
+import { storageManager } from './storage';
 
 interface Question {
   id: number;
@@ -55,6 +57,12 @@ const questions: Question[] = [
 
 const categories = Array.from(new Set(questions.map(q => q.category)));
 
+interface Lifelines {
+  fiftyFifty: number;
+  hint: number;
+  skip: number;
+}
+
 function App() {
   const [isStarted, setIsStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -63,19 +71,32 @@ function App() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30); // 30 seconds per question
+  const [timeLeft, setTimeLeft] = useState(30);
   const [totalTime, setTotalTime] = useState(0);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [isSelectingCategories, setIsSelectingCategories] = useState(false);
+  const [lifelines, setLifelines] = useState<Lifelines>({
+    fiftyFifty: 1,
+    hint: 1,
+    skip: 1
+  });
+  const [availableOptions, setAvailableOptions] = useState<string[]>([]);
+  const [showHint, setShowHint] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [showStats, setShowStats] = useState(false);
+  const [categoryResults, setCategoryResults] = useState<{[key: string]: {correct: number, total: number}}>({});
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (isStarted && !showResult && !isAnswered) {
+    if (isStarted && !showResult && !isAnswered && timeLeft > 0) {
       timer = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 1) {
             handleTimeUp();
             return 0;
+          }
+          if (prev <= 5) {
+            soundManager.playSound('tick');
           }
           return prev - 1;
         });
@@ -83,20 +104,46 @@ function App() {
       }, 1000);
     }
     return () => clearInterval(timer);
-  }, [isStarted, showResult, isAnswered]);
+  }, [isStarted, showResult, isAnswered, timeLeft]);
+
+  useEffect(() => {
+    if (currentQuestion) {
+      setAvailableOptions([...currentQuestion.options]);
+    }
+  }, [currentQuestionIndex, quizQuestions]);
+
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      soundManager.initializeAudio();
+      document.removeEventListener('click', handleUserInteraction);
+    };
+    document.addEventListener('click', handleUserInteraction);
+    return () => document.removeEventListener('click', handleUserInteraction);
+  }, []);
 
   const handleTimeUp = () => {
     setIsAnswered(true);
+    soundManager.playSound('incorrect');
+    updateCategoryResults(false);
+    
     setTimeout(() => {
       if (currentQuestionIndex < quizQuestions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-        setSelectedAnswer(null);
-        setIsAnswered(false);
-        setTimeLeft(30);
+        nextQuestion();
       } else {
-        setShowResult(true);
+        endQuiz();
       }
     }, 1000);
+  };
+
+  const updateCategoryResults = (isCorrect: boolean) => {
+    const category = currentQuestion.category;
+    setCategoryResults(prev => ({
+      ...prev,
+      [category]: {
+        correct: (prev[category]?.correct || 0) + (isCorrect ? 1 : 0),
+        total: (prev[category]?.total || 0) + 1
+      }
+    }));
   };
 
   const toggleCategory = (category: string) => {
@@ -117,6 +164,12 @@ function App() {
     setIsStarted(true);
     setTimeLeft(30);
     setTotalTime(0);
+    setCategoryResults({});
+    setLifelines({
+      fiftyFifty: 1,
+      hint: 1,
+      skip: 1
+    });
   };
 
   const handleAnswerSelect = (answer: string) => {
@@ -125,20 +178,54 @@ function App() {
     setSelectedAnswer(answer);
     setIsAnswered(true);
     
-    if (answer === quizQuestions[currentQuestionIndex].correctAnswer) {
+    const isCorrect = answer === currentQuestion.correctAnswer;
+    if (isCorrect) {
       setScore(score + 1);
+      soundManager.playSound('correct');
+    } else {
+      soundManager.playSound('incorrect');
     }
+    
+    updateCategoryResults(isCorrect);
 
     setTimeout(() => {
       if (currentQuestionIndex < quizQuestions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-        setSelectedAnswer(null);
-        setIsAnswered(false);
-        setTimeLeft(30);
+        nextQuestion();
       } else {
-        setShowResult(true);
+        endQuiz();
       }
     }, 1000);
+  };
+
+  const nextQuestion = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
+    setTimeLeft(30);
+    setShowHint(false);
+    setAvailableOptions(quizQuestions[currentQuestionIndex + 1].options);
+  };
+
+  const endQuiz = () => {
+    setShowResult(true);
+    soundManager.playSound('victory');
+    
+    // Save high score
+    storageManager.addHighScore({
+      score,
+      totalQuestions: quizQuestions.length,
+      categories: selectedCategories.length ? selectedCategories : categories,
+      timeSpent: totalTime,
+      date: new Date().toISOString()
+    });
+
+    // Update statistics
+    storageManager.updateStats(
+      score,
+      quizQuestions.length,
+      categoryResults,
+      selectedCategories
+    );
   };
 
   const restartQuiz = () => {
@@ -150,7 +237,41 @@ function App() {
     setIsAnswered(false);
     setTimeLeft(30);
     setTotalTime(0);
+    setShowStats(false);
     setIsStarted(false);
+  };
+
+  const useFiftyFifty = () => {
+    if (lifelines.fiftyFifty === 0 || isAnswered) return;
+    
+    const correctAnswer = currentQuestion.correctAnswer;
+    const wrongOptions = currentQuestion.options.filter(opt => opt !== correctAnswer);
+    const remainingWrong = wrongOptions.sort(() => Math.random() - 0.5).slice(0, 2);
+    const newOptions = [correctAnswer, ...remainingWrong].sort(() => Math.random() - 0.5);
+    
+    setAvailableOptions(newOptions);
+    setLifelines(prev => ({ ...prev, fiftyFifty: 0 }));
+  };
+
+  const useHint = () => {
+    if (lifelines.hint === 0 || isAnswered) return;
+    setShowHint(true);
+    setLifelines(prev => ({ ...prev, hint: 0 }));
+  };
+
+  const useSkip = () => {
+    if (lifelines.skip === 0 || isAnswered) return;
+    setLifelines(prev => ({ ...prev, skip: 0 }));
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+      nextQuestion();
+    } else {
+      endQuiz();
+    }
+  };
+
+  const toggleMute = () => {
+    const isMuted = soundManager.toggleMute();
+    setIsMuted(isMuted);
   };
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
@@ -160,6 +281,9 @@ function App() {
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
+
+  const stats = storageManager.getStats();
+  const highScores = storageManager.getHighScores();
 
   return (
     <div className="App">
@@ -189,6 +313,43 @@ function App() {
               >
                 Start Quiz
               </button>
+              <button 
+                className="stats-button"
+                onClick={() => setShowStats(true)}
+              >
+                View Statistics
+              </button>
+            </div>
+          ) : showStats ? (
+            <div className="stats-screen">
+              <h2>Quiz Statistics</h2>
+              <div className="stats-content">
+                <p>Games Played: {stats.gamesPlayed}</p>
+                <p>Average Score: {(stats.averageScore * 100).toFixed(1)}%</p>
+                <h3>Category Performance</h3>
+                {Object.entries(stats.categoryStats).map(([category, results]) => (
+                  <div key={category} className="category-stat">
+                    <span>{category}</span>
+                    <span>{((results.correct / results.total) * 100).toFixed(1)}%</span>
+                  </div>
+                ))}
+                <h3>High Scores</h3>
+                <div className="high-scores">
+                  {highScores.map((score, index) => (
+                    <div key={index} className="high-score">
+                      <span>#{index + 1}</span>
+                      <span>{score.score}/{score.totalQuestions}</span>
+                      <span>{formatTime(score.timeSpent)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <button 
+                className="back-button"
+                onClick={() => setShowStats(false)}
+              >
+                Back
+              </button>
             </div>
           ) : (
             <div className="welcome-screen">
@@ -210,16 +371,11 @@ function App() {
             <p>Total Time: {formatTime(totalTime)}</p>
             <div className="category-breakdown">
               {categories.map(category => {
-                const categoryQuestions = quizQuestions.filter(q => q.category === category);
-                const categoryScore = quizQuestions.filter((q, index) => 
-                  q.category === category && 
-                  index < currentQuestionIndex && 
-                  quizQuestions[index].correctAnswer === selectedAnswer
-                ).length;
-                return categoryQuestions.length > 0 ? (
+                const results = categoryResults[category];
+                return results ? (
                   <div key={category} className="category-score">
                     <span>{category}:</span>
-                    <span>{categoryScore}/{categoryQuestions.length}</span>
+                    <span>{results.correct}/{results.total}</span>
                   </div>
                 ) : null;
               })}
@@ -239,9 +395,41 @@ function App() {
               <p className="progress">Question {currentQuestionIndex + 1} of {quizQuestions.length}</p>
               <p className="score">Score: {score}</p>
             </div>
+            <div className="lifelines">
+              <button
+                className={`lifeline-button ${lifelines.fiftyFifty === 0 ? 'used' : ''}`}
+                onClick={useFiftyFifty}
+                disabled={lifelines.fiftyFifty === 0 || isAnswered}
+              >
+                50:50
+              </button>
+              <button
+                className={`lifeline-button ${lifelines.hint === 0 ? 'used' : ''}`}
+                onClick={useHint}
+                disabled={lifelines.hint === 0 || isAnswered}
+              >
+                Hint
+              </button>
+              <button
+                className={`lifeline-button ${lifelines.skip === 0 ? 'used' : ''}`}
+                onClick={useSkip}
+                disabled={lifelines.skip === 0 || isAnswered}
+              >
+                Skip
+              </button>
+              <button
+                className={`sound-button ${isMuted ? 'muted' : ''}`}
+                onClick={toggleMute}
+              >
+                {isMuted ? '🔇' : '🔊'}
+              </button>
+            </div>
             <h2>{currentQuestion.question}</h2>
+            {showHint && (
+              <p className="hint">Hint: The correct answer has {currentQuestion.correctAnswer.length} characters</p>
+            )}
             <div className="options">
-              {currentQuestion.options.map((option, index) => (
+              {availableOptions.map((option, index) => (
                 <button
                   key={index}
                   className={`option-button ${
