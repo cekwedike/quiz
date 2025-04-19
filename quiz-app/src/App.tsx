@@ -503,7 +503,11 @@ function App() {
               </button>
               <button 
                 className="secondary-button"
-                onClick={() => setShowStats(true)}
+                onClick={() => {
+                  setShowStats(true);
+                  setShowResult(false);
+                  setIsStarted(false);
+                }}
               >
                 View All Stats
               </button>
