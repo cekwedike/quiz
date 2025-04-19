@@ -7,25 +7,27 @@ const SOUNDS = {
 };
 
 class SoundManager {
-  private audio: HTMLAudioElement;
+  private audioElements: { [key: string]: HTMLAudioElement } = {};
   private isMuted: boolean = false;
 
   constructor() {
-    this.audio = new Audio();
-    // Try to initialize with a silent sound
-    this.audio.volume = 0;
-    this.audio.src = SOUNDS.tick;
+    // Create an audio element for each sound
+    Object.entries(SOUNDS).forEach(([key, value]) => {
+      const audio = new Audio(value);
+      audio.preload = 'auto';
+      this.audioElements[key] = audio;
+    });
   }
 
   playSound(soundType: keyof typeof SOUNDS) {
     if (this.isMuted) return;
     
     try {
-      this.audio.volume = 1;
-      this.audio.src = SOUNDS[soundType];
-      this.audio.play().catch(() => {
-        // Ignore errors - audio might not play due to browser restrictions
-        console.log('Audio playback failed');
+      // Create a new audio element each time to allow overlapping sounds
+      const audio = new Audio(SOUNDS[soundType]);
+      audio.volume = 1;
+      audio.play().catch((error) => {
+        console.log('Audio playback failed:', error);
       });
     } catch (error) {
       console.log('Error playing sound:', error);

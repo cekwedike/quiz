@@ -161,6 +161,11 @@ function App() {
       hint: 1,
       skip: 1
     });
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
+    setShowHint(false);
   };
 
   const handleAnswerSelect = (answer: string) => {
@@ -201,6 +206,20 @@ function App() {
     setShowResult(true);
     soundManager.playSound('victory');
     
+    // Calculate final category results
+    const finalResults: { [key: string]: { correct: number, total: number } } = {};
+    quizQuestions.forEach((q, index) => {
+      const isCorrect = index < currentQuestionIndex && 
+        quizQuestions[index].correctAnswer === selectedAnswer;
+      if (!finalResults[q.category]) {
+        finalResults[q.category] = { correct: 0, total: 0 };
+      }
+      finalResults[q.category].total++;
+      if (isCorrect) {
+        finalResults[q.category].correct++;
+      }
+    });
+
     // Save high score
     storageManager.addHighScore({
       score,
@@ -210,11 +229,11 @@ function App() {
       date: new Date().toISOString()
     });
 
-    // Update statistics
+    // Update statistics with the final results
     storageManager.updateStats(
       score,
       quizQuestions.length,
-      categoryResults,
+      finalResults,
       selectedCategories
     );
   };
@@ -230,6 +249,11 @@ function App() {
     setTotalTime(0);
     setShowStats(false);
     setIsStarted(false);
+    setLifelines({
+      fiftyFifty: 1,
+      hint: 1,
+      skip: 1
+    });
   };
 
   const useFiftyFifty = () => {
