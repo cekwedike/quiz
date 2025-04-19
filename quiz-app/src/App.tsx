@@ -9,50 +9,45 @@ interface Question {
   options: string[];
   correctAnswer: string;
   category: string;
+  difficulty: 'simple' | 'complex' | 'extremely complex';
 }
 
 const questions: Question[] = [
-  // Science
-  { id: 1, question: "What is the chemical symbol for gold?", options: ["Au", "Ag", "Fe", "Cu"], correctAnswer: "Au", category: "Science" },
-  { id: 2, question: "Which planet is known as the Red Planet?", options: ["Venus", "Mars", "Jupiter", "Saturn"], correctAnswer: "Mars", category: "Science" },
-  { id: 3, question: "What is the hardest natural substance on Earth?", options: ["Gold", "Iron", "Diamond", "Platinum"], correctAnswer: "Diamond", category: "Science" },
-  { id: 4, question: "What is the largest organ in the human body?", options: ["Heart", "Brain", "Liver", "Skin"], correctAnswer: "Skin", category: "Science" },
-  { id: 5, question: "Which gas do plants absorb from the atmosphere?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], correctAnswer: "Carbon Dioxide", category: "Science" },
-  
-  // History
-  { id: 6, question: "In which year did World War II end?", options: ["1943", "1944", "1945", "1946"], correctAnswer: "1945", category: "History" },
-  { id: 7, question: "Who was the first President of the United States?", options: ["John Adams", "Thomas Jefferson", "George Washington", "Benjamin Franklin"], correctAnswer: "George Washington", category: "History" },
-  { id: 8, question: "Which ancient wonder was located in Alexandria?", options: ["The Lighthouse", "The Colossus", "The Pyramids", "The Hanging Gardens"], correctAnswer: "The Lighthouse", category: "History" },
-  { id: 9, question: "Who painted the Mona Lisa?", options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"], correctAnswer: "Leonardo da Vinci", category: "History" },
-  { id: 10, question: "Which empire was ruled by the Aztecs?", options: ["Roman", "Greek", "Mexican", "Persian"], correctAnswer: "Mexican", category: "History" },
+  // Simple Questions
+  { id: 1, question: "What is the chemical symbol for gold?", options: ["Au", "Ag", "Fe", "Cu"], correctAnswer: "Au", category: "Science", difficulty: "simple" },
+  { id: 2, question: "Which planet is known as the Red Planet?", options: ["Venus", "Mars", "Jupiter", "Saturn"], correctAnswer: "Mars", category: "Science", difficulty: "simple" },
+  { id: 3, question: "What is the capital of Japan?", options: ["Seoul", "Beijing", "Tokyo", "Bangkok"], correctAnswer: "Tokyo", category: "Geography", difficulty: "simple" },
+  { id: 4, question: "Who painted the Mona Lisa?", options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"], correctAnswer: "Leonardo da Vinci", category: "History", difficulty: "simple" },
+  { id: 5, question: "What does CPU stand for?", options: ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Computer Processing Unit"], correctAnswer: "Central Processing Unit", category: "Technology", difficulty: "simple" },
+  { id: 6, question: "In which sport would you perform a slam dunk?", options: ["Football", "Basketball", "Tennis", "Golf"], correctAnswer: "Basketball", category: "Sports", difficulty: "simple" },
+  { id: 7, question: "Who played Iron Man in the Marvel Cinematic Universe?", options: ["Chris Evans", "Chris Hemsworth", "Robert Downey Jr.", "Mark Ruffalo"], correctAnswer: "Robert Downey Jr.", category: "Entertainment", difficulty: "simple" },
+  { id: 8, question: "What is the largest ocean on Earth?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], correctAnswer: "Pacific", category: "Geography", difficulty: "simple" },
+  { id: 9, question: "Which gas do plants absorb from the atmosphere?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], correctAnswer: "Carbon Dioxide", category: "Science", difficulty: "simple" },
+  { id: 10, question: "What year was the first iPhone released?", options: ["2005", "2006", "2007", "2008"], correctAnswer: "2007", category: "Technology", difficulty: "simple" },
 
-  // Geography
-  { id: 11, question: "What is the capital of Japan?", options: ["Seoul", "Beijing", "Tokyo", "Bangkok"], correctAnswer: "Tokyo", category: "Geography" },
-  { id: 12, question: "Which is the largest ocean on Earth?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], correctAnswer: "Pacific", category: "Geography" },
-  { id: 13, question: "On which continent is the Sahara Desert located?", options: ["Asia", "Africa", "South America", "North America"], correctAnswer: "Africa", category: "Geography" },
-  { id: 14, question: "Which country is known as the Land of the Rising Sun?", options: ["China", "Korea", "Japan", "Vietnam"], correctAnswer: "Japan", category: "Geography" },
-  { id: 15, question: "What is the longest river in the world?", options: ["Amazon", "Nile", "Mississippi", "Yangtze"], correctAnswer: "Nile", category: "Geography" },
+  // Complex Questions
+  { id: 11, question: "Which programming language is known as the 'mother of all languages'?", options: ["Python", "Java", "C", "Assembly"], correctAnswer: "C", category: "Technology", difficulty: "complex" },
+  { id: 12, question: "What is the name of the process by which plants convert sunlight into energy?", options: ["Photosynthesis", "Respiration", "Transpiration", "Germination"], correctAnswer: "Photosynthesis", category: "Science", difficulty: "complex" },
+  { id: 13, question: "Which ancient civilization built the Machu Picchu?", options: ["Aztec", "Maya", "Inca", "Olmec"], correctAnswer: "Inca", category: "History", difficulty: "complex" },
+  { id: 14, question: "What is the name of the largest desert in the world?", options: ["Sahara", "Antarctic", "Arabian", "Gobi"], correctAnswer: "Antarctic", category: "Geography", difficulty: "complex" },
+  { id: 15, question: "In which year did the Berlin Wall fall?", options: ["1987", "1989", "1991", "1993"], correctAnswer: "1989", category: "History", difficulty: "complex" },
+  { id: 16, question: "What is the name of the first artificial satellite launched into space?", options: ["Sputnik 1", "Explorer 1", "Vanguard 1", "Telstar 1"], correctAnswer: "Sputnik 1", category: "Science", difficulty: "complex" },
+  { id: 17, question: "Which country won the first FIFA World Cup?", options: ["Brazil", "Uruguay", "Argentina", "Italy"], correctAnswer: "Uruguay", category: "Sports", difficulty: "complex" },
+  { id: 18, question: "What is the name of the first computer programmer?", options: ["Alan Turing", "Ada Lovelace", "Charles Babbage", "Grace Hopper"], correctAnswer: "Ada Lovelace", category: "Technology", difficulty: "complex" },
+  { id: 19, question: "Which movie won the first Academy Award for Best Picture?", options: ["Wings", "Sunrise", "The Jazz Singer", "Metropolis"], correctAnswer: "Wings", category: "Entertainment", difficulty: "complex" },
+  { id: 20, question: "What is the name of the highest mountain in Africa?", options: ["Mount Kilimanjaro", "Mount Kenya", "Mount Stanley", "Mount Meru"], correctAnswer: "Mount Kilimanjaro", category: "Geography", difficulty: "complex" },
 
-  // Technology
-  { id: 16, question: "Who co-founded Apple Computer Company?", options: ["Steve Jobs and Steve Wozniak", "Bill Gates and Paul Allen", "Larry Page and Sergey Brin", "Mark Zuckerberg and Eduardo Saverin"], correctAnswer: "Steve Jobs and Steve Wozniak", category: "Technology" },
-  { id: 17, question: "What does CPU stand for?", options: ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Computer Processing Unit"], correctAnswer: "Central Processing Unit", category: "Technology" },
-  { id: 18, question: "Which programming language is known as the 'mother of all languages'?", options: ["Python", "Java", "C", "Assembly"], correctAnswer: "C", category: "Technology" },
-  { id: 19, question: "What year was the first iPhone released?", options: ["2005", "2006", "2007", "2008"], correctAnswer: "2007", category: "Technology" },
-  { id: 20, question: "What does HTML stand for?", options: ["HyperText Markup Language", "HighTech Machine Learning", "HyperTransfer Markup Language", "HyperText Machine Language"], correctAnswer: "HyperText Markup Language", category: "Technology" },
-
-  // Sports
-  { id: 21, question: "In which sport would you perform a slam dunk?", options: ["Football", "Basketball", "Tennis", "Golf"], correctAnswer: "Basketball", category: "Sports" },
-  { id: 22, question: "How many players are there in a standard soccer team on the field?", options: ["9", "10", "11", "12"], correctAnswer: "11", category: "Sports" },
-  { id: 23, question: "Which country won the first FIFA World Cup?", options: ["Brazil", "Uruguay", "Argentina", "Italy"], correctAnswer: "Uruguay", category: "Sports" },
-  { id: 24, question: "What is the diameter of a basketball hoop in inches?", options: ["16", "18", "20", "22"], correctAnswer: "18", category: "Sports" },
-  { id: 25, question: "In which sport is a 'shuttlecock' used?", options: ["Tennis", "Badminton", "Table Tennis", "Squash"], correctAnswer: "Badminton", category: "Sports" },
-
-  // Entertainment
-  { id: 26, question: "Who played Iron Man in the Marvel Cinematic Universe?", options: ["Chris Evans", "Chris Hemsworth", "Robert Downey Jr.", "Mark Ruffalo"], correctAnswer: "Robert Downey Jr.", category: "Entertainment" },
-  { id: 27, question: "Which band performed 'Bohemian Rhapsody'?", options: ["The Beatles", "Led Zeppelin", "Queen", "Pink Floyd"], correctAnswer: "Queen", category: "Entertainment" },
-  { id: 28, question: "What is the name of Harry Potter's owl?", options: ["Hedwig", "Errol", "Fawkes", "Pigwidgeon"], correctAnswer: "Hedwig", category: "Entertainment" },
-  { id: 29, question: "Who directed the movie 'Jurassic Park'?", options: ["James Cameron", "Steven Spielberg", "George Lucas", "Peter Jackson"], correctAnswer: "Steven Spielberg", category: "Entertainment" },
-  { id: 30, question: "Which TV series features dragons and is based on George R.R. Martin's novels?", options: ["The Witcher", "Game of Thrones", "Lord of the Rings", "The Last Kingdom"], correctAnswer: "Game of Thrones", category: "Entertainment" }
+  // Extremely Complex Questions
+  { id: 21, question: "What is the name of the theorem that states that no three positive integers a, b, and c satisfy the equation aⁿ + bⁿ = cⁿ for any integer value of n greater than 2?", options: ["Fermat's Last Theorem", "Pythagorean Theorem", "Euler's Theorem", "Gauss's Theorem"], correctAnswer: "Fermat's Last Theorem", category: "Science", difficulty: "extremely complex" },
+  { id: 22, question: "Which ancient language is considered the ancestor of most modern European languages?", options: ["Latin", "Sanskrit", "Proto-Indo-European", "Ancient Greek"], correctAnswer: "Proto-Indo-European", category: "History", difficulty: "extremely complex" },
+  { id: 23, question: "What is the name of the quantum phenomenon where particles can be connected regardless of distance?", options: ["Quantum Tunneling", "Quantum Entanglement", "Quantum Superposition", "Quantum Decoherence"], correctAnswer: "Quantum Entanglement", category: "Science", difficulty: "extremely complex" },
+  { id: 24, question: "Which algorithm is used to find the shortest path between nodes in a graph?", options: ["Dijkstra's Algorithm", "Kruskal's Algorithm", "Prim's Algorithm", "Bellman-Ford Algorithm"], correctAnswer: "Dijkstra's Algorithm", category: "Technology", difficulty: "extremely complex" },
+  { id: 25, question: "What is the name of the ancient trade route that connected the East and West?", options: ["Silk Road", "Spice Route", "Amber Road", "Incense Route"], correctAnswer: "Silk Road", category: "History", difficulty: "extremely complex" },
+  { id: 26, question: "Which mathematical concept describes the behavior of dynamic systems that are highly sensitive to initial conditions?", options: ["Fractal Geometry", "Chaos Theory", "Game Theory", "Graph Theory"], correctAnswer: "Chaos Theory", category: "Science", difficulty: "extremely complex" },
+  { id: 27, question: "What is the name of the first computer virus ever created?", options: ["Creeper", "Elk Cloner", "Brain", "Morris Worm"], correctAnswer: "Creeper", category: "Technology", difficulty: "extremely complex" },
+  { id: 28, question: "Which ancient civilization developed the concept of zero?", options: ["Babylonian", "Egyptian", "Mayan", "Indian"], correctAnswer: "Indian", category: "History", difficulty: "extremely complex" },
+  { id: 29, question: "What is the name of the paradox that states that a faster-than-light signal would violate causality?", options: ["Twin Paradox", "Grandfather Paradox", "Bootstrap Paradox", "Tachyonic Antitelephone"], correctAnswer: "Tachyonic Antitelephone", category: "Science", difficulty: "extremely complex" },
+  { id: 30, question: "Which programming paradigm is based on the concept of 'objects'?", options: ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], correctAnswer: "Object-Oriented Programming", category: "Technology", difficulty: "extremely complex" }
 ];
 
 const categories = Array.from(new Set(questions.map(q => q.category)));
