@@ -85,6 +85,8 @@ function App() {
   const [isMuted, setIsMuted] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [categoryResults, setCategoryResults] = useState<{[key: string]: {correct: number, total: number}}>({});
+  const [stats, setStats] = useState(storageManager.getStats());
+  const [highScores, setHighScores] = useState(storageManager.getHighScores());
 
   useEffect(() => {
     if (currentQuestion) {
@@ -235,6 +237,10 @@ function App() {
       finalResults,
       selectedCategories
     );
+
+    // Update local stats state
+    setStats(storageManager.getStats());
+    setHighScores(storageManager.getHighScores());
   };
 
   const restartQuiz = () => {
@@ -296,9 +302,6 @@ function App() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const stats = storageManager.getStats();
-  const highScores = storageManager.getHighScores();
-
   return (
     <div className="App">
       <div className="quiz-container">
@@ -335,7 +338,10 @@ function App() {
                 </button>
                 <button 
                   className="secondary-button"
-                  onClick={() => setShowStats(true)}
+                  onClick={() => {
+                    setShowStats(true);
+                    setIsSelectingCategories(false);
+                  }}
                 >
                   View Statistics
                 </button>
@@ -405,7 +411,10 @@ function App() {
               </div>
               <button 
                 className="primary-button"
-                onClick={() => setShowStats(false)}
+                onClick={() => {
+                  setShowStats(false);
+                  setIsSelectingCategories(true);
+                }}
               >
                 Back to Categories
               </button>
