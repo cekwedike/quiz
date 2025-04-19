@@ -208,15 +208,14 @@ function App() {
     
     // Calculate final category results
     const finalResults: { [key: string]: { correct: number, total: number } } = {};
-    quizQuestions.forEach((q, index) => {
-      const isCorrect = index < currentQuestionIndex && 
-        quizQuestions[index].correctAnswer === selectedAnswer;
-      if (!finalResults[q.category]) {
-        finalResults[q.category] = { correct: 0, total: 0 };
-      }
-      finalResults[q.category].total++;
-      if (isCorrect) {
-        finalResults[q.category].correct++;
+    categories.forEach(category => {
+      const categoryQuestions = quizQuestions.filter(q => q.category === category);
+      const correctAnswers = categoryResults[category]?.correct || 0;
+      if (categoryQuestions.length > 0) {
+        finalResults[category] = {
+          correct: correctAnswers,
+          total: categoryQuestions.length
+        };
       }
     });
 
@@ -229,7 +228,7 @@ function App() {
       date: new Date().toISOString()
     });
 
-    // Update statistics with the final results
+    // Update statistics
     storageManager.updateStats(
       score,
       quizQuestions.length,
@@ -306,8 +305,10 @@ function App() {
         {!isStarted ? (
           isSelectingCategories ? (
             <div className="category-selection">
-              <h2>Select Categories</h2>
-              <p>Choose one or more categories (or none for all categories)</p>
+              <div className="quiz-header-modern">
+                <h2>Choose Your Categories</h2>
+                <p>Select one or more categories to customize your quiz experience</p>
+              </div>
               <div className="categories-grid">
                 {categories.map(category => (
                   <button
@@ -315,135 +316,205 @@ function App() {
                     className={`category-button ${selectedCategories.includes(category) ? 'selected' : ''}`}
                     onClick={() => toggleCategory(category)}
                   >
-                    {category}
+                    <span className="category-icon">
+                      {getCategoryIcon(category)}
+                    </span>
+                    <span className="category-name">{category}</span>
                   </button>
                 ))}
               </div>
-              <button 
-                className="start-button"
-                onClick={() => {
-                  setIsSelectingCategories(false);
-                  startQuiz();
-                }}
-              >
-                Start Quiz
-              </button>
-              <button 
-                className="stats-button"
-                onClick={() => setShowStats(true)}
-              >
-                View Statistics
-              </button>
+              <div className="action-buttons">
+                <button 
+                  className="primary-button"
+                  onClick={() => {
+                    setIsSelectingCategories(false);
+                    startQuiz();
+                  }}
+                >
+                  Start Quiz
+                </button>
+                <button 
+                  className="secondary-button"
+                  onClick={() => setShowStats(true)}
+                >
+                  View Statistics
+                </button>
+              </div>
             </div>
           ) : showStats ? (
             <div className="stats-screen">
-              <h2>Quiz Statistics</h2>
+              <div className="quiz-header-modern">
+                <h2>Your Quiz Statistics</h2>
+                <p>Track your progress and achievements</p>
+              </div>
               <div className="stats-content">
-                <p>Games Played: {stats.gamesPlayed}</p>
-                <p>Average Score: {(stats.averageScore * 100).toFixed(1)}%</p>
-                <h3>Category Performance</h3>
-                {Object.entries(stats.categoryStats).map(([category, results]) => (
-                  <div key={category} className="category-stat">
-                    <span>{category}</span>
-                    <span>{((results.correct / results.total) * 100).toFixed(1)}%</span>
+                <div className="stats-overview">
+                  <div className="stat-card">
+                    <h3>Games Played</h3>
+                    <p className="stat-value">{stats.gamesPlayed}</p>
                   </div>
-                ))}
-                <h3>High Scores</h3>
-                <div className="high-scores">
-                  {highScores.map((score, index) => (
-                    <div key={index} className="high-score">
-                      <span>#{index + 1}</span>
-                      <span>{score.score}/{score.totalQuestions}</span>
-                      <span>{formatTime(score.timeSpent)}</span>
-                    </div>
-                  ))}
+                  <div className="stat-card">
+                    <h3>Average Score</h3>
+                    <p className="stat-value">{(stats.averageScore * 100).toFixed(1)}%</p>
+                  </div>
+                  <div className="stat-card">
+                    <h3>Total Questions</h3>
+                    <p className="stat-value">{stats.totalQuestions}</p>
+                  </div>
+                </div>
+
+                <div className="stats-section">
+                  <h3>Category Performance</h3>
+                  <div className="category-stats">
+                    {Object.entries(stats.categoryStats).map(([category, results]) => (
+                      <div key={category} className="category-stat-card">
+                        <div className="category-stat-header">
+                          <span className="category-icon">{getCategoryIcon(category)}</span>
+                          <span>{category}</span>
+                        </div>
+                        <div className="category-stat-content">
+                          <div className="progress-bar">
+                            <div 
+                              className="progress-fill"
+                              style={{ width: `${((results.correct / results.total) * 100)}%` }}
+                            />
+                          </div>
+                          <p>{((results.correct / results.total) * 100).toFixed(1)}%</p>
+                          <p className="stat-detail">{results.correct}/{results.total} correct</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="stats-section">
+                  <h3>Recent High Scores</h3>
+                  <div className="high-scores-list">
+                    {highScores.map((score, index) => (
+                      <div key={index} className="high-score-card">
+                        <div className="score-rank">#{index + 1}</div>
+                        <div className="score-details">
+                          <p className="score-main">{score.score}/{score.totalQuestions}</p>
+                          <p className="score-time">{formatTime(score.timeSpent)}</p>
+                          <p className="score-date">{new Date(score.date).toLocaleDateString()}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               <button 
-                className="back-button"
+                className="primary-button"
                 onClick={() => setShowStats(false)}
               >
-                Back
+                Back to Categories
               </button>
             </div>
           ) : (
             <div className="welcome-screen">
-              <h1>Welcome to the Quiz App!</h1>
-              <p>Test your knowledge with our interactive quiz</p>
+              <div className="quiz-header-modern">
+                <h1>Welcome to QuizMaster</h1>
+                <p>Test your knowledge across multiple categories</p>
+              </div>
               <button 
-                className="start-button"
+                className="primary-button"
                 onClick={() => setIsSelectingCategories(true)}
               >
-                Choose Categories
+                Start Your Journey
               </button>
             </div>
           )
         ) : showResult ? (
           <div className="result-screen">
-            <h2>Quiz Completed!</h2>
-            <p>Your Score: {score} out of {quizQuestions.length}</p>
-            <p>Percentage: {((score / quizQuestions.length) * 100).toFixed(1)}%</p>
-            <p>Total Time: {formatTime(totalTime)}</p>
-            <div className="category-breakdown">
-              {categories.map(category => {
-                const results = categoryResults[category];
-                return results ? (
-                  <div key={category} className="category-score">
-                    <span>{category}:</span>
-                    <span>{results.correct}/{results.total}</span>
-                  </div>
-                ) : null;
-              })}
+            <div className="quiz-header-modern">
+              <h2>Quiz Completed!</h2>
+              <p>Let's see how you did</p>
             </div>
-            <button 
-              className="restart-button"
-              onClick={restartQuiz}
-            >
-              Try Again
-            </button>
+            <div className="result-content">
+              <div className="score-overview">
+                <div className="score-circle">
+                  <div className="score-number">{score}</div>
+                  <div className="score-total">out of {quizQuestions.length}</div>
+                </div>
+                <p className="score-percentage">
+                  {((score / quizQuestions.length) * 100).toFixed(1)}%
+                </p>
+                <p className="completion-time">Time: {formatTime(totalTime)}</p>
+              </div>
+
+              <div className="category-breakdown">
+                <h3>Performance by Category</h3>
+                {Object.entries(categoryResults).map(([category, results]) => (
+                  <div key={category} className="category-result-card">
+                    <div className="category-result-header">
+                      <span className="category-icon">{getCategoryIcon(category)}</span>
+                      <span>{category}</span>
+                    </div>
+                    <div className="category-result-stats">
+                      <div className="progress-bar">
+                        <div 
+                          className="progress-fill"
+                          style={{ width: `${((results.correct / results.total) * 100)}%` }}
+                        />
+                      </div>
+                      <p>{results.correct}/{results.total} correct</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="action-buttons">
+              <button 
+                className="primary-button"
+                onClick={restartQuiz}
+              >
+                Try Again
+              </button>
+              <button 
+                className="secondary-button"
+                onClick={() => setShowStats(true)}
+              >
+                View All Stats
+              </button>
+            </div>
           </div>
         ) : (
           <div className="quiz-content">
-            <div className="quiz-header">
-              <div className="timer">Time Left: {formatTime(timeLeft)}</div>
-              <p className="category">{currentQuestion.category}</p>
-              <p className="progress">Question {currentQuestionIndex + 1} of {quizQuestions.length}</p>
-              <p className="score">Score: {score}</p>
+            <div className="quiz-header-modern">
+              <div className="quiz-progress">
+                <div className="progress-bar">
+                  <div 
+                    className="progress-fill"
+                    style={{ width: `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%` }}
+                  />
+                </div>
+                <p>Question {currentQuestionIndex + 1} of {quizQuestions.length}</p>
+              </div>
+              <div className="quiz-info">
+                <p className="category-badge">{currentQuestion.category}</p>
+                <p className="score-badge">Score: {score}</p>
+              </div>
+              <div className="timer-container">
+                <div className="timer" style={{ 
+                  '--progress': `${(timeLeft / 30) * 100}%`,
+                  '--color': timeLeft <= 5 ? '#e74c3c' : timeLeft <= 10 ? '#f39c12' : '#2ecc71'
+                } as React.CSSProperties}>
+                  {timeLeft}
+                </div>
+              </div>
             </div>
-            <div className="lifelines">
-              <button
-                className={`lifeline-button ${lifelines.fiftyFifty === 0 ? 'used' : ''}`}
-                onClick={useFiftyFifty}
-                disabled={lifelines.fiftyFifty === 0 || isAnswered}
-              >
-                50:50
-              </button>
-              <button
-                className={`lifeline-button ${lifelines.hint === 0 ? 'used' : ''}`}
-                onClick={useHint}
-                disabled={lifelines.hint === 0 || isAnswered}
-              >
-                Hint
-              </button>
-              <button
-                className={`lifeline-button ${lifelines.skip === 0 ? 'used' : ''}`}
-                onClick={useSkip}
-                disabled={lifelines.skip === 0 || isAnswered}
-              >
-                Skip
-              </button>
-              <button
-                className={`sound-button ${isMuted ? 'muted' : ''}`}
-                onClick={toggleMute}
-              >
-                {isMuted ? '🔇' : '🔊'}
-              </button>
+
+            <div className="question-section">
+              <h2>{currentQuestion.question}</h2>
+              {showHint && (
+                <p className="hint">
+                  <span className="hint-icon">💡</span>
+                  The correct answer has {currentQuestion.correctAnswer.length} characters
+                </p>
+              )}
             </div>
-            <h2>{currentQuestion.question}</h2>
-            {showHint && (
-              <p className="hint">Hint: The correct answer has {currentQuestion.correctAnswer.length} characters</p>
-            )}
-            <div className="options">
+
+            <div className="options-grid">
               {availableOptions.map((option, index) => (
                 <button
                   key={index}
@@ -457,15 +528,61 @@ function App() {
                   onClick={() => handleAnswerSelect(option)}
                   disabled={isAnswered}
                 >
-                  {option}
+                  <span className="option-letter">{String.fromCharCode(65 + index)}</span>
+                  <span className="option-text">{option}</span>
                 </button>
               ))}
+            </div>
+
+            <div className="quiz-controls">
+              <div className="lifelines">
+                <button
+                  className={`lifeline-button ${lifelines.fiftyFifty === 0 ? 'used' : ''}`}
+                  onClick={useFiftyFifty}
+                  disabled={lifelines.fiftyFifty === 0 || isAnswered}
+                >
+                  <span className="lifeline-icon">50:50</span>
+                </button>
+                <button
+                  className={`lifeline-button ${lifelines.hint === 0 ? 'used' : ''}`}
+                  onClick={useHint}
+                  disabled={lifelines.hint === 0 || isAnswered}
+                >
+                  <span className="lifeline-icon">💡</span>
+                </button>
+                <button
+                  className={`lifeline-button ${lifelines.skip === 0 ? 'used' : ''}`}
+                  onClick={useSkip}
+                  disabled={lifelines.skip === 0 || isAnswered}
+                >
+                  <span className="lifeline-icon">⏭️</span>
+                </button>
+              </div>
+              <button
+                className={`sound-button ${isMuted ? 'muted' : ''}`}
+                onClick={toggleMute}
+              >
+                {isMuted ? '🔇' : '🔊'}
+              </button>
             </div>
           </div>
         )}
       </div>
     </div>
   );
+}
+
+// Helper function to get category icons
+function getCategoryIcon(category: string): string {
+  const icons: { [key: string]: string } = {
+    Science: '🔬',
+    History: '📚',
+    Geography: '🌍',
+    Technology: '💻',
+    Sports: '⚽',
+    Entertainment: '🎬'
+  };
+  return icons[category] || '❓';
 }
 
 export default App;
