@@ -2973,6 +2973,51 @@ export const questionBank: Question[] = [
     correctAnswer: 'Sumerian',
     explanation: 'The Sumerians developed cuneiform, the first known system of writing, around 3200 BCE in Mesopotamia.'
   },
+  {
+    id: 'hist_extreme_1',
+    category: 'History',
+    difficulty: 'extremely complex',
+    question: 'Which ancient civilization developed the first known system of writing?',
+    options: ['Sumerian', 'Egyptian', 'Indus Valley', 'Chinese'],
+    correctAnswer: 'Sumerian',
+    explanation: 'The Sumerians developed cuneiform, the first known system of writing, around 3200 BCE in Mesopotamia.'
+  },
+  {
+    id: 'hist_extreme_2',
+    category: 'History',
+    difficulty: 'extremely complex',
+    question: 'What was the significance of the Treaty of Tordesillas in 1494?',
+    options: ['Divided the New World between Spain and Portugal', 'Ended the Hundred Years\' War', 'Established the Holy Roman Empire', 'Created the Hanseatic League'],
+    correctAnswer: 'Divided the New World between Spain and Portugal',
+    explanation: 'The Treaty of Tordesillas divided the newly discovered lands outside Europe between Spain and Portugal along a meridian 370 leagues west of the Cape Verde islands.'
+  },
+  {
+    id: 'hist_extreme_3',
+    category: 'History',
+    difficulty: 'extremely complex',
+    question: 'Which ancient city was known as the "City of a Thousand Temples"?',
+    options: ['Angkor', 'Babylon', 'Thebes', 'Persepolis'],
+    correctAnswer: 'Angkor',
+    explanation: 'Angkor, the capital of the Khmer Empire, was known as the "City of a Thousand Temples" and was one of the largest pre-industrial cities in the world.'
+  },
+  {
+    id: 'hist_extreme_4',
+    category: 'History',
+    difficulty: 'extremely complex',
+    question: 'What was the primary cause of the Bronze Age Collapse around 1200 BCE?',
+    options: ['Climate change and drought', 'Invasions by Sea Peoples', 'Economic collapse', 'All of the above'],
+    correctAnswer: 'All of the above',
+    explanation: 'The Bronze Age Collapse was likely caused by a combination of factors including climate change, invasions by the Sea Peoples, economic collapse, and internal unrest.'
+  },
+  {
+    id: 'hist_extreme_5',
+    category: 'History',
+    difficulty: 'extremely complex',
+    question: 'Which ancient civilization developed the concept of zero independently of other civilizations?',
+    options: ['Maya', 'Babylonian', 'Egyptian', 'Chinese'],
+    correctAnswer: 'Maya',
+    explanation: 'The Maya civilization independently developed the concept of zero around 350 CE, using it in their sophisticated calendar system and mathematical calculations.'
+  },
 ];
 
 // Helper function to get questions by category and difficulty
