@@ -4618,6 +4618,286 @@ export const questionBank: Question[] = [
     correctAnswer: 'Rapid urbanization and population growth',
     explanation: 'Megacities are formed by rapid urbanization and population growth, typically defined as urban areas with populations exceeding 10 million people.'
   },
+  {
+    id: 'geo_extreme_1',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of teleconnection in climate science?',
+    options: [
+      'The relationship between climate anomalies in widely separated regions',
+      'The connection between ocean currents and atmospheric circulation',
+      'The interaction between different climate systems',
+      'The relationship between local and global climate patterns'
+    ],
+    correctAnswer: 'The relationship between climate anomalies in widely separated regions',
+    explanation: 'Teleconnection refers to the relationship between climate anomalies in widely separated regions, often caused by large-scale atmospheric circulation patterns like ENSO or the North Atlantic Oscillation.'
+  },
+  {
+    id: 'geo_extreme_2',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a Rossby wave in atmospheric circulation?',
+    options: [
+      'The conservation of potential vorticity in a rotating fluid',
+      'The interaction between different air masses',
+      'The movement of high and low pressure systems',
+      'The effect of the Coriolis force on air movement'
+    ],
+    correctAnswer: 'The conservation of potential vorticity in a rotating fluid',
+    explanation: 'Rossby waves are formed due to the conservation of potential vorticity in a rotating fluid, creating large-scale meanders in the jet stream and influencing weather patterns.'
+  },
+  {
+    id: 'geo_extreme_3',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of geomorphic threshold in landscape evolution?',
+    options: [
+      'The point at which a small change in driving forces results in a significant change in landform',
+      'The maximum rate of erosion a landscape can sustain',
+      'The minimum energy required for geomorphic processes to occur',
+      'The balance between erosion and deposition in a landscape'
+    ],
+    correctAnswer: 'The point at which a small change in driving forces results in a significant change in landform',
+    explanation: 'A geomorphic threshold represents the point at which a small change in driving forces results in a significant change in landform, often leading to rapid landscape transformation.'
+  },
+  {
+    id: 'geo_extreme_4',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a katabatic wind?',
+    options: [
+      'The cooling of air over elevated terrain and subsequent downslope flow',
+      'The heating of air over low-lying areas',
+      'The interaction between different pressure systems',
+      'The effect of the Coriolis force on air movement'
+    ],
+    correctAnswer: 'The cooling of air over elevated terrain and subsequent downslope flow',
+    explanation: 'Katabatic winds are formed by the cooling of air over elevated terrain, which becomes denser and flows downslope under the influence of gravity.'
+  },
+  {
+    id: 'geo_extreme_5',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of equifinality in geomorphology?',
+    options: [
+      'The principle that different processes can produce similar landforms',
+      'The final state of landscape evolution',
+      'The balance between different geomorphic processes',
+      'The relationship between process and form in landscape development'
+    ],
+    correctAnswer: 'The principle that different processes can produce similar landforms',
+    explanation: 'Equifinality is the principle that different processes can produce similar landforms, making it challenging to determine the exact process responsible for a particular landform.'
+  },
+  {
+    id: 'geo_extreme_6',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective complex?',
+    options: [
+      'The organization of thunderstorms into a large, long-lived convective system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a large, long-lived convective system',
+    explanation: 'Mesoscale convective complexes form when thunderstorms organize into a large, long-lived convective system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_7',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of critical zone science?',
+    options: [
+      'The study of Earth\'s surface processes from the top of vegetation to the bottom of groundwater',
+      'The analysis of climate change impacts on ecosystems',
+      'The study of human-environment interactions',
+      'The investigation of geological hazards'
+    ],
+    correctAnswer: 'The study of Earth\'s surface processes from the top of vegetation to the bottom of groundwater',
+    explanation: 'Critical zone science is the study of Earth\'s surface processes from the top of vegetation to the bottom of groundwater, integrating various disciplines to understand Earth\'s surface systems.'
+  },
+  {
+    id: 'geo_extreme_8',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a polar vortex?',
+    options: [
+      'The strong westerly winds that circle the polar regions',
+      'The interaction between different air masses',
+      'The effect of the Coriolis force on air movement',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The strong westerly winds that circle the polar regions',
+    explanation: 'A polar vortex is formed by strong westerly winds that circle the polar regions, creating a large area of low pressure and cold air.'
+  },
+  {
+    id: 'geo_extreme_9',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape sensitivity?',
+    options: [
+      'The degree to which a landscape responds to changes in driving forces',
+      'The vulnerability of a landscape to erosion',
+      'The stability of a landscape over time',
+      'The ability of a landscape to recover from disturbance'
+    ],
+    correctAnswer: 'The degree to which a landscape responds to changes in driving forces',
+    explanation: 'Landscape sensitivity refers to the degree to which a landscape responds to changes in driving forces, influencing how it evolves over time.'
+  },
+  {
+    id: 'geo_extreme_10',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a Madden-Julian Oscillation?',
+    options: [
+      'The eastward propagation of large-scale tropical convection',
+      'The interaction between different air masses',
+      'The effect of the Coriolis force on air movement',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The eastward propagation of large-scale tropical convection',
+    explanation: 'The Madden-Julian Oscillation is formed by the eastward propagation of large-scale tropical convection, influencing weather patterns across the tropics and beyond.'
+  },
+  {
+    id: 'geo_extreme_11',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of geomorphic memory?',
+    options: [
+      'The persistence of landform features from past environmental conditions',
+      'The record of past climate in geological formations',
+      'The influence of historical land use on current landscapes',
+      'The relationship between process and form in landscape development'
+    ],
+    correctAnswer: 'The persistence of landform features from past environmental conditions',
+    explanation: 'Geomorphic memory refers to the persistence of landform features from past environmental conditions, influencing current landscape processes and evolution.'
+  },
+  {
+    id: 'geo_extreme_12',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a blocking high?',
+    options: [
+      'The persistence of a high-pressure system that disrupts normal atmospheric flow',
+      'The interaction between different air masses',
+      'The effect of topography on atmospheric circulation',
+      'The influence of ocean currents on weather patterns'
+    ],
+    correctAnswer: 'The persistence of a high-pressure system that disrupts normal atmospheric flow',
+    explanation: 'A blocking high forms when a high-pressure system persists and disrupts normal atmospheric flow, often leading to prolonged weather conditions.'
+  },
+  {
+    id: 'geo_extreme_13',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape connectivity?',
+    options: [
+      'The degree to which different parts of a landscape are functionally linked',
+      'The physical connection between different landforms',
+      'The relationship between different ecosystems',
+      'The movement of species across a landscape'
+    ],
+    correctAnswer: 'The degree to which different parts of a landscape are functionally linked',
+    explanation: 'Landscape connectivity refers to the degree to which different parts of a landscape are functionally linked, influencing ecological processes and species movement.'
+  },
+  {
+    id: 'geo_extreme_14',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a gravity wave in the atmosphere?',
+    options: [
+      'The oscillation of air parcels in a stable atmosphere',
+      'The interaction between different air masses',
+      'The effect of topography on air movement',
+      'The influence of pressure differences on air flow'
+    ],
+    correctAnswer: 'The oscillation of air parcels in a stable atmosphere',
+    explanation: 'Gravity waves form when air parcels oscillate in a stable atmosphere, often influenced by topography or convective processes.'
+  },
+  {
+    id: 'geo_extreme_15',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape resilience?',
+    options: [
+      'The ability of a landscape to absorb disturbance and maintain its essential structure and function',
+      'The stability of a landscape over time',
+      'The ability of a landscape to recover from disturbance',
+      'The resistance of a landscape to change'
+    ],
+    correctAnswer: 'The ability of a landscape to absorb disturbance and maintain its essential structure and function',
+    explanation: 'Landscape resilience refers to the ability of a landscape to absorb disturbance and maintain its essential structure and function, influencing its long-term evolution.'
+  },
+  {
+    id: 'geo_extreme_16',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective vortex?',
+    options: [
+      'The organization of thunderstorms into a rotating system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a rotating system',
+    explanation: 'A mesoscale convective vortex forms when thunderstorms organize into a rotating system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_17',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape feedback?',
+    options: [
+      'The process by which changes in one part of a landscape affect other parts',
+      'The response of a landscape to external forces',
+      'The interaction between different landscape elements',
+      'The relationship between process and form in landscape development'
+    ],
+    correctAnswer: 'The process by which changes in one part of a landscape affect other parts',
+    explanation: 'Landscape feedback refers to the process by which changes in one part of a landscape affect other parts, creating complex interactions and responses.'
+  },
+  {
+    id: 'geo_extreme_18',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a thermal low?',
+    options: [
+      'The heating of land surfaces creating low pressure',
+      'The interaction between different air masses',
+      'The effect of topography on atmospheric circulation',
+      'The influence of ocean currents on weather patterns'
+    ],
+    correctAnswer: 'The heating of land surfaces creating low pressure',
+    explanation: 'A thermal low forms when land surfaces heat up, creating low pressure that draws in air from surrounding areas.'
+  },
+  {
+    id: 'geo_extreme_19',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape hysteresis?',
+    options: [
+      'The dependence of a landscape\'s state on its history of environmental conditions',
+      'The response of a landscape to changing conditions',
+      'The stability of a landscape over time',
+      'The relationship between process and form in landscape development'
+    ],
+    correctAnswer: 'The dependence of a landscape\'s state on its history of environmental conditions',
+    explanation: 'Landscape hysteresis refers to the dependence of a landscape\'s state on its history of environmental conditions, influencing its response to change.'
+  },
+  {
+    id: 'geo_extreme_20',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective system?',
+    options: [
+      'The organization of thunderstorms into a large, long-lived system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a large, long-lived system',
+    explanation: 'A mesoscale convective system forms when thunderstorms organize into a large, long-lived system, often producing severe weather and heavy precipitation.'
+  },
 ];
 
 // Helper function to get questions by category and difficulty
