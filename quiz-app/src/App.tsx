@@ -208,7 +208,19 @@ const App: React.FC = () => {
     setIsAnswered(true);
     if (isCorrect) {
       setScore(prev => prev + 1);
+      soundManager.playSound('correct');
+    } else {
+      soundManager.playSound('incorrect');
     }
+
+    // Automatically move to next question after a delay
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        nextQuestion();
+      } else {
+        endQuiz();
+      }
+    }, 1000);
   };
 
   const nextQuestion = () => {
