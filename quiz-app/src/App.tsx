@@ -197,15 +197,28 @@ const App: React.FC = () => {
       };
     } else {
       difficultyDistribution = {
-        easy: selectedDifficulty === 'easy' ? 50 : 0,
+        easy: selectedDifficulty === 'simple' ? 50 : 0,
         complex: selectedDifficulty === 'complex' ? 50 : 0,
         hard: selectedDifficulty === 'hard' ? 50 : 0,
         'extremely complex': selectedDifficulty === 'extremely complex' ? 50 : 0
       };
     }
 
-    const newQuestions = getRandomQuestionsForQuiz(selectedCategories, 10, difficultyDistribution);
+    // Get questions based on selected categories and difficulty
+    const newQuestions = getRandomQuestionsForQuiz(
+      selectedCategories.length > 0 ? selectedCategories : categories,
+      10,
+      difficultyDistribution
+    );
+
+    if (newQuestions.length === 0) {
+      alert('No questions found for the selected categories and difficulty. Please try different selections.');
+      return;
+    }
+
+    // Reset all quiz states
     setQuestions(newQuestions);
+    setCurrentQuestionIndex(0);
     setCurrentQuestion(newQuestions[0]);
     setSelectedAnswerIndex(null);
     setShowExplanation(false);
@@ -213,6 +226,21 @@ const App: React.FC = () => {
     setStreak(0);
     setAnsweredQuestions(new Set());
     setCategoryResults({});
+    setTimeLeft(30);
+    setTotalTime(0);
+    setIsAnswered(false);
+    setShowResult(false);
+    setQuizCompleted(false);
+    setLifelines({
+      fiftyFifty: 1,
+      hint: 1,
+      skip: 1
+    });
+    setAvailableOptions(new Set(newQuestions[0].options));
+    
+    // Start the quiz
+    setIsStarted(true);
+    setIsSelectingCategories(false);
   };
 
   const saveResults = () => {
