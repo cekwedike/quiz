@@ -115,16 +115,42 @@ const App: React.FC = () => {
       return;
     }
 
-    // Get 50 random questions based on selected categories
+    // Get questions based on selected difficulty
+    let difficultyDistribution = {
+      easy: 15,    // 30% easy questions
+      complex: 20,  // 40% complex questions
+      hard: 10,    // 20% hard questions
+      'extremely complex': 5 // 10% extremely complex questions
+    };
+
+    if (selectedDifficulty === 'simple') {
+      difficultyDistribution = {
+        easy: 50,    // 100% easy questions
+        complex: 0,
+        hard: 0,
+        'extremely complex': 0
+      };
+    } else if (selectedDifficulty === 'complex') {
+      difficultyDistribution = {
+        easy: 0,
+        complex: 50,  // 100% complex questions
+        hard: 0,
+        'extremely complex': 0
+      };
+    } else if (selectedDifficulty === 'extremely complex') {
+      difficultyDistribution = {
+        easy: 0,
+        complex: 0,
+        hard: 0,
+        'extremely complex': 50  // 100% extremely complex questions
+      };
+    }
+
+    // Get questions based on selected categories and difficulty
     const quizQuestions = getRandomQuestionsForQuiz(
       selectedCategories,
       50, // Total questions per quiz
-      {
-        easy: 15,    // 30% easy questions
-        complex: 20,  // 40% complex questions
-        hard: 10,    // 20% hard questions
-        'extremely complex': 5 // 10% extremely complex questions
-      }
+      difficultyDistribution
     );
 
     setQuestions(quizQuestions);

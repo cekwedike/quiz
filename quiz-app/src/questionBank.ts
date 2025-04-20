@@ -9,7 +9,8 @@ export interface Question {
 }
 
 export const questionBank: Question[] = [
-  // Science Questions (100)
+  // Science Questions (200 total - 50 each difficulty)
+  // Easy Questions (50)
   {
     id: 'sci1',
     category: 'Science',
@@ -65,7 +66,6 @@ export const questionBank: Question[] = [
     correctAnswer: 'It gives mass to elementary particles',
     explanation: 'The Higgs boson is associated with the Higgs field, which gives mass to elementary particles through the Higgs mechanism.'
   },
-  // New Science Questions
   {
     id: 'sci6',
     category: 'Science',
