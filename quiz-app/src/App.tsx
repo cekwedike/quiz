@@ -41,6 +41,7 @@ const App: React.FC = () => {
   const [enhancedStats, setEnhancedStats] = useState(storageManager.getEnhancedStats());
   const [showAchievements, setShowAchievements] = useState(false);
   const [showLearningProgress, setShowLearningProgress] = useState(false);
+  const [visibleAchievements, setVisibleAchievements] = useState<Achievement[]>([]);
   const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -211,6 +212,11 @@ const App: React.FC = () => {
     setEnhancedStats(storageManager.getEnhancedStats());
     setHighScores(storageManager.getHighScores());
     setStats(storageManager.getStats());
+
+    // Show newly unlocked achievements
+    const newAchievements = enhancedStats.achievements
+      .filter(a => a.unlocked && new Date(a.dateUnlocked!).toDateString() === new Date().toDateString());
+    setVisibleAchievements(newAchievements);
   };
 
   // Add useEffect to update stats when component mounts
@@ -279,17 +285,28 @@ const App: React.FC = () => {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // Add achievement notification component
-  const AchievementNotification = ({ achievement }: { achievement: Achievement }) => (
-    <div className="achievement-notification">
-      <div className="achievement-icon">{achievement.icon}</div>
-      <div className="achievement-content">
-        <h3>New Achievement Unlocked!</h3>
-        <p className="achievement-name">{achievement.name}</p>
-        <p className="achievement-description">{achievement.description}</p>
+  // Update achievement notification component
+  const AchievementNotification = ({ achievement, onClose }: { achievement: Achievement, onClose: () => void }) => {
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        onClose();
+      }, 10000); // 10 seconds timeout
+
+      return () => clearTimeout(timer);
+    }, [onClose]);
+
+    return (
+      <div className="achievement-notification">
+        <button className="close-button" onClick={onClose}>×</button>
+        <div className="achievement-icon">{achievement.icon}</div>
+        <div className="achievement-content">
+          <h3>New Achievement Unlocked!</h3>
+          <p className="achievement-name">{achievement.name}</p>
+          <p className="achievement-description">{achievement.description}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   // Add learning progress component
   const LearningProgress = () => (
@@ -691,11 +708,13 @@ const App: React.FC = () => {
                 View All Stats
               </button>
             </div>
-            {enhancedStats.achievements
-              .filter(a => a.unlocked && new Date(a.dateUnlocked!).toDateString() === new Date().toDateString())
-              .map(achievement => (
-                <AchievementNotification key={achievement.id} achievement={achievement} />
-              ))}
+            {visibleAchievements.map(achievement => (
+              <AchievementNotification
+                key={achievement.id}
+                achievement={achievement}
+                onClose={() => setVisibleAchievements(prev => prev.filter(a => a.id !== achievement.id))}
+              />
+            ))}
           </div>
         ) : (
           <div className="quiz-content">

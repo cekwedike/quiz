@@ -65,6 +65,237 @@ export const questionBank: Question[] = [
     correctAnswer: 'It gives mass to elementary particles',
     explanation: 'The Higgs boson is associated with the Higgs field, which gives mass to elementary particles through the Higgs mechanism.'
   },
+  // New Science Questions
+  {
+    id: 'sci6',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the smallest unit of matter?',
+    options: ['Atom', 'Molecule', 'Cell', 'Electron'],
+    correctAnswer: 'Atom',
+    explanation: 'An atom is the smallest unit of matter that retains the properties of an element.'
+  },
+  {
+    id: 'sci7',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for water?',
+    options: ['H2O', 'CO2', 'O2', 'H2O2'],
+    correctAnswer: 'H2O',
+    explanation: 'Water is composed of two hydrogen atoms and one oxygen atom, hence the formula H2O.'
+  },
+  {
+    id: 'sci8',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'Which planet is known as the Red Planet?',
+    options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
+    correctAnswer: 'Mars',
+    explanation: 'Mars is called the Red Planet due to its reddish appearance caused by iron oxide on its surface.'
+  },
+  {
+    id: 'sci9',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the main component of the Sun?',
+    options: ['Hydrogen', 'Helium', 'Oxygen', 'Carbon'],
+    correctAnswer: 'Hydrogen',
+    explanation: 'The Sun is primarily composed of hydrogen (about 70%) and helium (about 28%).'
+  },
+  {
+    id: 'sci10',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of electrical resistance?',
+    options: ['Ohm', 'Volt', 'Ampere', 'Watt'],
+    correctAnswer: 'Ohm',
+    explanation: 'The ohm (Ω) is the unit of electrical resistance, named after Georg Simon Ohm.'
+  },
+  {
+    id: 'sci11',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the process by which cells divide to create new cells?',
+    options: ['Mitosis', 'Meiosis', 'Photosynthesis', 'Respiration'],
+    correctAnswer: 'Mitosis',
+    explanation: 'Mitosis is the process of cell division that results in two identical daughter cells.'
+  },
+  {
+    id: 'sci12',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the chemical process that breaks down food to release energy?',
+    options: ['Cellular Respiration', 'Photosynthesis', 'Fermentation', 'Digestion'],
+    correctAnswer: 'Cellular Respiration',
+    explanation: 'Cellular respiration is the process by which cells convert nutrients into energy (ATP).'
+  },
+  {
+    id: 'sci13',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the theory that explains the movement of Earth\'s continents?',
+    options: ['Plate Tectonics', 'Continental Drift', 'Seafloor Spreading', 'Mantle Convection'],
+    correctAnswer: 'Plate Tectonics',
+    explanation: 'Plate tectonics theory explains how Earth\'s lithosphere is divided into plates that move over the asthenosphere.'
+  },
+  {
+    id: 'sci14',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants lose water through their leaves?',
+    options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Osmosis'],
+    correctAnswer: 'Transpiration',
+    explanation: 'Transpiration is the process by which plants lose water vapor through their stomata.'
+  },
+  {
+    id: 'sci15',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the force that opposes motion between two surfaces in contact?',
+    options: ['Friction', 'Gravity', 'Tension', 'Normal Force'],
+    correctAnswer: 'Friction',
+    explanation: 'Friction is the force that opposes the relative motion of two surfaces in contact.'
+  },
+  {
+    id: 'sci16',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the double-helix structure of DNA?',
+    options: [
+      'It allows for accurate replication of genetic information',
+      'It provides structural support to cells',
+      'It enables rapid cell division',
+      'It protects DNA from environmental damage'
+    ],
+    correctAnswer: 'It allows for accurate replication of genetic information',
+    explanation: 'The double-helix structure of DNA enables accurate replication through complementary base pairing.'
+  },
+  {
+    id: 'sci17',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the principle behind the operation of a nuclear reactor?',
+    options: [
+      'Controlled nuclear fission',
+      'Nuclear fusion',
+      'Radioactive decay',
+      'Particle acceleration'
+    ],
+    correctAnswer: 'Controlled nuclear fission',
+    explanation: 'Nuclear reactors operate by controlling the rate of nuclear fission reactions to produce heat.'
+  },
+  {
+    id: 'sci18',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the Michelson-Morley experiment?',
+    options: [
+      'It failed to detect the existence of the luminiferous aether',
+      'It proved the existence of the luminiferous aether',
+      'It demonstrated the wave nature of light',
+      'It confirmed Newton\'s theory of gravity'
+    ],
+    correctAnswer: 'It failed to detect the existence of the luminiferous aether',
+    explanation: 'The Michelson-Morley experiment\'s failure to detect the aether led to the development of special relativity.'
+  },
+  {
+    id: 'sci19',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the role of messenger RNA (mRNA) in protein synthesis?',
+    options: [
+      'It carries genetic information from DNA to ribosomes',
+      'It provides structural support to ribosomes',
+      'It catalyzes the formation of peptide bonds',
+      'It transports amino acids to the ribosome'
+    ],
+    correctAnswer: 'It carries genetic information from DNA to ribosomes',
+    explanation: 'mRNA carries the genetic code from DNA to ribosomes, where it serves as a template for protein synthesis.'
+  },
+  {
+    id: 'sci20',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the photoelectric effect in quantum mechanics?',
+    options: [
+      'It demonstrated the particle nature of light',
+      'It proved the wave nature of light',
+      'It confirmed the existence of the aether',
+      'It demonstrated the existence of dark matter'
+    ],
+    correctAnswer: 'It demonstrated the particle nature of light',
+    explanation: 'The photoelectric effect showed that light can behave as particles (photons), supporting quantum theory.'
+  },
+  {
+    id: 'sci21',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Riemann Hypothesis in mathematics?',
+    options: [
+      'It concerns the distribution of prime numbers',
+      'It describes the behavior of complex functions',
+      'It explains the nature of infinity',
+      'It defines the properties of fractals'
+    ],
+    correctAnswer: 'It concerns the distribution of prime numbers',
+    explanation: 'The Riemann Hypothesis is a conjecture about the distribution of the zeros of the Riemann zeta function, which is deeply connected to the distribution of prime numbers.'
+  },
+  {
+    id: 'sci22',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the holographic principle in theoretical physics?',
+    options: [
+      'It suggests that the information in a volume of space can be encoded on its boundary',
+      'It explains the nature of black holes',
+      'It describes the behavior of quantum particles',
+      'It predicts the existence of parallel universes'
+    ],
+    correctAnswer: 'It suggests that the information in a volume of space can be encoded on its boundary',
+    explanation: 'The holographic principle suggests that the information in a volume of space can be represented as a theory on the boundary of that space.'
+  },
+  {
+    id: 'sci23',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the AdS/CFT correspondence in string theory?',
+    options: [
+      'It establishes a duality between a gravity theory and a quantum field theory',
+      'It explains the nature of dark energy',
+      'It describes the behavior of black holes',
+      'It predicts the existence of extra dimensions'
+    ],
+    correctAnswer: 'It establishes a duality between a gravity theory and a quantum field theory',
+    explanation: 'The AdS/CFT correspondence is a conjectured relationship between two kinds of physical theories: a quantum field theory and a gravity theory.'
+  },
+  {
+    id: 'sci24',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Navier-Stokes existence and smoothness problem?',
+    options: [
+      'It concerns the mathematical properties of fluid flow equations',
+      'It describes the behavior of quantum particles',
+      'It explains the nature of turbulence',
+      'It predicts weather patterns'
+    ],
+    correctAnswer: 'It concerns the mathematical properties of fluid flow equations',
+    explanation: 'The Navier-Stokes existence and smoothness problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of solutions to the Navier-Stokes equations.'
+  },
+  {
+    id: 'sci25',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Yang-Mills existence and mass gap problem?',
+    options: [
+      'It concerns the mathematical properties of quantum field theory',
+      'It explains the nature of dark matter',
+      'It describes the behavior of elementary particles',
+      'It predicts the existence of new fundamental forces'
+    ],
+    correctAnswer: 'It concerns the mathematical properties of quantum field theory',
+    explanation: 'The Yang-Mills existence and mass gap problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of quantum field theory.'
+  },
   // Add more science questions here...
 
   // History Questions (100)
