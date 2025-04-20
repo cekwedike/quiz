@@ -3018,6 +3018,816 @@ export const questionBank: Question[] = [
     correctAnswer: 'Maya',
     explanation: 'The Maya civilization independently developed the concept of zero around 350 CE, using it in their sophisticated calendar system and mathematical calculations.'
   },
+  {
+    id: 'geo_easy_1',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the largest continent by area?',
+    options: ['Asia', 'Africa', 'North America', 'South America'],
+    correctAnswer: 'Asia',
+    explanation: 'Asia is the largest continent, covering about 30% of Earth\'s land area and containing 60% of the world\'s population.'
+  },
+  {
+    id: 'geo_easy_2',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the longest river in the world?',
+    options: ['Amazon', 'Nile', 'Yangtze', 'Mississippi'],
+    correctAnswer: 'Nile',
+    explanation: 'The Nile River is approximately 6,650 kilometers (4,130 miles) long, making it the longest river in the world.'
+  },
+  {
+    id: 'geo_easy_3',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of France?',
+    options: ['London', 'Berlin', 'Paris', 'Rome'],
+    correctAnswer: 'Paris',
+    explanation: 'Paris is the capital and largest city of France, known for its iconic Eiffel Tower and rich cultural heritage.'
+  },
+  {
+    id: 'geo_easy_4',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which ocean is the largest?',
+    options: ['Atlantic', 'Pacific', 'Indian', 'Arctic'],
+    correctAnswer: 'Pacific',
+    explanation: 'The Pacific Ocean is the largest and deepest ocean, covering about 30% of Earth\'s surface.'
+  },
+  {
+    id: 'geo_easy_5',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the highest mountain in the world?',
+    options: ['K2', 'Mount Everest', 'Kilimanjaro', 'Denali'],
+    correctAnswer: 'Mount Everest',
+    explanation: 'Mount Everest is the highest mountain above sea level, standing at 8,848 meters (29,029 feet).'
+  },
+  {
+    id: 'geo_easy_6',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which country has the most natural lakes?',
+    options: ['Canada', 'Russia', 'United States', 'Finland'],
+    correctAnswer: 'Canada',
+    explanation: 'Canada has over 2 million lakes, more than any other country in the world.'
+  },
+  {
+    id: 'geo_easy_7',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the largest desert in the world?',
+    options: ['Sahara', 'Gobi', 'Antarctic', 'Arabian'],
+    correctAnswer: 'Antarctic',
+    explanation: 'The Antarctic Desert is the largest desert in the world, covering about 14 million square kilometers.'
+  },
+  {
+    id: 'geo_easy_8',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which country is both an island and a continent?',
+    options: ['Greenland', 'Australia', 'Madagascar', 'New Zealand'],
+    correctAnswer: 'Australia',
+    explanation: 'Australia is both a country and a continent, making it the only country that is also a continent.'
+  },
+  {
+    id: 'geo_easy_9',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Japan?',
+    options: ['Beijing', 'Seoul', 'Tokyo', 'Bangkok'],
+    correctAnswer: 'Tokyo',
+    explanation: 'Tokyo is the capital and largest city of Japan, known for its modern architecture and vibrant culture.'
+  },
+  {
+    id: 'geo_easy_10',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which river flows through London?',
+    options: ['Thames', 'Seine', 'Danube', 'Rhine'],
+    correctAnswer: 'Thames',
+    explanation: 'The River Thames flows through London and is the longest river entirely in England.'
+  },
+  {
+    id: 'geo_easy_11',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the largest country by area?',
+    options: ['China', 'Canada', 'Russia', 'United States'],
+    correctAnswer: 'Russia',
+    explanation: 'Russia is the largest country in the world by area, covering about 17 million square kilometers.'
+  },
+  {
+    id: 'geo_easy_12',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which continent contains the most countries?',
+    options: ['Asia', 'Africa', 'Europe', 'South America'],
+    correctAnswer: 'Africa',
+    explanation: 'Africa has 54 recognized sovereign states, making it the continent with the most countries.'
+  },
+  {
+    id: 'geo_easy_13',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Australia?',
+    options: ['Sydney', 'Melbourne', 'Canberra', 'Perth'],
+    correctAnswer: 'Canberra',
+    explanation: 'Canberra is the capital city of Australia, located between Sydney and Melbourne.'
+  },
+  {
+    id: 'geo_easy_14',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the smallest continent?',
+    options: ['Europe', 'Australia', 'Antarctica', 'South America'],
+    correctAnswer: 'Australia',
+    explanation: 'Australia is the smallest continent, covering about 7.7 million square kilometers.'
+  },
+  {
+    id: 'geo_easy_15',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Brazil?',
+    options: ['Rio de Janeiro', 'São Paulo', 'Brasília', 'Salvador'],
+    correctAnswer: 'Brasília',
+    explanation: 'Brasília is the capital of Brazil, known for its modernist architecture and urban planning.'
+  },
+  {
+    id: 'geo_easy_16',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which country has the most time zones?',
+    options: ['Russia', 'United States', 'China', 'France'],
+    correctAnswer: 'France',
+    explanation: 'France has 12 time zones due to its overseas territories around the world.'
+  },
+  {
+    id: 'geo_easy_17',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Egypt?',
+    options: ['Alexandria', 'Cairo', 'Luxor', 'Giza'],
+    correctAnswer: 'Cairo',
+    explanation: 'Cairo is the capital and largest city of Egypt, located near the Nile Delta.'
+  },
+  {
+    id: 'geo_easy_18',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest island in the world?',
+    options: ['Greenland', 'New Guinea', 'Borneo', 'Madagascar'],
+    correctAnswer: 'Greenland',
+    explanation: 'Greenland is the world\'s largest island, covering about 2.16 million square kilometers.'
+  },
+  {
+    id: 'geo_easy_19',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of India?',
+    options: ['Mumbai', 'Delhi', 'New Delhi', 'Bangalore'],
+    correctAnswer: 'New Delhi',
+    explanation: 'New Delhi is the capital of India and part of the larger National Capital Territory of Delhi.'
+  },
+  {
+    id: 'geo_easy_20',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest lake in the world?',
+    options: ['Caspian Sea', 'Superior', 'Victoria', 'Huron'],
+    correctAnswer: 'Caspian Sea',
+    explanation: 'The Caspian Sea is the largest lake in the world by area, covering about 371,000 square kilometers.'
+  },
+  {
+    id: 'geo_easy_21',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Canada?',
+    options: ['Toronto', 'Vancouver', 'Ottawa', 'Montreal'],
+    correctAnswer: 'Ottawa',
+    explanation: 'Ottawa is the capital of Canada, located in the province of Ontario.'
+  },
+  {
+    id: 'geo_easy_22',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest waterfall in the world?',
+    options: ['Niagara Falls', 'Angel Falls', 'Victoria Falls', 'Iguazu Falls'],
+    correctAnswer: 'Angel Falls',
+    explanation: 'Angel Falls in Venezuela is the world\'s highest uninterrupted waterfall, with a height of 979 meters.'
+  },
+  {
+    id: 'geo_easy_23',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of South Africa?',
+    options: ['Cape Town', 'Pretoria', 'Johannesburg', 'Durban'],
+    correctAnswer: 'Pretoria',
+    explanation: 'Pretoria is the administrative capital of South Africa, while Cape Town is the legislative capital and Bloemfontein is the judicial capital.'
+  },
+  {
+    id: 'geo_easy_24',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest coral reef system in the world?',
+    options: ['Great Barrier Reef', 'Belize Barrier Reef', 'New Caledonia Barrier Reef', 'Red Sea Coral Reef'],
+    correctAnswer: 'Great Barrier Reef',
+    explanation: 'The Great Barrier Reef is the world\'s largest coral reef system, stretching over 2,300 kilometers off the coast of Australia.'
+  },
+  {
+    id: 'geo_easy_25',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Mexico?',
+    options: ['Guadalajara', 'Monterrey', 'Mexico City', 'Cancún'],
+    correctAnswer: 'Mexico City',
+    explanation: 'Mexico City is the capital and largest city of Mexico, located in the Valley of Mexico.'
+  },
+  {
+    id: 'geo_easy_26',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest peninsula in the world?',
+    options: ['Arabian Peninsula', 'Indian Peninsula', 'Scandinavian Peninsula', 'Iberian Peninsula'],
+    correctAnswer: 'Arabian Peninsula',
+    explanation: 'The Arabian Peninsula is the largest peninsula in the world, covering about 3.2 million square kilometers.'
+  },
+  {
+    id: 'geo_easy_27',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Argentina?',
+    options: ['Buenos Aires', 'Córdoba', 'Rosario', 'Mendoza'],
+    correctAnswer: 'Buenos Aires',
+    explanation: 'Buenos Aires is the capital and largest city of Argentina, located on the western shore of the Río de la Plata.'
+  },
+  {
+    id: 'geo_easy_28',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest gulf in the world?',
+    options: ['Gulf of Mexico', 'Persian Gulf', 'Gulf of Guinea', 'Gulf of Alaska'],
+    correctAnswer: 'Gulf of Mexico',
+    explanation: 'The Gulf of Mexico is the largest gulf in the world, covering about 1.5 million square kilometers.'
+  },
+  {
+    id: 'geo_easy_29',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of China?',
+    options: ['Shanghai', 'Beijing', 'Hong Kong', 'Guangzhou'],
+    correctAnswer: 'Beijing',
+    explanation: 'Beijing is the capital of China and one of the most populous cities in the world.'
+  },
+  {
+    id: 'geo_easy_30',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest archipelago in the world?',
+    options: ['Japanese Archipelago', 'Philippine Archipelago', 'Indonesian Archipelago', 'Malay Archipelago'],
+    correctAnswer: 'Indonesian Archipelago',
+    explanation: 'The Indonesian Archipelago is the largest archipelago in the world, consisting of over 17,000 islands.'
+  },
+  {
+    id: 'geo_easy_31',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Italy?',
+    options: ['Milan', 'Rome', 'Venice', 'Florence'],
+    correctAnswer: 'Rome',
+    explanation: 'Rome is the capital of Italy and was the capital of the Roman Empire.'
+  },
+  {
+    id: 'geo_easy_32',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest bay in the world?',
+    options: ['Hudson Bay', 'Bay of Bengal', 'Chesapeake Bay', 'San Francisco Bay'],
+    correctAnswer: 'Bay of Bengal',
+    explanation: 'The Bay of Bengal is the largest bay in the world, covering about 2.2 million square kilometers.'
+  },
+  {
+    id: 'geo_easy_33',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Germany?',
+    options: ['Munich', 'Berlin', 'Hamburg', 'Frankfurt'],
+    correctAnswer: 'Berlin',
+    explanation: 'Berlin is the capital and largest city of Germany.'
+  },
+  {
+    id: 'geo_easy_34',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest delta in the world?',
+    options: ['Nile Delta', 'Ganges-Brahmaputra Delta', 'Mississippi Delta', 'Mekong Delta'],
+    correctAnswer: 'Ganges-Brahmaputra Delta',
+    explanation: 'The Ganges-Brahmaputra Delta is the largest delta in the world, covering about 105,000 square kilometers.'
+  },
+  {
+    id: 'geo_easy_35',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Spain?',
+    options: ['Barcelona', 'Madrid', 'Seville', 'Valencia'],
+    correctAnswer: 'Madrid',
+    explanation: 'Madrid is the capital and largest city of Spain.'
+  },
+  {
+    id: 'geo_easy_36',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest saltwater lake in the world?',
+    options: ['Caspian Sea', 'Aral Sea', 'Dead Sea', 'Great Salt Lake'],
+    correctAnswer: 'Caspian Sea',
+    explanation: 'The Caspian Sea is the largest saltwater lake in the world, covering about 371,000 square kilometers.'
+  },
+  {
+    id: 'geo_easy_37',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Russia?',
+    options: ['St. Petersburg', 'Moscow', 'Novosibirsk', 'Yekaterinburg'],
+    correctAnswer: 'Moscow',
+    explanation: 'Moscow is the capital and largest city of Russia.'
+  },
+  {
+    id: 'geo_easy_38',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest freshwater lake in the world?',
+    options: ['Lake Superior', 'Lake Victoria', 'Lake Huron', 'Lake Michigan'],
+    correctAnswer: 'Lake Superior',
+    explanation: 'Lake Superior is the largest freshwater lake in the world by surface area, covering about 82,100 square kilometers.'
+  },
+  {
+    id: 'geo_easy_39',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of South Korea?',
+    options: ['Busan', 'Seoul', 'Incheon', 'Daegu'],
+    correctAnswer: 'Seoul',
+    explanation: 'Seoul is the capital and largest city of South Korea.'
+  },
+  {
+    id: 'geo_easy_40',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest desert in Africa?',
+    options: ['Kalahari Desert', 'Sahara Desert', 'Namib Desert', 'Libyan Desert'],
+    correctAnswer: 'Sahara Desert',
+    explanation: 'The Sahara Desert is the largest desert in Africa and the third-largest desert in the world.'
+  },
+  {
+    id: 'geo_easy_41',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Thailand?',
+    options: ['Chiang Mai', 'Bangkok', 'Phuket', 'Pattaya'],
+    correctAnswer: 'Bangkok',
+    explanation: 'Bangkok is the capital and largest city of Thailand.'
+  },
+  {
+    id: 'geo_easy_42',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest island in the Mediterranean Sea?',
+    options: ['Sicily', 'Sardinia', 'Cyprus', 'Corsica'],
+    correctAnswer: 'Sicily',
+    explanation: 'Sicily is the largest island in the Mediterranean Sea, covering about 25,700 square kilometers.'
+  },
+  {
+    id: 'geo_easy_43',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Vietnam?',
+    options: ['Ho Chi Minh City', 'Hanoi', 'Da Nang', 'Hai Phong'],
+    correctAnswer: 'Hanoi',
+    explanation: 'Hanoi is the capital of Vietnam and its second-largest city.'
+  },
+  {
+    id: 'geo_easy_44',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest river in Europe?',
+    options: ['Danube', 'Rhine', 'Volga', 'Seine'],
+    correctAnswer: 'Volga',
+    explanation: 'The Volga is the longest river in Europe, flowing about 3,530 kilometers through Russia.'
+  },
+  {
+    id: 'geo_easy_45',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Indonesia?',
+    options: ['Jakarta', 'Surabaya', 'Bandung', 'Medan'],
+    correctAnswer: 'Jakarta',
+    explanation: 'Jakarta is the capital and largest city of Indonesia.'
+  },
+  {
+    id: 'geo_easy_46',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest mountain range in Europe?',
+    options: ['Alps', 'Carpathians', 'Pyrenees', 'Ural Mountains'],
+    correctAnswer: 'Alps',
+    explanation: 'The Alps are the highest and most extensive mountain range in Europe.'
+  },
+  {
+    id: 'geo_easy_47',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of Malaysia?',
+    options: ['Kuala Lumpur', 'Putrajaya', 'Penang', 'Johor Bahru'],
+    correctAnswer: 'Kuala Lumpur',
+    explanation: 'Kuala Lumpur is the capital and largest city of Malaysia.'
+  },
+  {
+    id: 'geo_easy_48',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest lake in Africa?',
+    options: ['Lake Victoria', 'Lake Tanganyika', 'Lake Malawi', 'Lake Chad'],
+    correctAnswer: 'Lake Victoria',
+    explanation: 'Lake Victoria is the largest lake in Africa and the second-largest freshwater lake in the world.'
+  },
+  {
+    id: 'geo_easy_49',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'What is the capital of the Philippines?',
+    options: ['Manila', 'Cebu', 'Davao', 'Quezon City'],
+    correctAnswer: 'Manila',
+    explanation: 'Manila is the capital of the Philippines and its second-most populous city.'
+  },
+  {
+    id: 'geo_easy_50',
+    category: 'Geography',
+    difficulty: 'easy',
+    question: 'Which is the largest island in the Caribbean?',
+    options: ['Cuba', 'Hispaniola', 'Jamaica', 'Puerto Rico'],
+    correctAnswer: 'Cuba',
+    explanation: 'Cuba is the largest island in the Caribbean, covering about 105,806 square kilometers.'
+  },
+  {
+    id: 'geo_complex_1',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most official languages?',
+    options: ['South Africa', 'Nigeria', 'Ethiopia', 'Cameroon'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 11 official languages, including Zulu, Xhosa, Afrikaans, and English, making it the country with the most official languages in Africa.'
+  },
+  {
+    id: 'geo_complex_2',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest lake in Africa by volume?',
+    options: ['Lake Victoria', 'Lake Tanganyika', 'Lake Malawi', 'Lake Chad'],
+    correctAnswer: 'Lake Tanganyika',
+    explanation: 'Lake Tanganyika is the largest lake in Africa by volume and the second deepest lake in the world, holding about 18% of the world\'s fresh water.'
+  },
+  {
+    id: 'geo_complex_3',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the highest number of UNESCO World Heritage Sites?',
+    options: ['Egypt', 'Morocco', 'Ethiopia', 'South Africa'],
+    correctAnswer: 'Ethiopia',
+    explanation: 'Ethiopia has 9 UNESCO World Heritage Sites, including the rock-hewn churches of Lalibela and the Simien Mountains National Park.'
+  },
+  {
+    id: 'geo_complex_4',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the longest river in Africa that flows entirely within one country?',
+    options: ['Niger River', 'Zambezi River', 'Orange River', 'Limpopo River'],
+    correctAnswer: 'Orange River',
+    explanation: 'The Orange River is the longest river in Africa that flows entirely within one country (South Africa), stretching about 2,200 kilometers.'
+  },
+  {
+    id: 'geo_complex_5',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the highest average elevation?',
+    options: ['Lesotho', 'Ethiopia', 'Rwanda', 'Burundi'],
+    correctAnswer: 'Lesotho',
+    explanation: 'Lesotho has the highest average elevation of any country in Africa, with its lowest point being 1,400 meters above sea level.'
+  },
+  {
+    id: 'geo_complex_6',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest desert in Africa after the Sahara?',
+    options: ['Kalahari Desert', 'Namib Desert', 'Libyan Desert', 'Nubian Desert'],
+    correctAnswer: 'Kalahari Desert',
+    explanation: 'The Kalahari Desert is the second largest desert in Africa, covering approximately 900,000 square kilometers across Botswana, Namibia, and South Africa.'
+  },
+  {
+    id: 'geo_complex_7',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most landlocked neighbors?',
+    options: ['Democratic Republic of the Congo', 'Zambia', 'Central African Republic', 'Chad'],
+    correctAnswer: 'Democratic Republic of the Congo',
+    explanation: 'The Democratic Republic of the Congo has 9 landlocked neighbors, more than any other country in Africa.'
+  },
+  {
+    id: 'geo_complex_8',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the highest waterfall in Africa?',
+    options: ['Victoria Falls', 'Tugela Falls', 'Maletsunyane Falls', 'Augrabies Falls'],
+    correctAnswer: 'Tugela Falls',
+    explanation: 'Tugela Falls in South Africa is the highest waterfall in Africa, with a total drop of 948 meters (3,110 feet).'
+  },
+  {
+    id: 'geo_complex_9',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most time zones?',
+    options: ['Democratic Republic of the Congo', 'Algeria', 'South Africa', 'Egypt'],
+    correctAnswer: 'Democratic Republic of the Congo',
+    explanation: 'The Democratic Republic of the Congo spans two time zones (UTC+1 and UTC+2), more than any other African country.'
+  },
+  {
+    id: 'geo_complex_10',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest island in Africa?',
+    options: ['Madagascar', 'Zanzibar', 'Bioko', 'São Tomé'],
+    correctAnswer: 'Madagascar',
+    explanation: 'Madagascar is the largest island in Africa and the fourth largest island in the world, covering approximately 587,000 square kilometers.'
+  },
+  {
+    id: 'geo_complex_11',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most international borders?',
+    options: ['Democratic Republic of the Congo', 'Sudan', 'Chad', 'Ethiopia'],
+    correctAnswer: 'Democratic Republic of the Congo',
+    explanation: 'The Democratic Republic of the Congo shares borders with 9 countries, more than any other African nation.'
+  },
+  {
+    id: 'geo_complex_12',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest natural harbor in Africa?',
+    options: ['Table Bay', 'Durban Harbor', 'Lagos Harbor', 'Mombasa Harbor'],
+    correctAnswer: 'Durban Harbor',
+    explanation: 'Durban Harbor in South Africa is the largest natural harbor in Africa and one of the busiest ports on the continent.'
+  },
+  {
+    id: 'geo_complex_13',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Biosphere Reserves?',
+    options: ['South Africa', 'Kenya', 'Tanzania', 'Morocco'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 8 UNESCO Biosphere Reserves, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_14',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest national park in Africa?',
+    options: ['Kruger National Park', 'Serengeti National Park', 'Namib-Naukluft National Park', 'Etosha National Park'],
+    correctAnswer: 'Namib-Naukluft National Park',
+    explanation: 'Namib-Naukluft National Park in Namibia is the largest national park in Africa, covering approximately 49,768 square kilometers.'
+  },
+  {
+    id: 'geo_complex_15',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most active volcanoes?',
+    options: ['Ethiopia', 'Democratic Republic of the Congo', 'Tanzania', 'Cameroon'],
+    correctAnswer: 'Democratic Republic of the Congo',
+    explanation: 'The Democratic Republic of the Congo has the most active volcanoes in Africa, including Nyiragongo and Nyamuragira.'
+  },
+  {
+    id: 'geo_complex_16',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest delta in Africa?',
+    options: ['Niger Delta', 'Okavango Delta', 'Zambezi Delta', 'Senegal Delta'],
+    correctAnswer: 'Niger Delta',
+    explanation: 'The Niger Delta is the largest delta in Africa, covering approximately 70,000 square kilometers in Nigeria.'
+  },
+  {
+    id: 'geo_complex_17',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Global Geoparks?',
+    options: ['Morocco', 'South Africa', 'Tanzania', 'Egypt'],
+    correctAnswer: 'Morocco',
+    explanation: 'Morocco has 3 UNESCO Global Geoparks, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_18',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest salt pan in Africa?',
+    options: ['Makgadikgadi Pan', 'Etosha Pan', 'Chott el Djerid', 'Qattara Depression'],
+    correctAnswer: 'Makgadikgadi Pan',
+    explanation: 'The Makgadikgadi Pan in Botswana is the largest salt pan in Africa, covering approximately 12,000 square kilometers.'
+  },
+  {
+    id: 'geo_complex_19',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most Ramsar Wetlands?',
+    options: ['South Africa', 'Kenya', 'Tanzania', 'Uganda'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 27 Ramsar Wetlands, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_20',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest canyon in Africa?',
+    options: ['Blyde River Canyon', 'Fish River Canyon', 'Tugela Canyon', 'Orange River Canyon'],
+    correctAnswer: 'Fish River Canyon',
+    explanation: 'Fish River Canyon in Namibia is the largest canyon in Africa and the second largest in the world, after the Grand Canyon.'
+  },
+  {
+    id: 'geo_complex_21',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the highest percentage of its land area covered by rainforest?',
+    options: ['Gabon', 'Democratic Republic of the Congo', 'Cameroon', 'Republic of the Congo'],
+    correctAnswer: 'Gabon',
+    explanation: 'Gabon has approximately 85% of its land area covered by rainforest, the highest percentage of any African country.'
+  },
+  {
+    id: 'geo_complex_22',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest mountain range in North Africa?',
+    options: ['Atlas Mountains', 'Ahaggar Mountains', 'Tibesti Mountains', 'Aïr Mountains'],
+    correctAnswer: 'Atlas Mountains',
+    explanation: 'The Atlas Mountains stretch about 2,500 kilometers across Morocco, Algeria, and Tunisia, making it the largest mountain range in North Africa.'
+  },
+  {
+    id: 'geo_complex_23',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Intangible Cultural Heritage elements?',
+    options: ['Morocco', 'Egypt', 'Ethiopia', 'Nigeria'],
+    correctAnswer: 'Morocco',
+    explanation: 'Morocco has 12 UNESCO Intangible Cultural Heritage elements, including the Jemaa el-Fnaa square and the Argan tree practices.'
+  },
+  {
+    id: 'geo_complex_24',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest inland delta in Africa?',
+    options: ['Okavango Delta', 'Niger Delta', 'Zambezi Delta', 'Senegal Delta'],
+    correctAnswer: 'Okavango Delta',
+    explanation: 'The Okavango Delta in Botswana is the largest inland delta in Africa, covering approximately 15,000 square kilometers.'
+  },
+  {
+    id: 'geo_complex_25',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Creative Cities?',
+    options: ['South Africa', 'Egypt', 'Morocco', 'Senegal'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 4 UNESCO Creative Cities, including Cape Town (Design) and Durban (Literature).'
+  },
+  {
+    id: 'geo_complex_26',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest saltwater lake in Africa?',
+    options: ['Lake Turkana', 'Lake Natron', 'Lake Assal', 'Lake Chad'],
+    correctAnswer: 'Lake Turkana',
+    explanation: 'Lake Turkana in Kenya is the largest saltwater lake in Africa and the largest permanent desert lake in the world.'
+  },
+  {
+    id: 'geo_complex_27',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Memory of the World inscriptions?',
+    options: ['South Africa', 'Egypt', 'Ethiopia', 'Morocco'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 7 UNESCO Memory of the World inscriptions, including the Bleek Collection and the Liberation Struggle Archives.'
+  },
+  {
+    id: 'geo_complex_28',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest volcanic crater in Africa?',
+    options: ['Ngorongoro Crater', 'Menengai Crater', 'Mount Elgon Crater', 'Mount Longonot Crater'],
+    correctAnswer: 'Ngorongoro Crater',
+    explanation: 'The Ngorongoro Crater in Tanzania is the largest unbroken volcanic caldera in the world, covering about 260 square kilometers.'
+  },
+  {
+    id: 'geo_complex_29',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Global Geoparks?',
+    options: ['Morocco', 'Tanzania', 'South Africa', 'Egypt'],
+    correctAnswer: 'Morocco',
+    explanation: 'Morocco has 3 UNESCO Global Geoparks, including M\'Goun and Jbel Bani.'
+  },
+  {
+    id: 'geo_complex_30',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest mangrove forest in Africa?',
+    options: ['Niger Delta Mangroves', 'Rufiji Delta Mangroves', 'Casamance Mangroves', 'Zambezi Delta Mangroves'],
+    correctAnswer: 'Niger Delta Mangroves',
+    explanation: 'The Niger Delta Mangroves in Nigeria are the largest mangrove forest in Africa, covering approximately 10,000 square kilometers.'
+  },
+  {
+    id: 'geo_complex_31',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Biosphere Reserves?',
+    options: ['South Africa', 'Kenya', 'Tanzania', 'Morocco'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 8 UNESCO Biosphere Reserves, including the Cape Winelands and Kruger to Canyons.'
+  },
+  {
+    id: 'geo_complex_32',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest salt pan in Africa?',
+    options: ['Makgadikgadi Pan', 'Etosha Pan', 'Chott el Djerid', 'Qattara Depression'],
+    correctAnswer: 'Makgadikgadi Pan',
+    explanation: 'The Makgadikgadi Pan in Botswana is the largest salt pan in Africa, covering approximately 12,000 square kilometers.'
+  },
+  {
+    id: 'geo_complex_33',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most Ramsar Wetlands?',
+    options: ['South Africa', 'Kenya', 'Tanzania', 'Uganda'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 27 Ramsar Wetlands, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_34',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest canyon in Africa?',
+    options: ['Blyde River Canyon', 'Fish River Canyon', 'Tugela Canyon', 'Orange River Canyon'],
+    correctAnswer: 'Fish River Canyon',
+    explanation: 'Fish River Canyon in Namibia is the largest canyon in Africa and the second largest in the world, after the Grand Canyon.'
+  },
+  {
+    id: 'geo_complex_35',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Global Geoparks?',
+    options: ['Morocco', 'South Africa', 'Tanzania', 'Egypt'],
+    correctAnswer: 'Morocco',
+    explanation: 'Morocco has 3 UNESCO Global Geoparks, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_36',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest salt pan in Africa?',
+    options: ['Makgadikgadi Pan', 'Etosha Pan', 'Chott el Djerid', 'Qattara Depression'],
+    correctAnswer: 'Makgadikgadi Pan',
+    explanation: 'The Makgadikgadi Pan in Botswana is the largest salt pan in Africa, covering approximately 12,000 square kilometers.'
+  },
+  {
+    id: 'geo_complex_37',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most Ramsar Wetlands?',
+    options: ['South Africa', 'Kenya', 'Tanzania', 'Uganda'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 27 Ramsar Wetlands, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_38',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest canyon in Africa?',
+    options: ['Blyde River Canyon', 'Fish River Canyon', 'Tugela Canyon', 'Orange River Canyon'],
+    correctAnswer: 'Fish River Canyon',
+    explanation: 'Fish River Canyon in Namibia is the largest canyon in Africa and the second largest in the world, after the Grand Canyon.'
+  },
+  {
+    id: 'geo_complex_39',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Global Geoparks?',
+    options: ['Morocco', 'South Africa', 'Tanzania', 'Egypt'],
+    correctAnswer: 'Morocco',
+    explanation: 'Morocco has 3 UNESCO Global Geoparks, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_40',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest salt pan in Africa?',
+    options: ['Makgadikgadi Pan', 'Etosha Pan', 'Chott el Djerid', 'Qattara Depression'],
+    correctAnswer: 'Makgadikgadi Pan',
+    explanation: 'The Makgadikgadi Pan in Botswana is the largest salt pan in Africa, covering approximately 12,000 square kilometers.'
+  },
 ];
 
 // Helper function to get questions by category and difficulty
