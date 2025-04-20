@@ -20,7 +20,7 @@ interface QuizStats {
   preferredCategories: string[];
 }
 
-interface Achievement {
+export interface Achievement {
   id: string;
   name: string;
   description: string;

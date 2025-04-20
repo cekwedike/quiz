@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { soundManager } from './sounds';
-import { storageManager } from './storage';
+import { storageManager, Achievement } from './storage';
 
 interface Question {
   id: number;
