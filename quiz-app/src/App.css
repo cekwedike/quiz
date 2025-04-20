@@ -119,10 +119,8 @@
 }
 
 .category-button:hover {
-  transform: translateY(-3px) rotate(2deg);
+  transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-  border-color: var(--primary-color);
-  background: #3d566e;
 }
 
 .category-button.selected {
@@ -836,7 +834,7 @@
 
 .achievement-card.unlocked {
   border: 2px solid var(--primary-color);
-  animation: pulseGlow 2s infinite ease-in-out, pulse 1s ease-in-out;
+  animation: pulseGlow 2s infinite ease-in-out;
 }
 
 .achievement-icon {
@@ -995,11 +993,17 @@
 /* Cosmic Background Animations */
 @keyframes shootingStar {
   0% {
-    transform: translateX(0) translateY(0) rotate(45deg);
+    transform: translateX(-100px) translateY(-100px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
-    transform: translateX(100vw) translateY(-100vh) rotate(45deg);
+    transform: translateX(calc(100vw + 100px)) translateY(calc(-100vh - 100px)) rotate(45deg);
     opacity: 0;
   }
 }
@@ -1045,7 +1049,8 @@
   height: 4px;
   background: linear-gradient(45deg, white, transparent);
   border-radius: 50%;
-  animation: shootingStar 3s linear infinite;
+  animation: shootingStar 8s linear infinite;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Add floating animation to quiz container */
@@ -1079,12 +1084,12 @@
 }
 
 .category-button:hover {
-  transform: translateY(-3px) rotate(2deg);
+  transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
 }
 
 .achievement-card.unlocked {
-  animation: pulseGlow 2s infinite ease-in-out, pulse 1s ease-in-out;
+  animation: pulseGlow 2s infinite ease-in-out;
 }
 
 /* Add cosmic theme to the timer */
