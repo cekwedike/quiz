@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { soundManager } from './sounds';
 import { storageManager, Achievement } from './storage';
@@ -86,6 +86,7 @@ function App() {
   const [enhancedStats, setEnhancedStats] = useState(storageManager.getEnhancedStats());
   const [showAchievements, setShowAchievements] = useState(false);
   const [showLearningProgress, setShowLearningProgress] = useState(false);
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (currentQuestion) {
@@ -458,8 +459,71 @@ function App() {
     );
   };
 
+  // Add cosmic background generation
+  useEffect(() => {
+    const createStar = () => {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 3;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      star.style.animationDelay = `${Math.random() * 2}s`;
+      return star;
+    };
+
+    const createShootingStar = () => {
+      const shootingStar = document.createElement('div');
+      shootingStar.className = 'shooting-star';
+      shootingStar.style.left = `${Math.random() * 100}%`;
+      shootingStar.style.top = `${Math.random() * 100}%`;
+      shootingStar.style.animationDuration = `${Math.random() * 2 + 1}s`;
+      shootingStar.style.animationDelay = `${Math.random() * 5}s`;
+      return shootingStar;
+    };
+
+    const createCosmicParticle = () => {
+      const particle = document.createElement('div');
+      particle.className = 'cosmic-particle';
+      const size = Math.random() * 10 + 5;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+      particle.style.animationDelay = `${Math.random() * 2}s`;
+      return particle;
+    };
+
+    if (backgroundRef.current) {
+      // Create stars
+      for (let i = 0; i < 100; i++) {
+        backgroundRef.current.appendChild(createStar());
+      }
+
+      // Create shooting stars
+      for (let i = 0; i < 5; i++) {
+        backgroundRef.current.appendChild(createShootingStar());
+      }
+
+      // Create cosmic particles
+      for (let i = 0; i < 20; i++) {
+        backgroundRef.current.appendChild(createCosmicParticle());
+      }
+    }
+
+    return () => {
+      if (backgroundRef.current) {
+        backgroundRef.current.innerHTML = '';
+      }
+    };
+  }, []);
+
   return (
     <div className="App">
+      <div className="cosmic-background" ref={backgroundRef} />
       <div className="quiz-container">
         {!isStarted ? (
           isSelectingCategories ? (
