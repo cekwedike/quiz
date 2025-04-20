@@ -4478,6 +4478,146 @@ export const questionBank: Question[] = [
     correctAnswer: 'Glacial deposition of rock and soil',
     explanation: 'A moraine is formed by glacial deposition of rock and soil, creating ridges or mounds of unsorted material.'
   },
+  {
+    id: 'geo_hard_41',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of ENSO (El Niño-Southern Oscillation)?',
+    options: [
+      'The periodic warming and cooling of the tropical Pacific Ocean',
+      'The movement of ocean currents',
+      'The formation of hurricanes',
+      'The melting of polar ice'
+    ],
+    correctAnswer: 'The periodic warming and cooling of the tropical Pacific Ocean',
+    explanation: 'ENSO is a climate pattern that involves the periodic warming (El Niño) and cooling (La Niña) of the tropical Pacific Ocean, affecting global weather patterns.'
+  },
+  {
+    id: 'geo_hard_42',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a Hadley cell?',
+    options: [
+      'The differential heating of the Earth\'s surface',
+      'The rotation of the Earth',
+      'The presence of mountains',
+      'The movement of ocean currents'
+    ],
+    correctAnswer: 'The differential heating of the Earth\'s surface',
+    explanation: 'Hadley cells are formed by the differential heating of the Earth\'s surface, creating a large-scale atmospheric circulation pattern between the equator and subtropics.'
+  },
+  {
+    id: 'geo_hard_43',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of ecological succession?',
+    options: [
+      'The gradual change in species composition in an ecosystem',
+      'The movement of species',
+      'The formation of new ecosystems',
+      'The extinction of species'
+    ],
+    correctAnswer: 'The gradual change in species composition in an ecosystem',
+    explanation: 'Ecological succession is the process of gradual change in species composition in an ecosystem, typically following a disturbance or the creation of new habitat.'
+  },
+  {
+    id: 'geo_hard_44',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a rain shadow desert?',
+    options: [
+      'The blocking of moisture by mountain ranges',
+      'The distance from the ocean',
+      'The latitude of the location',
+      'The presence of high pressure systems'
+    ],
+    correctAnswer: 'The blocking of moisture by mountain ranges',
+    explanation: 'Rain shadow deserts are formed when mountain ranges block moisture-laden air, causing precipitation on the windward side and creating arid conditions on the leeward side.'
+  },
+  {
+    id: 'geo_hard_45',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of urban heat island formation?',
+    options: [
+      'The increased temperature in urban areas compared to surrounding rural areas',
+      'The formation of cities',
+      'The movement of people to urban areas',
+      'The development of infrastructure'
+    ],
+    correctAnswer: 'The increased temperature in urban areas compared to surrounding rural areas',
+    explanation: 'Urban heat islands are formed by the increased temperature in urban areas compared to surrounding rural areas, caused by human activities and modified surfaces.'
+  },
+  {
+    id: 'geo_hard_46',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a biodiversity hotspot?',
+    options: [
+      'High species richness and endemism with significant habitat loss',
+      'The presence of many species',
+      'The formation of new species',
+      'The movement of species'
+    ],
+    correctAnswer: 'High species richness and endemism with significant habitat loss',
+    explanation: 'Biodiversity hotspots are areas with high species richness and endemism that have experienced significant habitat loss, making them conservation priorities.'
+  },
+  {
+    id: 'geo_hard_47',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of soil salinization?',
+    options: [
+      'The accumulation of salts in the soil',
+      'The formation of soil',
+      'The erosion of soil',
+      'The movement of water'
+    ],
+    correctAnswer: 'The accumulation of salts in the soil',
+    explanation: 'Soil salinization is the process of salt accumulation in the soil, often caused by irrigation in arid regions or the rise of saline groundwater.'
+  },
+  {
+    id: 'geo_hard_48',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a monsoon climate?',
+    options: [
+      'The seasonal reversal of wind patterns',
+      'The presence of mountains',
+      'The proximity to the ocean',
+      'The latitude of the location'
+    ],
+    correctAnswer: 'The seasonal reversal of wind patterns',
+    explanation: 'Monsoon climates are formed by the seasonal reversal of wind patterns, bringing wet and dry seasons to affected regions.'
+  },
+  {
+    id: 'geo_hard_49',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of cultural landscape formation?',
+    options: [
+      'The modification of the natural landscape by human activity',
+      'The formation of cities',
+      'The movement of people',
+      'The development of agriculture'
+    ],
+    correctAnswer: 'The modification of the natural landscape by human activity',
+    explanation: 'Cultural landscapes are formed by the modification of the natural landscape by human activity, reflecting the interaction between people and their environment.'
+  },
+  {
+    id: 'geo_hard_50',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a megacity?',
+    options: [
+      'Rapid urbanization and population growth',
+      'The presence of infrastructure',
+      'The development of industry',
+      'The movement of people'
+    ],
+    correctAnswer: 'Rapid urbanization and population growth',
+    explanation: 'Megacities are formed by rapid urbanization and population growth, typically defined as urban areas with populations exceeding 10 million people.'
+  },
 ];
 
 // Helper function to get questions by category and difficulty
