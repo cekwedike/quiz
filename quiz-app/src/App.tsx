@@ -456,7 +456,9 @@ const App: React.FC = () => {
   const useFiftyFifty = () => {
     if (!currentQuestion || lifelines.fiftyFifty === 0 || isAnswered) return;
 
-    const correctAnswerIndex = currentQuestion.options.indexOf(currentQuestion.correctAnswer);
+    const correctAnswerIndex = currentQuestion.options.findIndex(
+      (option) => option.toString() === currentQuestion.correctAnswer.toString()
+    );
 
     // Get indices of wrong answers
     const wrongAnswerIndices = currentQuestion.options
