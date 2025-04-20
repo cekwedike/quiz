@@ -212,15 +212,6 @@ const App: React.FC = () => {
     } else {
       soundManager.playSound('incorrect');
     }
-
-    // Automatically move to next question after a delay
-    setTimeout(() => {
-      if (currentQuestionIndex < questions.length - 1) {
-        nextQuestion();
-      } else {
-        endQuiz();
-      }
-    }, 1000);
   };
 
   const nextQuestion = () => {
@@ -811,6 +802,12 @@ const App: React.FC = () => {
                   The correct answer has {currentQuestion.correctAnswer.length} characters
                 </p>
               )}
+              {isAnswered && currentQuestion.explanation && (
+                <div className="explanation">
+                  <h3>Explanation:</h3>
+                  <p>{currentQuestion.explanation}</p>
+                </div>
+              )}
             </div>
 
             <div className="options-grid">
@@ -832,6 +829,23 @@ const App: React.FC = () => {
                 </button>
               ))}
             </div>
+
+            {isAnswered && (
+              <div className="next-button-container">
+                <button 
+                  className="next-button"
+                  onClick={() => {
+                    if (currentQuestionIndex < questions.length - 1) {
+                      nextQuestion();
+                    } else {
+                      endQuiz();
+                    }
+                  }}
+                >
+                  Next Question
+                </button>
+              </div>
+            )}
 
             <div className="quiz-controls">
               <div className="lifelines">
