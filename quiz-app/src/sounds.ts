@@ -7,30 +7,53 @@ const SOUNDS = {
 };
 
 class SoundManager {
-  private audioElements: { [key: string]: HTMLAudioElement } = {};
+  private audioContext: AudioContext | null = null;
   private isMuted: boolean = false;
 
   constructor() {
-    // Create an audio element for each sound
-    Object.entries(SOUNDS).forEach(([key, value]) => {
-      const audio = new Audio(value);
-      audio.preload = 'auto';
-      this.audioElements[key] = audio;
-    });
+    // Initialize audio context on user interaction
+    document.addEventListener('click', () => {
+      if (!this.audioContext) {
+        this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      }
+    }, { once: true });
   }
 
-  playSound(soundType: keyof typeof SOUNDS) {
-    if (this.isMuted) return;
-    
-    try {
-      // Create a new audio element each time to allow overlapping sounds
-      const audio = new Audio(SOUNDS[soundType]);
-      audio.volume = 1;
-      audio.play().catch((error) => {
-        console.log('Audio playback failed:', error);
-      });
-    } catch (error) {
-      console.log('Error playing sound:', error);
+  private playTone(frequency: number, duration: number, type: OscillatorType = 'sine') {
+    if (this.isMuted || !this.audioContext) return;
+
+    const oscillator = this.audioContext.createOscillator();
+    const gainNode = this.audioContext.createGain();
+
+    oscillator.type = type;
+    oscillator.frequency.value = frequency;
+    oscillator.connect(gainNode);
+    gainNode.connect(this.audioContext.destination);
+
+    oscillator.start();
+    gainNode.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+    oscillator.stop(this.audioContext.currentTime + duration);
+  }
+
+  playSound(soundType: 'correct' | 'incorrect' | 'tick' | 'victory') {
+    if (this.isMuted || !this.audioContext) return;
+
+    switch (soundType) {
+      case 'correct':
+        this.playTone(880, 0.2); // High pitch
+        break;
+      case 'incorrect':
+        this.playTone(220, 0.2, 'square'); // Low pitch
+        break;
+      case 'tick':
+        this.playTone(440, 0.1); // Middle pitch
+        break;
+      case 'victory':
+        // Play a short victory sequence
+        this.playTone(523.25, 0.1); // C
+        setTimeout(() => this.playTone(659.25, 0.1), 100); // E
+        setTimeout(() => this.playTone(783.99, 0.1), 200); // G
+        break;
     }
   }
 
