@@ -3828,6 +3828,96 @@ export const questionBank: Question[] = [
     correctAnswer: 'Makgadikgadi Pan',
     explanation: 'The Makgadikgadi Pan in Botswana is the largest salt pan in Africa, covering approximately 12,000 square kilometers.'
   },
+  {
+    id: 'geo_complex_41',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the highest number of transboundary rivers?',
+    options: ['Democratic Republic of the Congo', 'Sudan', 'Ethiopia', 'Chad'],
+    correctAnswer: 'Democratic Republic of the Congo',
+    explanation: 'The Democratic Republic of the Congo shares 9 major river basins with neighboring countries, more than any other African nation.'
+  },
+  {
+    id: 'geo_complex_42',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest protected area for desert-adapted elephants in Africa?',
+    options: ['Skeleton Coast National Park', 'Namib-Naukluft National Park', 'Etosha National Park', 'Kgalagadi Transfrontier Park'],
+    correctAnswer: 'Skeleton Coast National Park',
+    explanation: 'Skeleton Coast National Park in Namibia protects the largest population of desert-adapted elephants in Africa.'
+  },
+  {
+    id: 'geo_complex_43',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO World Heritage Sites related to rock art?',
+    options: ['South Africa', 'Algeria', 'Libya', 'Namibia'],
+    correctAnswer: 'Algeria',
+    explanation: 'Algeria has 5 UNESCO World Heritage Sites featuring rock art, including Tassili n\'Ajjer, which contains one of the most important collections of prehistoric rock art in the world.'
+  },
+  {
+    id: 'geo_complex_44',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest protected area for mountain gorillas in Africa?',
+    options: ['Virunga National Park', 'Bwindi Impenetrable National Park', 'Volcanoes National Park', 'Mgahinga Gorilla National Park'],
+    correctAnswer: 'Virunga National Park',
+    explanation: 'Virunga National Park in the Democratic Republic of the Congo is the largest protected area for mountain gorillas, covering approximately 7,800 square kilometers.'
+  },
+  {
+    id: 'geo_complex_45',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Global Geoparks?',
+    options: ['Morocco', 'South Africa', 'Tanzania', 'Egypt'],
+    correctAnswer: 'Morocco',
+    explanation: 'Morocco has 3 UNESCO Global Geoparks, including M\'Goun and Jbel Bani.'
+  },
+  {
+    id: 'geo_complex_46',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest protected area for cheetahs in Africa?',
+    options: ['Namib-Naukluft National Park', 'Kgalagadi Transfrontier Park', 'Etosha National Park', 'Serengeti National Park'],
+    correctAnswer: 'Kgalagadi Transfrontier Park',
+    explanation: 'Kgalagadi Transfrontier Park, shared by South Africa and Botswana, is the largest protected area for cheetahs in Africa.'
+  },
+  {
+    id: 'geo_complex_47',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most UNESCO Biosphere Reserves?',
+    options: ['South Africa', 'Kenya', 'Tanzania', 'Morocco'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 8 UNESCO Biosphere Reserves, including the Cape Winelands and Kruger to Canyons.'
+  },
+  {
+    id: 'geo_complex_48',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest protected area for black rhinos in Africa?',
+    options: ['Etosha National Park', 'Kruger National Park', 'Hluhluwe-iMfolozi Park', 'Serengeti National Park'],
+    correctAnswer: 'Etosha National Park',
+    explanation: 'Etosha National Park in Namibia is the largest protected area for black rhinos in Africa.'
+  },
+  {
+    id: 'geo_complex_49',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'Which African country has the most Ramsar Wetlands?',
+    options: ['South Africa', 'Kenya', 'Tanzania', 'Uganda'],
+    correctAnswer: 'South Africa',
+    explanation: 'South Africa has 27 Ramsar Wetlands, more than any other African country.'
+  },
+  {
+    id: 'geo_complex_50',
+    category: 'Geography',
+    difficulty: 'complex',
+    question: 'What is the largest protected area for African wild dogs in Africa?',
+    options: ['Kruger National Park', 'Hwange National Park', 'Selous Game Reserve', 'Moremi Game Reserve'],
+    correctAnswer: 'Selous Game Reserve',
+    explanation: 'Selous Game Reserve in Tanzania is the largest protected area for African wild dogs in Africa.'
+  },
 ];
 
 // Helper function to get questions by category and difficulty
