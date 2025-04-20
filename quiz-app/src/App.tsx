@@ -25,9 +25,9 @@ const App: React.FC = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [isSelectingCategories, setIsSelectingCategories] = useState(false);
   const [lifelines, setLifelines] = useState<Lifelines>({
-    fiftyFifty: 1,
+    fiftyFifty: 5,
     hint: 1,
-    skip: 1
+    skip: Infinity
   });
   const [usedLifelines, setUsedLifelines] = useState<Set<string>>(new Set());
   const [availableOptions, setAvailableOptions] = useState<Set<string>>(new Set(['1', '2', '3', '4']));
@@ -166,29 +166,49 @@ const App: React.FC = () => {
     setCategoryResults({});
   };
 
-  const handleAnswerSelect = (answer: string) => {
-    if (isAnswered) return;
-    
-    setSelectedAnswer(answer);
-    setIsAnswered(true);
-    
-    const isCorrect = answer === currentQuestion.correctAnswer;
-    if (isCorrect) {
-      setScore(score + 1);
-      soundManager.playSound('correct');
-    } else {
-      soundManager.playSound('incorrect');
-    }
-    
-    updateCategoryResults(isCorrect);
+  const handleAnswer = (selectedAnswer: string) => {
+    if (!currentQuestion) return;
 
-    setTimeout(() => {
-      if (currentQuestionIndex < questions.length - 1) {
-        nextQuestion();
-      } else {
-        endQuiz();
+    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+    const newStats = storageManager.getStats();
+
+    // Update basic stats
+    newStats.totalQuestions++;
+    if (isCorrect) {
+      newStats.correctAnswers++;
+      newStats.currentStreak++;
+      if (newStats.currentStreak > newStats.longestStreak) {
+        newStats.longestStreak = newStats.currentStreak;
       }
-    }, 1000);
+    } else {
+      newStats.incorrectAnswers++;
+      newStats.currentStreak = 0;
+    }
+
+    // Update total score and average
+    newStats.totalScore += isCorrect ? 1 : 0;
+    newStats.averageScore = newStats.totalScore / newStats.totalQuestions;
+
+    // Update last played
+    newStats.lastPlayed = new Date().toISOString();
+
+    // Update categories played
+    if (!newStats.categoriesPlayed.includes(currentQuestion.category)) {
+      newStats.categoriesPlayed.push(currentQuestion.category);
+    }
+
+    // Update difficulty levels
+    newStats.difficultyLevels[currentQuestion.difficulty]++;
+
+    // Save updated stats
+    storageManager.saveStats(newStats);
+
+    // Update UI state
+    setSelectedAnswer(selectedAnswer);
+    setIsAnswered(true);
+    if (isCorrect) {
+      setScore(prev => prev + 1);
+    }
   };
 
   const nextQuestion = () => {
@@ -264,9 +284,9 @@ const App: React.FC = () => {
     setShowStats(false);
     setIsStarted(false);
     setLifelines({
-      fiftyFifty: 1,
+      fiftyFifty: 5,
       hint: 1,
-      skip: 1
+      skip: Infinity
     });
   };
 
@@ -275,11 +295,11 @@ const App: React.FC = () => {
     
     const correctAnswer = currentQuestion.correctAnswer;
     const wrongOptions = currentQuestion.options.filter(opt => opt !== correctAnswer);
-    const remainingWrong = wrongOptions.sort(() => Math.random() - 0.5).slice(0, 2);
+    const remainingWrong = wrongOptions.sort(() => Math.random() - 0.5).slice(0, 1);
     const newOptions = new Set([correctAnswer, ...remainingWrong].sort(() => Math.random() - 0.5));
     
     setAvailableOptions(newOptions);
-    setLifelines(prev => ({ ...prev, fiftyFifty: 0 }));
+    setLifelines(prev => ({ ...prev, fiftyFifty: prev.fiftyFifty - 1 }));
   };
 
   const useHint = () => {
@@ -792,7 +812,7 @@ const App: React.FC = () => {
                         : 'incorrect'
                       : ''
                   } ${isAnswered && option === currentQuestion.correctAnswer ? 'correct' : ''}`}
-                  onClick={() => handleAnswerSelect(option)}
+                  onClick={() => handleAnswer(option)}
                   disabled={isAnswered}
                 >
                   <span className="option-letter">{String.fromCharCode(65 + index)}</span>

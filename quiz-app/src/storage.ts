@@ -7,17 +7,21 @@ interface HighScore {
 }
 
 interface QuizStats {
-  gamesPlayed: number;
-  totalCorrect: number;
   totalQuestions: number;
+  correctAnswers: number;
+  incorrectAnswers: number;
+  currentStreak: number;
+  longestStreak: number;
+  totalScore: number;
   averageScore: number;
-  categoryStats: {
-    [key: string]: {
-      correct: number;
-      total: number;
-    };
+  lastPlayed: string;
+  categoriesPlayed: string[];
+  difficultyLevels: {
+    easy: number;
+    complex: number;
+    hard: number;
+    'extremely complex': number;
   };
-  preferredCategories: string[];
 }
 
 export interface Achievement {
@@ -66,8 +70,9 @@ const categories = ['Science', 'History', 'Geography', 'Technology', 'Sports', '
 
 export class StorageManager {
   private readonly HIGH_SCORES_KEY = 'quiz_high_scores';
-  private readonly STATS_KEY = 'quiz_stats';
-  private readonly ACHIEVEMENTS_KEY = 'quiz_achievements';
+  private static readonly STATS_KEY = 'quiz_stats';
+  private static readonly ACHIEVEMENTS_KEY = 'quiz_achievements';
+  private static readonly QUESTIONS_KEY = 'quiz_questions';
   private readonly MAX_HIGH_SCORES = 10;
 
   private readonly ACHIEVEMENTS: Achievement[] = [
@@ -225,42 +230,32 @@ export class StorageManager {
     localStorage.setItem(this.HIGH_SCORES_KEY, JSON.stringify(scores.slice(0, this.MAX_HIGH_SCORES)));
   }
 
-  getStats(): QuizStats {
-    const stats = localStorage.getItem(this.STATS_KEY);
-    return stats ? JSON.parse(stats) : {
-      gamesPlayed: 0,
-      totalCorrect: 0,
-      totalQuestions: 0,
-      averageScore: 0,
-      categoryStats: {},
-      preferredCategories: []
-    };
+  saveStats(stats: QuizStats): void {
+    localStorage.setItem(StorageManager.STATS_KEY, JSON.stringify(stats));
   }
 
-  updateStats(score: number, totalQuestions: number, categoryResults: { [key: string]: { correct: number, total: number } }, selectedCategories: string[]) {
-    const stats = this.getStats();
-    
-    // Update general stats
-    stats.gamesPlayed++;
-    stats.totalCorrect += score;
-    stats.totalQuestions += totalQuestions;
-    stats.averageScore = stats.totalCorrect / stats.totalQuestions;
-
-    // Update category stats
-    Object.entries(categoryResults).forEach(([category, results]) => {
-      if (!stats.categoryStats[category]) {
-        stats.categoryStats[category] = { correct: 0, total: 0 };
-      }
-      stats.categoryStats[category].correct += results.correct;
-      stats.categoryStats[category].total += results.total;
-    });
-
-    // Update preferred categories
-    if (selectedCategories.length > 0) {
-      stats.preferredCategories = selectedCategories;
+  getStats(): QuizStats {
+    const stats = localStorage.getItem(StorageManager.STATS_KEY);
+    if (stats) {
+      return JSON.parse(stats);
     }
-
-    localStorage.setItem(this.STATS_KEY, JSON.stringify(stats));
+    return {
+      totalQuestions: 0,
+      correctAnswers: 0,
+      incorrectAnswers: 0,
+      currentStreak: 0,
+      longestStreak: 0,
+      totalScore: 0,
+      averageScore: 0,
+      lastPlayed: new Date().toISOString(),
+      categoriesPlayed: [],
+      difficultyLevels: {
+        easy: 0,
+        complex: 0,
+        hard: 0,
+        'extremely complex': 0
+      }
+    };
   }
 
   getEnhancedStats(): EnhancedStats {
@@ -298,7 +293,7 @@ export class StorageManager {
       perfectScoresInARow: 0
     };
 
-    const storedStats = localStorage.getItem(this.STATS_KEY);
+    const storedStats = localStorage.getItem(StorageManager.STATS_KEY);
     return storedStats ? { ...defaultStats, ...JSON.parse(storedStats), achievements } : defaultStats;
   }
 
@@ -367,18 +362,18 @@ export class StorageManager {
       perfectScoresInARow: stats.perfectScoresInARow
     };
 
-    localStorage.setItem(this.STATS_KEY, JSON.stringify(updatedStats));
+    localStorage.setItem(StorageManager.STATS_KEY, JSON.stringify(updatedStats));
     return updatedStats;
   }
 
   private getAchievements(): Achievement[] {
-    const storedAchievements = localStorage.getItem(this.ACHIEVEMENTS_KEY);
+    const storedAchievements = localStorage.getItem(StorageManager.ACHIEVEMENTS_KEY);
     if (storedAchievements) {
       return JSON.parse(storedAchievements);
     }
     
     // Initialize with all achievements if none are stored
-    localStorage.setItem(this.ACHIEVEMENTS_KEY, JSON.stringify(this.ACHIEVEMENTS));
+    localStorage.setItem(StorageManager.ACHIEVEMENTS_KEY, JSON.stringify(this.ACHIEVEMENTS));
     return this.ACHIEVEMENTS;
   }
 
@@ -475,7 +470,7 @@ export class StorageManager {
 
     // Save updated achievements to localStorage
     if (unlockedAchievements.length > 0) {
-      localStorage.setItem(this.ACHIEVEMENTS_KEY, JSON.stringify(achievements));
+      localStorage.setItem(StorageManager.ACHIEVEMENTS_KEY, JSON.stringify(achievements));
     }
 
     return unlockedAchievements;
@@ -498,12 +493,12 @@ export class StorageManager {
 
   clearAllData() {
     localStorage.removeItem(this.HIGH_SCORES_KEY);
-    localStorage.removeItem(this.STATS_KEY);
-    localStorage.removeItem(this.ACHIEVEMENTS_KEY);
+    localStorage.removeItem(StorageManager.STATS_KEY);
+    localStorage.removeItem(StorageManager.ACHIEVEMENTS_KEY);
   }
 
   clearStats() {
-    localStorage.removeItem(this.STATS_KEY);
+    localStorage.removeItem(StorageManager.STATS_KEY);
   }
 }
 
