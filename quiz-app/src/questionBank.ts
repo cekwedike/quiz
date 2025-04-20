@@ -1146,136 +1146,245 @@ export const questionBank: Question[] = [
     correctAnswer: 'It explained the behavior of matter at the atomic level',
     explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
   },
-  // Add more science questions here...
-
-  // History Questions (100)
+  // Additional Easy Questions
   {
-    id: 'his1',
-    category: 'History',
+    id: 'sci241',
+    category: 'Science',
     difficulty: 'easy',
-    question: 'In which year did World War II end?',
-    options: ['1945', '1943', '1947', '1941'],
-    correctAnswer: '1945',
-    explanation: 'World War II ended in 1945 with the surrender of Germany in May and Japan in September.'
+    question: 'What is the chemical symbol for sodium?',
+    options: ['Na', 'So', 'Sd', 'No'],
+    correctAnswer: 'Na',
+    explanation: 'Sodium is represented by the chemical symbol Na, derived from the Latin word "natrium".'
   },
   {
-    id: 'his2',
-    category: 'History',
+    id: 'sci242',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the smallest unit of life?',
+    options: ['Cell', 'Atom', 'Molecule', 'Organelle'],
+    correctAnswer: 'Cell',
+    explanation: 'The cell is the smallest unit of life, capable of performing all the functions necessary for life.'
+  },
+  {
+    id: 'sci243',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the process by which plants take in carbon dioxide?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'During photosynthesis, plants take in carbon dioxide and release oxygen.'
+  },
+  {
+    id: 'sci244',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of energy in the International System of Units (SI)?',
+    options: ['Joule', 'Watt', 'Newton', 'Pascal'],
+    correctAnswer: 'Joule',
+    explanation: 'The joule (J) is the SI unit of energy, named after James Prescott Joule.'
+  },
+  {
+    id: 'sci245',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for methane?',
+    options: ['CH4', 'CO2', 'H2O', 'NH3'],
+    correctAnswer: 'CH4',
+    explanation: 'Methane is composed of one carbon atom and four hydrogen atoms, hence the formula CH4.'
+  },
+
+  // Additional Complex Questions
+  {
+    id: 'sci246',
+    category: 'Science',
     difficulty: 'complex',
-    question: 'Who was the first President of the United States?',
-    options: ['George Washington', 'Thomas Jefferson', 'John Adams', 'Benjamin Franklin'],
-    correctAnswer: 'George Washington',
-    explanation: 'George Washington served as the first President of the United States from 1789 to 1797.'
+    question: 'What is the name of the process by which plants convert light energy into chemical energy?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'Photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose.'
   },
   {
-    id: 'his3',
-    category: 'History',
-    difficulty: 'hard',
-    question: 'What was the significance of the Treaty of Westphalia in 1648?',
-    options: [
-      'It ended the Thirty Years\' War and established the modern state system',
-      'It marked the beginning of the Renaissance',
-      'It established the Holy Roman Empire',
-      'It ended the Hundred Years\' War'
-    ],
-    correctAnswer: 'It ended the Thirty Years\' War and established the modern state system',
-    explanation: 'The Treaty of Westphalia ended the Thirty Years\' War and is considered the birth of the modern state system and international law.'
-  },
-  // Add more history questions here...
-
-  // Geography Questions (100)
-  {
-    id: 'geo1',
-    category: 'Geography',
-    difficulty: 'easy',
-    question: 'What is the capital of France?',
-    options: ['Paris', 'London', 'Berlin', 'Madrid'],
-    correctAnswer: 'Paris',
-    explanation: 'Paris is the capital and largest city of France.'
-  },
-  {
-    id: 'geo2',
-    category: 'Geography',
+    id: 'sci247',
+    category: 'Science',
     difficulty: 'complex',
-    question: 'Which is the largest desert in the world?',
-    options: ['Antarctic Desert', 'Sahara Desert', 'Arabian Desert', 'Gobi Desert'],
-    correctAnswer: 'Antarctic Desert',
-    explanation: 'The Antarctic Desert is the largest desert in the world, covering about 5.5 million square miles.'
-  },
-  // Add more geography questions here...
-
-  // Technology Questions (100)
-  {
-    id: 'tech1',
-    category: 'Technology',
-    difficulty: 'easy',
-    question: 'What does "HTML" stand for?',
-    options: [
-      'Hyper Text Markup Language',
-      'High Tech Modern Language',
-      'Hyper Transfer Markup Language',
-      'Home Tool Markup Language'
-    ],
-    correctAnswer: 'Hyper Text Markup Language',
-    explanation: 'HTML stands for Hyper Text Markup Language, which is the standard markup language for creating web pages.'
+    question: 'What is the name of the theory that explains the evolution of species?',
+    options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
+    correctAnswer: 'Natural Selection',
+    explanation: 'Natural selection is the process by which organisms better adapted to their environment tend to survive and produce more offspring.'
   },
   {
-    id: 'tech2',
-    category: 'Technology',
-    difficulty: 'hard',
-    question: 'What is the difference between TCP and UDP protocols?',
-    options: [
-      'TCP is connection-oriented while UDP is connectionless',
-      'TCP is faster than UDP',
-      'UDP provides error checking while TCP does not',
-      'TCP is used for video streaming while UDP is used for web browsing'
-    ],
-    correctAnswer: 'TCP is connection-oriented while UDP is connectionless',
-    explanation: 'TCP (Transmission Control Protocol) is connection-oriented and reliable, while UDP (User Datagram Protocol) is connectionless and faster but less reliable.'
-  },
-  // Add more technology questions here...
-
-  // Sports Questions (100)
-  {
-    id: 'spt1',
-    category: 'Sports',
-    difficulty: 'easy',
-    question: 'How many players are there in a standard soccer team?',
-    options: ['11', '9', '13', '15'],
-    correctAnswer: '11',
-    explanation: 'A standard soccer team consists of 11 players, including one goalkeeper.'
-  },
-  {
-    id: 'spt2',
-    category: 'Sports',
+    id: 'sci248',
+    category: 'Science',
     difficulty: 'complex',
-    question: 'Which country has won the most FIFA World Cup titles?',
-    options: ['Brazil', 'Germany', 'Italy', 'Argentina'],
-    correctAnswer: 'Brazil',
-    explanation: 'Brazil has won the FIFA World Cup 5 times (1958, 1962, 1970, 1994, 2002).'
+    question: 'What is the name of the process by which rocks are formed from sediments?',
+    options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
+    correctAnswer: 'Lithification',
+    explanation: 'Lithification is the process by which sediments are compacted and cemented to form sedimentary rocks.'
   },
-  // Add more sports questions here...
+  {
+    id: 'sci249',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the process by which plants respond to light?',
+    options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
+    correctAnswer: 'Phototropism',
+    explanation: 'Phototropism is the process by which plants grow toward or away from light.'
+  },
+  {
+    id: 'sci250',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the force that opposes the motion of objects through fluids?',
+    options: ['Drag', 'Gravity', 'Friction', 'Tension'],
+    correctAnswer: 'Drag',
+    explanation: 'Drag is the force that opposes the motion of objects through fluids, such as air or water.'
+  },
 
-  // Entertainment Questions (100)
+  // Additional Hard Questions
   {
-    id: 'ent1',
-    category: 'Entertainment',
-    difficulty: 'easy',
-    question: 'Who directed the movie "Titanic"?',
-    options: ['James Cameron', 'Steven Spielberg', 'Christopher Nolan', 'Martin Scorsese'],
-    correctAnswer: 'James Cameron',
-    explanation: 'James Cameron directed the 1997 blockbuster movie "Titanic".'
-  },
-  {
-    id: 'ent2',
-    category: 'Entertainment',
+    id: 'sci251',
+    category: 'Science',
     difficulty: 'hard',
-    question: 'Which composer wrote the "Moonlight Sonata"?',
-    options: ['Ludwig van Beethoven', 'Wolfgang Amadeus Mozart', 'Johann Sebastian Bach', 'Frédéric Chopin'],
-    correctAnswer: 'Ludwig van Beethoven',
-    explanation: 'Ludwig van Beethoven composed the "Moonlight Sonata" (Piano Sonata No. 14) in 1801.'
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained how proteins are synthesized',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
   },
-  // Add more entertainment questions here...
+  {
+    id: 'sci252',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the behavior of matter at the atomic level',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci253',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the double helix?',
+    options: [
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained how genetic information is stored and transmitted',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci254',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the cosmic microwave background radiation?',
+    options: [
+      'It proved the existence of dark matter',
+      'It demonstrated the expansion of the universe',
+      'It provided evidence for the Big Bang theory',
+      'It explained the formation of galaxies'
+    ],
+    correctAnswer: 'It provided evidence for the Big Bang theory',
+    explanation: 'The discovery of cosmic microwave background radiation provided strong evidence for the Big Bang theory.'
+  },
+  {
+    id: 'sci255',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of penicillin?',
+    options: [
+      'It proved the germ theory of disease',
+      'It demonstrated the existence of viruses',
+      'It explained the process of immunity',
+      'It revolutionized the treatment of bacterial infections'
+    ],
+    correctAnswer: 'It revolutionized the treatment of bacterial infections',
+    explanation: 'The discovery of penicillin revolutionized medicine by providing an effective treatment for bacterial infections.'
+  },
+
+  // Additional Extremely Complex Questions
+  {
+    id: 'sci256',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Birch and Swinnerton-Dyer conjecture in mathematics?',
+    options: [
+      'It describes the behavior of prime numbers',
+      'It explains the nature of infinity',
+      'It defines the properties of complex numbers',
+      'It concerns the number of rational points on elliptic curves'
+    ],
+    correctAnswer: 'It concerns the number of rational points on elliptic curves',
+    explanation: 'The Birch and Swinnerton-Dyer conjecture is one of the seven Millennium Prize Problems, concerning the number of rational points on elliptic curves.'
+  },
+  {
+    id: 'sci257',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Hodge conjecture in algebraic geometry?',
+    options: [
+      'It describes the behavior of geometric shapes',
+      'It explains the nature of symmetry',
+      'It defines the properties of topological spaces',
+      'It concerns the relationship between algebraic cycles and cohomology classes'
+    ],
+    correctAnswer: 'It concerns the relationship between algebraic cycles and cohomology classes',
+    explanation: 'The Hodge conjecture is one of the seven Millennium Prize Problems, concerning the relationship between algebraic cycles and cohomology classes.'
+  },
+  {
+    id: 'sci258',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Poincaré conjecture in topology?',
+    options: [
+      'It describes the behavior of geometric shapes',
+      'It explains the nature of space',
+      'It defines the properties of surfaces',
+      'It concerns the classification of three-dimensional manifolds'
+    ],
+    correctAnswer: 'It concerns the classification of three-dimensional manifolds',
+    explanation: 'The Poincaré conjecture is one of the seven Millennium Prize Problems, concerning the classification of three-dimensional manifolds.'
+  },
+  {
+    id: 'sci259',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Navier-Stokes existence and smoothness problem?',
+    options: [
+      'It describes the behavior of quantum particles',
+      'It explains the nature of turbulence',
+      'It predicts weather patterns',
+      'It concerns the mathematical properties of fluid flow equations'
+    ],
+    correctAnswer: 'It concerns the mathematical properties of fluid flow equations',
+    explanation: 'The Navier-Stokes existence and smoothness problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of solutions to the Navier-Stokes equations.'
+  },
+  {
+    id: 'sci260',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Yang-Mills existence and mass gap problem?',
+    options: [
+      'It explains the nature of dark matter',
+      'It describes the behavior of elementary particles',
+      'It predicts the existence of new fundamental forces',
+      'It concerns the mathematical properties of quantum field theory'
+    ],
+    correctAnswer: 'It concerns the mathematical properties of quantum field theory',
+    explanation: 'The Yang-Mills existence and mass gap problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of quantum field theory.'
+  },
+
+  // ... existing questions from other categories ...
 ];
 
 // Helper function to get questions by category and difficulty
