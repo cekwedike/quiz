@@ -4898,6 +4898,986 @@ export const questionBank: Question[] = [
     correctAnswer: 'The organization of thunderstorms into a large, long-lived system',
     explanation: 'A mesoscale convective system forms when thunderstorms organize into a large, long-lived system, often producing severe weather and heavy precipitation.'
   },
+  {
+    id: 'geo_extreme_21',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of biogeochemical cycling in Earth systems?',
+    options: [
+      'The movement of elements through living organisms and the physical environment',
+      'The cycling of water through different states',
+      'The movement of tectonic plates',
+      'The formation of different rock types'
+    ],
+    correctAnswer: 'The movement of elements through living organisms and the physical environment',
+    explanation: 'Biogeochemical cycling refers to the movement of elements through living organisms and the physical environment, creating complex feedback loops in Earth systems.'
+  },
+  {
+    id: 'geo_extreme_22',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a Walker circulation?',
+    options: [
+      'The east-west atmospheric circulation in the tropical Pacific',
+      'The north-south movement of air masses',
+      'The interaction between different pressure systems',
+      'The effect of the Coriolis force on air movement'
+    ],
+    correctAnswer: 'The east-west atmospheric circulation in the tropical Pacific',
+    explanation: 'The Walker circulation is formed by the east-west atmospheric circulation in the tropical Pacific, driven by temperature differences between the eastern and western Pacific.'
+  },
+  {
+    id: 'geo_extreme_23',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape metastability?',
+    options: [
+      'The ability of a landscape to maintain its structure despite changing conditions',
+      'The stability of a landscape over time',
+      'The ability of a landscape to recover from disturbance',
+      'The resistance of a landscape to change'
+    ],
+    correctAnswer: 'The ability of a landscape to maintain its structure despite changing conditions',
+    explanation: 'Landscape metastability refers to the ability of a landscape to maintain its structure despite changing conditions, often through complex feedback mechanisms.'
+  },
+  {
+    id: 'geo_extreme_24',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a quasi-biennial oscillation?',
+    options: [
+      'The periodic reversal of winds in the tropical stratosphere',
+      'The interaction between different air masses',
+      'The effect of the Coriolis force on air movement',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The periodic reversal of winds in the tropical stratosphere',
+    explanation: 'The quasi-biennial oscillation is formed by the periodic reversal of winds in the tropical stratosphere, influencing global atmospheric circulation patterns.'
+  },
+  {
+    id: 'geo_extreme_25',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape self-organization?',
+    options: [
+      'The emergence of ordered patterns in landscapes through local interactions',
+      'The formation of landscapes by external forces',
+      'The development of landscapes over time',
+      'The relationship between process and form in landscape development'
+    ],
+    correctAnswer: 'The emergence of ordered patterns in landscapes through local interactions',
+    explanation: 'Landscape self-organization refers to the emergence of ordered patterns in landscapes through local interactions, often creating complex spatial structures.'
+  },
+  {
+    id: 'geo_extreme_26',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a stratospheric sudden warming?',
+    options: [
+      'The rapid warming of the polar stratosphere',
+      'The interaction between different air masses',
+      'The effect of the Coriolis force on air movement',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The rapid warming of the polar stratosphere',
+    explanation: 'A stratospheric sudden warming is formed by the rapid warming of the polar stratosphere, often disrupting the polar vortex and influencing weather patterns.'
+  },
+  {
+    id: 'geo_extreme_27',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape complexity?',
+    options: [
+      'The degree of heterogeneity and organization in a landscape',
+      'The number of different elements in a landscape',
+      'The size of a landscape',
+      'The age of a landscape'
+    ],
+    correctAnswer: 'The degree of heterogeneity and organization in a landscape',
+    explanation: 'Landscape complexity refers to the degree of heterogeneity and organization in a landscape, influencing its ecological function and response to change.'
+  },
+  {
+    id: 'geo_extreme_28',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective vortex?',
+    options: [
+      'The organization of thunderstorms into a rotating system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a rotating system',
+    explanation: 'A mesoscale convective vortex forms when thunderstorms organize into a rotating system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_29',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape emergence?',
+    options: [
+      'The appearance of new properties in a landscape that are not present in its individual components',
+      'The formation of new landscapes',
+      'The development of landscapes over time',
+      'The relationship between process and form in landscape development'
+    ],
+    correctAnswer: 'The appearance of new properties in a landscape that are not present in its individual components',
+    explanation: 'Landscape emergence refers to the appearance of new properties in a landscape that are not present in its individual components, creating complex system behavior.'
+  },
+  {
+    id: 'geo_extreme_30',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective system?',
+    options: [
+      'The organization of thunderstorms into a large, long-lived system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a large, long-lived system',
+    explanation: 'A mesoscale convective system forms when thunderstorms organize into a large, long-lived system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_31',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape self-regulation?',
+    options: [
+      'The ability of a landscape to maintain its structure through feedback mechanisms',
+      'The stability of a landscape over time',
+      'The ability of a landscape to recover from disturbance',
+      'The resistance of a landscape to change'
+    ],
+    correctAnswer: 'The ability of a landscape to maintain its structure through feedback mechanisms',
+    explanation: 'Landscape self-regulation refers to the ability of a landscape to maintain its structure through feedback mechanisms, creating stability in complex systems.'
+  },
+  {
+    id: 'geo_extreme_32',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective vortex?',
+    options: [
+      'The organization of thunderstorms into a rotating system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a rotating system',
+    explanation: 'A mesoscale convective vortex forms when thunderstorms organize into a rotating system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_33',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape adaptation?',
+    options: [
+      'The ability of a landscape to adjust to changing conditions',
+      'The stability of a landscape over time',
+      'The ability of a landscape to recover from disturbance',
+      'The resistance of a landscape to change'
+    ],
+    correctAnswer: 'The ability of a landscape to adjust to changing conditions',
+    explanation: 'Landscape adaptation refers to the ability of a landscape to adjust to changing conditions, often through complex feedback mechanisms.'
+  },
+  {
+    id: 'geo_extreme_34',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective system?',
+    options: [
+      'The organization of thunderstorms into a large, long-lived system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a large, long-lived system',
+    explanation: 'A mesoscale convective system forms when thunderstorms organize into a large, long-lived system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_35',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape transformation?',
+    options: [
+      'The fundamental change in a landscape\'s structure and function',
+      'The development of a landscape over time',
+      'The ability of a landscape to recover from disturbance',
+      'The resistance of a landscape to change'
+    ],
+    correctAnswer: 'The fundamental change in a landscape\'s structure and function',
+    explanation: 'Landscape transformation refers to the fundamental change in a landscape\'s structure and function, often resulting from significant environmental change.'
+  },
+  {
+    id: 'geo_extreme_36',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective vortex?',
+    options: [
+      'The organization of thunderstorms into a rotating system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a rotating system',
+    explanation: 'A mesoscale convective vortex forms when thunderstorms organize into a rotating system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_37',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape resilience?',
+    options: [
+      'The ability of a landscape to absorb disturbance and maintain its essential structure and function',
+      'The stability of a landscape over time',
+      'The ability of a landscape to recover from disturbance',
+      'The resistance of a landscape to change'
+    ],
+    correctAnswer: 'The ability of a landscape to absorb disturbance and maintain its essential structure and function',
+    explanation: 'Landscape resilience refers to the ability of a landscape to absorb disturbance and maintain its essential structure and function, influencing its long-term evolution.'
+  },
+  {
+    id: 'geo_extreme_38',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective system?',
+    options: [
+      'The organization of thunderstorms into a large, long-lived system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a large, long-lived system',
+    explanation: 'A mesoscale convective system forms when thunderstorms organize into a large, long-lived system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'geo_extreme_39',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'Which of the following best describes the concept of landscape feedback?',
+    options: [
+      'The process by which changes in one part of a landscape affect other parts',
+      'The response of a landscape to external forces',
+      'The interaction between different landscape elements',
+      'The relationship between process and form in landscape development'
+    ],
+    correctAnswer: 'The process by which changes in one part of a landscape affect other parts',
+    explanation: 'Landscape feedback refers to the process by which changes in one part of a landscape affect other parts, creating complex interactions and responses.'
+  },
+  {
+    id: 'geo_extreme_40',
+    category: 'Geography',
+    difficulty: 'extremely complex',
+    question: 'What is the primary mechanism behind the formation of a mesoscale convective vortex?',
+    options: [
+      'The organization of thunderstorms into a rotating system',
+      'The interaction between different air masses',
+      'The effect of topography on storm development',
+      'The influence of ocean currents on atmospheric circulation'
+    ],
+    correctAnswer: 'The organization of thunderstorms into a rotating system',
+    explanation: 'A mesoscale convective vortex forms when thunderstorms organize into a rotating system, often producing severe weather and heavy precipitation.'
+  },
+  {
+    id: 'tech1',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "CPU" stand for in computing?',
+    options: [
+      'Central Processing Unit',
+      'Computer Processing Unit',
+      'Central Program Unit',
+      'Computer Program Unit'
+    ],
+    correctAnswer: 'Central Processing Unit',
+    explanation: 'CPU stands for Central Processing Unit, which is the primary component of a computer that performs most processing inside computers.'
+  },
+  {
+    id: 'tech2',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company developed the Windows operating system?',
+    options: [
+      'Microsoft',
+      'Apple',
+      'Google',
+      'IBM'
+    ],
+    correctAnswer: 'Microsoft',
+    explanation: 'Microsoft developed and released the Windows operating system, with the first version being Windows 1.0 in 1985.'
+  },
+  {
+    id: 'tech3',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "URL" stand for?',
+    options: [
+      'Uniform Resource Locator',
+      'Universal Resource Link',
+      'Uniform Resource Link',
+      'Universal Resource Locator'
+    ],
+    correctAnswer: 'Uniform Resource Locator',
+    explanation: 'URL stands for Uniform Resource Locator, which is the address of a specific webpage or file on the internet.'
+  },
+  {
+    id: 'tech4',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a web browser?',
+    options: [
+      'Chrome',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Chrome',
+    explanation: 'Chrome is a web browser developed by Google, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech5',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What is the name of Apple\'s mobile operating system?',
+    options: [
+      'iOS',
+      'Android',
+      'Windows',
+      'Linux'
+    ],
+    correctAnswer: 'iOS',
+    explanation: 'iOS is Apple\'s mobile operating system used on iPhones and iPads.'
+  },
+  {
+    id: 'tech6',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "Wi-Fi" stand for?',
+    options: [
+      'Wireless Fidelity',
+      'Wireless Internet',
+      'Wireless Frequency',
+      'Wireless Function'
+    ],
+    correctAnswer: 'Wireless Fidelity',
+    explanation: 'Wi-Fi stands for Wireless Fidelity, which is a technology that allows devices to connect to the internet wirelessly.'
+  },
+  {
+    id: 'tech7',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a social media platform?',
+    options: [
+      'Facebook',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Facebook',
+    explanation: 'Facebook is a social media platform, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech8',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "RAM" stand for in computing?',
+    options: [
+      'Random Access Memory',
+      'Read Access Memory',
+      'Random Access Module',
+      'Read Access Module'
+    ],
+    correctAnswer: 'Random Access Memory',
+    explanation: 'RAM stands for Random Access Memory, which is a type of computer memory that can be accessed randomly.'
+  },
+  {
+    id: 'tech9',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Android operating system?',
+    options: [
+      'Google',
+      'Apple',
+      'Microsoft',
+      'Samsung'
+    ],
+    correctAnswer: 'Google',
+    explanation: 'Google created the Android operating system, which is now the most widely used mobile OS in the world.'
+  },
+  {
+    id: 'tech10',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "PDF" stand for?',
+    options: [
+      'Portable Document Format',
+      'Personal Document Format',
+      'Portable Data Format',
+      'Personal Data Format'
+    ],
+    correctAnswer: 'Portable Document Format',
+    explanation: 'PDF stands for Portable Document Format, which is a file format used to present documents in a manner independent of application software.'
+  },
+  {
+    id: 'tech11',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a search engine?',
+    options: [
+      'Google',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Google',
+    explanation: 'Google is a search engine, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech12',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "HTML" stand for?',
+    options: [
+      'HyperText Markup Language',
+      'HyperText Machine Language',
+      'HyperText Markup Link',
+      'HyperText Machine Link'
+    ],
+    correctAnswer: 'HyperText Markup Language',
+    explanation: 'HTML stands for HyperText Markup Language, which is the standard markup language for creating web pages.'
+  },
+  {
+    id: 'tech13',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a video streaming service?',
+    options: [
+      'Netflix',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Netflix',
+    explanation: 'Netflix is a video streaming service, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech14',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "USB" stand for?',
+    options: [
+      'Universal Serial Bus',
+      'Universal System Bus',
+      'Universal Serial Board',
+      'Universal System Board'
+    ],
+    correctAnswer: 'Universal Serial Bus',
+    explanation: 'USB stands for Universal Serial Bus, which is a standard for connecting devices to computers.'
+  },
+  {
+    id: 'tech15',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the iPhone?',
+    options: [
+      'Apple',
+      'Samsung',
+      'Google',
+      'Microsoft'
+    ],
+    correctAnswer: 'Apple',
+    explanation: 'Apple created the iPhone, which was first released in 2007.'
+  },
+  {
+    id: 'tech16',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "VPN" stand for?',
+    options: [
+      'Virtual Private Network',
+      'Virtual Public Network',
+      'Virtual Private Node',
+      'Virtual Public Node'
+    ],
+    correctAnswer: 'Virtual Private Network',
+    explanation: 'VPN stands for Virtual Private Network, which is a service that creates a secure, encrypted connection over the internet.'
+  },
+  {
+    id: 'tech17',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a cloud storage service?',
+    options: [
+      'Google Drive',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Google Drive',
+    explanation: 'Google Drive is a cloud storage service, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech18',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "AI" stand for?',
+    options: [
+      'Artificial Intelligence',
+      'Automated Intelligence',
+      'Artificial Information',
+      'Automated Information'
+    ],
+    correctAnswer: 'Artificial Intelligence',
+    explanation: 'AI stands for Artificial Intelligence, which refers to the simulation of human intelligence by machines.'
+  },
+  {
+    id: 'tech19',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the PlayStation gaming console?',
+    options: [
+      'Sony',
+      'Microsoft',
+      'Nintendo',
+      'Sega'
+    ],
+    correctAnswer: 'Sony',
+    explanation: 'Sony created the PlayStation gaming console, with the first version being released in 1994.'
+  },
+  {
+    id: 'tech20',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "GPS" stand for?',
+    options: [
+      'Global Positioning System',
+      'Global Pointing System',
+      'Global Positioning Service',
+      'Global Pointing Service'
+    ],
+    correctAnswer: 'Global Positioning System',
+    explanation: 'GPS stands for Global Positioning System, which is a satellite-based navigation system.'
+  },
+  {
+    id: 'tech21',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a programming language?',
+    options: [
+      'Python',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Python',
+    explanation: 'Python is a programming language, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech22',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "SSD" stand for in computing?',
+    options: [
+      'Solid State Drive',
+      'Solid State Disk',
+      'Solid Storage Drive',
+      'Solid Storage Disk'
+    ],
+    correctAnswer: 'Solid State Drive',
+    explanation: 'SSD stands for Solid State Drive, which is a type of storage device that uses flash memory.'
+  },
+  {
+    id: 'tech23',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Xbox gaming console?',
+    options: [
+      'Microsoft',
+      'Sony',
+      'Nintendo',
+      'Sega'
+    ],
+    correctAnswer: 'Microsoft',
+    explanation: 'Microsoft created the Xbox gaming console, with the first version being released in 2001.'
+  },
+  {
+    id: 'tech24',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "IoT" stand for?',
+    options: [
+      'Internet of Things',
+      'Internet of Technology',
+      'Internet of Tools',
+      'Internet of Tasks'
+    ],
+    correctAnswer: 'Internet of Things',
+    explanation: 'IoT stands for Internet of Things, which refers to the network of physical objects embedded with sensors and software.'
+  },
+  {
+    id: 'tech25',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a messaging app?',
+    options: [
+      'WhatsApp',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'WhatsApp',
+    explanation: 'WhatsApp is a messaging app, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech26',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "HDMI" stand for?',
+    options: [
+      'High-Definition Multimedia Interface',
+      'High-Definition Media Interface',
+      'High-Definition Multimedia Input',
+      'High-Definition Media Input'
+    ],
+    correctAnswer: 'High-Definition Multimedia Interface',
+    explanation: 'HDMI stands for High-Definition Multimedia Interface, which is a standard for transmitting audio and video data.'
+  },
+  {
+    id: 'tech27',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Nintendo Switch?',
+    options: [
+      'Nintendo',
+      'Sony',
+      'Microsoft',
+      'Sega'
+    ],
+    correctAnswer: 'Nintendo',
+    explanation: 'Nintendo created the Nintendo Switch gaming console, which was released in 2017.'
+  },
+  {
+    id: 'tech28',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "VR" stand for?',
+    options: [
+      'Virtual Reality',
+      'Virtual Response',
+      'Virtual Resolution',
+      'Virtual Resource'
+    ],
+    correctAnswer: 'Virtual Reality',
+    explanation: 'VR stands for Virtual Reality, which is a simulated experience that can be similar to or completely different from the real world.'
+  },
+  {
+    id: 'tech29',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a photo editing software?',
+    options: [
+      'Photoshop',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Photoshop',
+    explanation: 'Photoshop is a photo editing software, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech30',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "AR" stand for?',
+    options: [
+      'Augmented Reality',
+      'Artificial Reality',
+      'Augmented Response',
+      'Artificial Response'
+    ],
+    correctAnswer: 'Augmented Reality',
+    explanation: 'AR stands for Augmented Reality, which is an interactive experience where real-world objects are enhanced by computer-generated information.'
+  },
+  {
+    id: 'tech31',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Mac computer?',
+    options: [
+      'Apple',
+      'Microsoft',
+      'IBM',
+      'Dell'
+    ],
+    correctAnswer: 'Apple',
+    explanation: 'Apple created the Mac computer, with the first model being released in 1984.'
+  },
+  {
+    id: 'tech32',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "LED" stand for?',
+    options: [
+      'Light Emitting Diode',
+      'Light Emitting Display',
+      'Light Emitting Device',
+      'Light Emitting Data'
+    ],
+    correctAnswer: 'Light Emitting Diode',
+    explanation: 'LED stands for Light Emitting Diode, which is a semiconductor light source that emits light when current flows through it.'
+  },
+  {
+    id: 'tech33',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a video conferencing app?',
+    options: [
+      'Zoom',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Zoom',
+    explanation: 'Zoom is a video conferencing app, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech34',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "LCD" stand for?',
+    options: [
+      'Liquid Crystal Display',
+      'Liquid Crystal Device',
+      'Liquid Crystal Data',
+      'Liquid Crystal Drive'
+    ],
+    correctAnswer: 'Liquid Crystal Display',
+    explanation: 'LCD stands for Liquid Crystal Display, which is a flat-panel display that uses liquid crystals to produce images.'
+  },
+  {
+    id: 'tech35',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Tesla electric car?',
+    options: [
+      'Tesla',
+      'Ford',
+      'Toyota',
+      'General Motors'
+    ],
+    correctAnswer: 'Tesla',
+    explanation: 'Tesla created the Tesla electric car, with the first model being the Roadster in 2008.'
+  },
+  {
+    id: 'tech36',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "ISP" stand for?',
+    options: [
+      'Internet Service Provider',
+      'Internet Service Protocol',
+      'Internet System Provider',
+      'Internet System Protocol'
+    ],
+    correctAnswer: 'Internet Service Provider',
+    explanation: 'ISP stands for Internet Service Provider, which is a company that provides internet access to customers.'
+  },
+  {
+    id: 'tech37',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a music streaming service?',
+    options: [
+      'Spotify',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Spotify',
+    explanation: 'Spotify is a music streaming service, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech38',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "DNS" stand for?',
+    options: [
+      'Domain Name System',
+      'Domain Name Service',
+      'Domain Network System',
+      'Domain Network Service'
+    ],
+    correctAnswer: 'Domain Name System',
+    explanation: 'DNS stands for Domain Name System, which is the system that translates domain names into IP addresses.'
+  },
+  {
+    id: 'tech39',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Amazon Echo smart speaker?',
+    options: [
+      'Amazon',
+      'Google',
+      'Apple',
+      'Microsoft'
+    ],
+    correctAnswer: 'Amazon',
+    explanation: 'Amazon created the Amazon Echo smart speaker, which was first released in 2014.'
+  },
+  {
+    id: 'tech40',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "FTP" stand for?',
+    options: [
+      'File Transfer Protocol',
+      'File Transfer Program',
+      'File Transfer Process',
+      'File Transfer Procedure'
+    ],
+    correctAnswer: 'File Transfer Protocol',
+    explanation: 'FTP stands for File Transfer Protocol, which is a standard network protocol used for transferring files between computers.'
+  },
+  {
+    id: 'tech41',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a cloud computing service?',
+    options: [
+      'Amazon Web Services',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Amazon Web Services',
+    explanation: 'Amazon Web Services is a cloud computing service, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech42',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "HTTP" stand for?',
+    options: [
+      'HyperText Transfer Protocol',
+      'HyperText Transfer Program',
+      'HyperText Transfer Process',
+      'HyperText Transfer Procedure'
+    ],
+    correctAnswer: 'HyperText Transfer Protocol',
+    explanation: 'HTTP stands for HyperText Transfer Protocol, which is the foundation of data communication for the World Wide Web.'
+  },
+  {
+    id: 'tech43',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Google Home smart speaker?',
+    options: [
+      'Google',
+      'Amazon',
+      'Apple',
+      'Microsoft'
+    ],
+    correctAnswer: 'Google',
+    explanation: 'Google created the Google Home smart speaker, which was first released in 2016.'
+  },
+  {
+    id: 'tech44',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "HTTPS" stand for?',
+    options: [
+      'HyperText Transfer Protocol Secure',
+      'HyperText Transfer Protocol Safe',
+      'HyperText Transfer Protocol System',
+      'HyperText Transfer Protocol Service'
+    ],
+    correctAnswer: 'HyperText Transfer Protocol Secure',
+    explanation: 'HTTPS stands for HyperText Transfer Protocol Secure, which is the secure version of HTTP.'
+  },
+  {
+    id: 'tech45',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a project management tool?',
+    options: [
+      'Trello',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'Trello',
+    explanation: 'Trello is a project management tool, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech46',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "API" stand for?',
+    options: [
+      'Application Programming Interface',
+      'Application Program Interface',
+      'Application Programming Input',
+      'Application Program Input'
+    ],
+    correctAnswer: 'Application Programming Interface',
+    explanation: 'API stands for Application Programming Interface, which is a set of rules and protocols for building and interacting with software applications.'
+  },
+  {
+    id: 'tech47',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which company created the Oculus VR headset?',
+    options: [
+      'Meta (Facebook)',
+      'Google',
+      'Apple',
+      'Microsoft'
+    ],
+    correctAnswer: 'Meta (Facebook)',
+    explanation: 'Meta (formerly Facebook) acquired Oculus VR in 2014 and now produces the Oculus VR headset.'
+  },
+  {
+    id: 'tech48',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "CSS" stand for?',
+    options: [
+      'Cascading Style Sheets',
+      'Computer Style Sheets',
+      'Cascading Style System',
+      'Computer Style System'
+    ],
+    correctAnswer: 'Cascading Style Sheets',
+    explanation: 'CSS stands for Cascading Style Sheets, which is a style sheet language used for describing the presentation of a document written in HTML.'
+  },
+  {
+    id: 'tech49',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'Which of these is a code repository service?',
+    options: [
+      'GitHub',
+      'Word',
+      'Excel',
+      'PowerPoint'
+    ],
+    correctAnswer: 'GitHub',
+    explanation: 'GitHub is a code repository service, while Word, Excel, and PowerPoint are Microsoft Office applications.'
+  },
+  {
+    id: 'tech50',
+    category: 'Technology',
+    difficulty: 'easy',
+    question: 'What does "SQL" stand for?',
+    options: [
+      'Structured Query Language',
+      'Structured Question Language',
+      'Structured Query Logic',
+      'Structured Question Logic'
+    ],
+    correctAnswer: 'Structured Query Language',
+    explanation: 'SQL stands for Structured Query Language, which is a programming language designed for managing data in relational database management systems.'
+  }
 ];
 
 // Helper function to get questions by category and difficulty
