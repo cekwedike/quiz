@@ -1,7 +1,7 @@
 export interface Question {
   id: string;
   category: string;
-  difficulty: string;
+  difficulty: 'easy' | 'complex' | 'hard' | 'extremely complex';
   question: string;
   options: string[];
   correctAnswer: number;
@@ -1492,7 +1492,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the principle behind nuclear magnetic resonance (NMR) spectroscopy?',
     options: ['Magnetic properties of atomic nuclei', 'Radioactive decay', 'Chemical reactions', 'Electrical conductivity'],
-    correctAnswer: 'Magnetic properties of atomic nuclei',
+    correctAnswer: 0,
     explanation: 'NMR spectroscopy uses the magnetic properties of atomic nuclei to determine molecular structure and dynamics.'
   },
   {
@@ -1501,7 +1501,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the role of ATP in cellular metabolism?',
     options: ['Energy storage and transfer', 'Protein synthesis', 'DNA replication', 'Cell division'],
-    correctAnswer: 'Energy storage and transfer',
+    correctAnswer: 0,
     explanation: 'ATP (adenosine triphosphate) is the primary energy currency of cells, storing and transferring energy for cellular processes.'
   },
   {
@@ -1510,7 +1510,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the principle behind polymerase chain reaction (PCR)?',
     options: ['DNA amplification', 'Protein synthesis', 'Cell division', 'Energy production'],
-    correctAnswer: 'DNA amplification',
+    correctAnswer: 0,
     explanation: 'PCR is a technique used to amplify specific DNA sequences by creating multiple copies through repeated cycles of DNA replication.'
   },
   {
@@ -1524,7 +1524,7 @@ export const questionBank: Question[] = [
       'It repairs DNA damage',
       'It synthesizes new genes'
     ],
-    correctAnswer: 'It modifies gene expression without changing DNA sequence',
+    correctAnswer: 0,
     explanation: 'Epigenetics involves changes in gene expression that do not involve changes to the DNA sequence itself.'
   },
   {
@@ -1538,7 +1538,7 @@ export const questionBank: Question[] = [
       'It describes atomic structure',
       'It explains chemical bonding'
     ],
-    correctAnswer: 'It demonstrates quantum vacuum fluctuations',
+    correctAnswer: 0,
     explanation: 'The Casimir effect demonstrates the existence of quantum vacuum fluctuations and their ability to produce measurable forces.'
   },
   {
@@ -1552,7 +1552,7 @@ export const questionBank: Question[] = [
       'It generates energy',
       'It synthesizes proteins'
     ],
-    correctAnswer: 'It demonstrates chemical oscillation and pattern formation',
+    correctAnswer: 0,
     explanation: 'The Belousov-Zhabotinsky reaction is a classical example of non-equilibrium thermodynamics, resulting in the establishment of a nonlinear chemical oscillator.'
   },
   {
@@ -1566,7 +1566,7 @@ export const questionBank: Question[] = [
       'It creates new elements',
       'It synthesizes proteins'
     ],
-    correctAnswer: 'It enables industrial nitrogen fixation',
+    correctAnswer: 0,
     explanation: 'The Haber process is an artificial nitrogen fixation process that revolutionized agriculture by enabling the industrial production of ammonia.'
   },
   {
@@ -1580,7 +1580,7 @@ export const questionBank: Question[] = [
       'It synthesizes proteins',
       'It replicates DNA'
     ],
-    correctAnswer: 'It generates ATP and CO2 from acetyl-CoA',
+    correctAnswer: 0,
     explanation: 'The Krebs cycle is a key metabolic pathway that generates energy through the oxidation of acetyl-CoA in cellular respiration.'
   },
   {
@@ -1594,7 +1594,7 @@ export const questionBank: Question[] = [
       'It generates energy',
       'It processes information faster'
     ],
-    correctAnswer: 'It uses topological states for fault-tolerant quantum computation',
+    correctAnswer: 0,
     explanation: 'Topological quantum computing uses topologically protected states to perform quantum computations that are inherently protected from decoherence.'
   },
   {
@@ -1608,7 +1608,7 @@ export const questionBank: Question[] = [
       'It describes atomic structure',
       'It explains chemical bonding'
     ],
-    correctAnswer: 'It demonstrates quantum conductance quantization',
+    correctAnswer: 0,
     explanation: 'The quantum Hall effect demonstrates the quantization of conductance in two-dimensional electron systems under strong magnetic fields.'
   },
   {
@@ -1622,7 +1622,7 @@ export const questionBank: Question[] = [
       'It describes atomic structure',
       'It explains chemical bonding'
     ],
-    correctAnswer: 'It handles infinities in quantum field calculations',
+    correctAnswer: 0,
     explanation: 'Renormalization is a collection of techniques in quantum field theory used to handle infinities that arise in calculated quantities.'
   },
 ];
@@ -1640,8 +1640,7 @@ export function getQuestionsByCategoryAndDifficulty(
   // Shuffle the questions and their options
   const shuffled = [...filteredQuestions].map(q => {
     const options = [...q.options];
-    const correctAnswer = q.correctAnswer;
-    const correctIndex = options.indexOf(correctAnswer);
+    const correctIndex = q.correctAnswer;
     
     // Shuffle options
     for (let i = options.length - 1; i > 0; i--) {
@@ -1649,13 +1648,14 @@ export function getQuestionsByCategoryAndDifficulty(
       [options[i], options[j]] = [options[j], options[i]];
     }
     
-    // Update correct answer position
-    const newCorrectIndex = options.indexOf(correctAnswer);
+    // Find the new position of the correct answer
+    const correctOption = options[correctIndex];
+    const newCorrectIndex = options.indexOf(correctOption);
     
     return {
       ...q,
       options,
-      correctAnswer: options[newCorrectIndex]
+      correctAnswer: newCorrectIndex
     };
   }).sort(() => Math.random() - 0.5);
   
