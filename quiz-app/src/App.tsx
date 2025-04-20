@@ -121,7 +121,7 @@ const App: React.FC = () => {
       50, // Total questions per quiz
       {
         easy: 15,    // 30% easy questions
-        medium: 20,  // 40% medium questions
+        complex: 20,  // 40% complex questions
         hard: 10,    // 20% hard questions
         'extremely complex': 5 // 10% extremely complex questions
       }

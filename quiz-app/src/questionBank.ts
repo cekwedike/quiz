@@ -1,7 +1,7 @@
 export interface Question {
   id: string;
   category: string;
-  difficulty: 'easy' | 'medium' | 'hard' | 'extremely complex';
+  difficulty: 'easy' | 'complex' | 'hard' | 'extremely complex';
   question: string;
   options: string[];
   correctAnswer: string;
@@ -15,7 +15,7 @@ export const questionBank: Question[] = [
     category: 'Science',
     difficulty: 'easy',
     question: 'What is the chemical symbol for gold?',
-    options: ['Au', 'Ag', 'Fe', 'Cu'],
+    options: ['Ag', 'Au', 'Fe', 'Cu'],
     correctAnswer: 'Au',
     explanation: 'Gold is represented by the chemical symbol Au, derived from the Latin word "aurum".'
   },
@@ -24,16 +24,16 @@ export const questionBank: Question[] = [
     category: 'Science',
     difficulty: 'easy',
     question: 'What is the largest planet in our solar system?',
-    options: ['Jupiter', 'Saturn', 'Neptune', 'Earth'],
+    options: ['Saturn', 'Jupiter', 'Neptune', 'Earth'],
     correctAnswer: 'Jupiter',
     explanation: 'Jupiter is the largest planet in our solar system, with a diameter of about 86,881 miles.'
   },
   {
     id: 'sci3',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the process by which plants convert sunlight into energy?',
-    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    options: ['Respiration', 'Transpiration', 'Photosynthesis', 'Fermentation'],
     correctAnswer: 'Photosynthesis',
     explanation: 'Photosynthesis is the process by which plants convert sunlight, carbon dioxide, and water into glucose and oxygen.'
   },
@@ -43,10 +43,10 @@ export const questionBank: Question[] = [
     difficulty: 'hard',
     question: 'What is the Heisenberg Uncertainty Principle?',
     options: [
-      'It is impossible to know both position and momentum of a particle simultaneously',
       'Energy cannot be created or destroyed',
       'Every action has an equal and opposite reaction',
-      'The speed of light is constant in a vacuum'
+      'The speed of light is constant in a vacuum',
+      'It is impossible to know both position and momentum of a particle simultaneously'
     ],
     correctAnswer: 'It is impossible to know both position and momentum of a particle simultaneously',
     explanation: 'The Heisenberg Uncertainty Principle states that the more precisely the position of a particle is determined, the less precisely its momentum can be known, and vice versa.'
@@ -57,10 +57,10 @@ export const questionBank: Question[] = [
     difficulty: 'extremely complex',
     question: 'What is the significance of the Higgs boson in the Standard Model of particle physics?',
     options: [
-      'It gives mass to elementary particles',
       'It mediates the strong nuclear force',
       'It is responsible for radioactive decay',
-      'It explains dark matter'
+      'It explains dark matter',
+      'It gives mass to elementary particles'
     ],
     correctAnswer: 'It gives mass to elementary particles',
     explanation: 'The Higgs boson is associated with the Higgs field, which gives mass to elementary particles through the Higgs mechanism.'
@@ -114,7 +114,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci11',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the process by which cells divide to create new cells?',
     options: ['Mitosis', 'Meiosis', 'Photosynthesis', 'Respiration'],
     correctAnswer: 'Mitosis',
@@ -123,7 +123,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci12',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the chemical process that breaks down food to release energy?',
     options: ['Cellular Respiration', 'Photosynthesis', 'Fermentation', 'Digestion'],
     correctAnswer: 'Cellular Respiration',
@@ -132,7 +132,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci13',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the theory that explains the movement of Earth\'s continents?',
     options: ['Plate Tectonics', 'Continental Drift', 'Seafloor Spreading', 'Mantle Convection'],
     correctAnswer: 'Plate Tectonics',
@@ -141,7 +141,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci14',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants lose water through their leaves?',
     options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Osmosis'],
     correctAnswer: 'Transpiration',
@@ -150,7 +150,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci15',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the force that opposes motion between two surfaces in contact?',
     options: ['Friction', 'Gravity', 'Tension', 'Normal Force'],
     correctAnswer: 'Friction',
@@ -344,7 +344,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci31',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which water moves through a plant?',
     options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Osmosis'],
     correctAnswer: 'Transpiration',
@@ -353,7 +353,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci32',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the theory that explains the origin of the universe?',
     options: ['Big Bang Theory', 'Steady State Theory', 'String Theory', 'Quantum Theory'],
     correctAnswer: 'Big Bang Theory',
@@ -362,7 +362,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci33',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which rocks are broken down into smaller pieces?',
     options: ['Weathering', 'Erosion', 'Deposition', 'Sedimentation'],
     correctAnswer: 'Weathering',
@@ -371,7 +371,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci34',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants reproduce without seeds?',
     options: ['Vegetative Propagation', 'Pollination', 'Fertilization', 'Germination'],
     correctAnswer: 'Vegetative Propagation',
@@ -380,7 +380,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci35',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the force that keeps planets in orbit around the sun?',
     options: ['Gravity', 'Magnetism', 'Friction', 'Tension'],
     correctAnswer: 'Gravity',
@@ -574,7 +574,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci51',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants convert light energy into chemical energy?',
     options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
     correctAnswer: 'Photosynthesis',
@@ -583,7 +583,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci52',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the theory that explains the evolution of species?',
     options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
     correctAnswer: 'Natural Selection',
@@ -592,7 +592,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci53',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which rocks are formed from sediments?',
     options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
     correctAnswer: 'Lithification',
@@ -601,7 +601,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci54',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants respond to light?',
     options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
     correctAnswer: 'Phototropism',
@@ -610,7 +610,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci55',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the force that opposes the motion of objects through fluids?',
     options: ['Drag', 'Gravity', 'Friction', 'Tension'],
     correctAnswer: 'Drag',
@@ -804,7 +804,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci71',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants convert light energy into chemical energy?',
     options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
     correctAnswer: 'Photosynthesis',
@@ -813,7 +813,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci72',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the theory that explains the evolution of species?',
     options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
     correctAnswer: 'Natural Selection',
@@ -822,7 +822,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci73',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which rocks are formed from sediments?',
     options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
     correctAnswer: 'Lithification',
@@ -831,7 +831,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci74',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants respond to light?',
     options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
     correctAnswer: 'Phototropism',
@@ -840,7 +840,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci75',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the force that opposes the motion of objects through fluids?',
     options: ['Drag', 'Gravity', 'Friction', 'Tension'],
     correctAnswer: 'Drag',
@@ -1034,7 +1034,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci91',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants convert light energy into chemical energy?',
     options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
     correctAnswer: 'Photosynthesis',
@@ -1043,7 +1043,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci92',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the theory that explains the evolution of species?',
     options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
     correctAnswer: 'Natural Selection',
@@ -1052,7 +1052,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci93',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which rocks are formed from sediments?',
     options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
     correctAnswer: 'Lithification',
@@ -1061,7 +1061,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci94',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the process by which plants respond to light?',
     options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
     correctAnswer: 'Phototropism',
@@ -1070,7 +1070,7 @@ export const questionBank: Question[] = [
   {
     id: 'sci95',
     category: 'Science',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'What is the name of the force that opposes the motion of objects through fluids?',
     options: ['Drag', 'Gravity', 'Friction', 'Tension'],
     correctAnswer: 'Drag',
@@ -1161,7 +1161,7 @@ export const questionBank: Question[] = [
   {
     id: 'his2',
     category: 'History',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'Who was the first President of the United States?',
     options: ['George Washington', 'Thomas Jefferson', 'John Adams', 'Benjamin Franklin'],
     correctAnswer: 'George Washington',
@@ -1196,7 +1196,7 @@ export const questionBank: Question[] = [
   {
     id: 'geo2',
     category: 'Geography',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'Which is the largest desert in the world?',
     options: ['Antarctic Desert', 'Sahara Desert', 'Arabian Desert', 'Gobi Desert'],
     correctAnswer: 'Antarctic Desert',
@@ -1248,7 +1248,7 @@ export const questionBank: Question[] = [
   {
     id: 'spt2',
     category: 'Sports',
-    difficulty: 'medium',
+    difficulty: 'complex',
     question: 'Which country has won the most FIFA World Cup titles?',
     options: ['Brazil', 'Germany', 'Italy', 'Argentina'],
     correctAnswer: 'Brazil',
@@ -1281,15 +1281,34 @@ export const questionBank: Question[] = [
 // Helper function to get questions by category and difficulty
 export function getQuestionsByCategoryAndDifficulty(
   category: string,
-  difficulty: 'easy' | 'medium' | 'hard' | 'extremely complex',
+  difficulty: 'easy' | 'complex' | 'hard' | 'extremely complex',
   count: number
 ): Question[] {
   const filteredQuestions = questionBank.filter(
     q => q.category === category && q.difficulty === difficulty
   );
   
-  // Shuffle the questions
-  const shuffled = [...filteredQuestions].sort(() => Math.random() - 0.5);
+  // Shuffle the questions and their options
+  const shuffled = [...filteredQuestions].map(q => {
+    const options = [...q.options];
+    const correctAnswer = q.correctAnswer;
+    const correctIndex = options.indexOf(correctAnswer);
+    
+    // Shuffle options
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [options[i], options[j]] = [options[j], options[i]];
+    }
+    
+    // Update correct answer position
+    const newCorrectIndex = options.indexOf(correctAnswer);
+    
+    return {
+      ...q,
+      options,
+      correctAnswer: options[newCorrectIndex]
+    };
+  }).sort(() => Math.random() - 0.5);
   
   // Return the requested number of questions
   return shuffled.slice(0, count);
@@ -1301,7 +1320,7 @@ export function getRandomQuestionsForQuiz(
   questionsPerCategory: number,
   difficultyDistribution: {
     easy: number;
-    medium: number;
+    complex: number;
     hard: number;
     'extremely complex': number;
   }
@@ -1312,7 +1331,7 @@ export function getRandomQuestionsForQuiz(
     Object.entries(difficultyDistribution).forEach(([difficulty, count]) => {
       const questions = getQuestionsByCategoryAndDifficulty(
         category,
-        difficulty as 'easy' | 'medium' | 'hard' | 'extremely complex',
+        difficulty as 'easy' | 'complex' | 'hard' | 'extremely complex',
         count
       );
       selectedQuestions.push(...questions);
