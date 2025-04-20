@@ -296,6 +296,856 @@ export const questionBank: Question[] = [
     correctAnswer: 'It concerns the mathematical properties of quantum field theory',
     explanation: 'The Yang-Mills existence and mass gap problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of quantum field theory.'
   },
+  {
+    id: 'sci26',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical symbol for oxygen?',
+    options: ['O', 'Ox', 'O2', 'Oy'],
+    correctAnswer: 'O',
+    explanation: 'Oxygen is represented by the chemical symbol O, derived from the Greek word "oxys" meaning sharp or acid.'
+  },
+  {
+    id: 'sci27',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the smallest bone in the human body?',
+    options: ['Stapes', 'Femur', 'Tibia', 'Radius'],
+    correctAnswer: 'Stapes',
+    explanation: 'The stapes, located in the middle ear, is the smallest bone in the human body, measuring about 2.8-3.5 mm.'
+  },
+  {
+    id: 'sci28',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the process by which plants make their own food?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Digestion'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'Photosynthesis is the process by which plants convert sunlight, carbon dioxide, and water into glucose and oxygen.'
+  },
+  {
+    id: 'sci29',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of force in the International System of Units (SI)?',
+    options: ['Newton', 'Joule', 'Watt', 'Pascal'],
+    correctAnswer: 'Newton',
+    explanation: 'The newton (N) is the SI unit of force, named after Sir Isaac Newton.'
+  },
+  {
+    id: 'sci30',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for table salt?',
+    options: ['NaCl', 'H2O', 'CO2', 'O2'],
+    correctAnswer: 'NaCl',
+    explanation: 'Table salt is sodium chloride (NaCl), composed of sodium (Na) and chlorine (Cl) ions.'
+  },
+  {
+    id: 'sci31',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which water moves through a plant?',
+    options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Osmosis'],
+    correctAnswer: 'Transpiration',
+    explanation: 'Transpiration is the process by which water moves through a plant and evaporates from its leaves.'
+  },
+  {
+    id: 'sci32',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the theory that explains the origin of the universe?',
+    options: ['Big Bang Theory', 'Steady State Theory', 'String Theory', 'Quantum Theory'],
+    correctAnswer: 'Big Bang Theory',
+    explanation: 'The Big Bang Theory is the prevailing cosmological model explaining the existence of the observable universe.'
+  },
+  {
+    id: 'sci33',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which rocks are broken down into smaller pieces?',
+    options: ['Weathering', 'Erosion', 'Deposition', 'Sedimentation'],
+    correctAnswer: 'Weathering',
+    explanation: 'Weathering is the process by which rocks are broken down into smaller pieces by physical or chemical means.'
+  },
+  {
+    id: 'sci34',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants reproduce without seeds?',
+    options: ['Vegetative Propagation', 'Pollination', 'Fertilization', 'Germination'],
+    correctAnswer: 'Vegetative Propagation',
+    explanation: 'Vegetative propagation is a form of asexual reproduction in plants where new plants grow from vegetative parts.'
+  },
+  {
+    id: 'sci35',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the force that keeps planets in orbit around the sun?',
+    options: ['Gravity', 'Magnetism', 'Friction', 'Tension'],
+    correctAnswer: 'Gravity',
+    explanation: 'Gravity is the force that attracts two bodies toward each other, keeping planets in orbit around the sun.'
+  },
+  {
+    id: 'sci36',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the double-slit experiment in quantum mechanics?',
+    options: [
+      'It demonstrated wave-particle duality',
+      'It proved the existence of the aether',
+      'It confirmed Newton\'s laws of motion',
+      'It demonstrated the photoelectric effect'
+    ],
+    correctAnswer: 'It demonstrated wave-particle duality',
+    explanation: 'The double-slit experiment showed that particles can exhibit both wave-like and particle-like behavior.'
+  },
+  {
+    id: 'sci37',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of DNA?',
+    options: [
+      'It explained how genetic information is stored and transmitted',
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci38',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the cosmic microwave background radiation?',
+    options: [
+      'It provided evidence for the Big Bang theory',
+      'It proved the existence of dark matter',
+      'It demonstrated the expansion of the universe',
+      'It explained the formation of galaxies'
+    ],
+    correctAnswer: 'It provided evidence for the Big Bang theory',
+    explanation: 'The discovery of cosmic microwave background radiation provided strong evidence for the Big Bang theory.'
+  },
+  {
+    id: 'sci39',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of penicillin?',
+    options: [
+      'It revolutionized the treatment of bacterial infections',
+      'It proved the germ theory of disease',
+      'It demonstrated the existence of viruses',
+      'It explained the process of immunity'
+    ],
+    correctAnswer: 'It revolutionized the treatment of bacterial infections',
+    explanation: 'The discovery of penicillin revolutionized medicine by providing an effective treatment for bacterial infections.'
+  },
+  {
+    id: 'sci40',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci41',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the P vs NP problem in computer science?',
+    options: [
+      'It concerns the relationship between problems that can be solved quickly and those that can be verified quickly',
+      'It explains the nature of quantum computing',
+      'It describes the behavior of artificial intelligence',
+      'It predicts the future of computing technology'
+    ],
+    correctAnswer: 'It concerns the relationship between problems that can be solved quickly and those that can be verified quickly',
+    explanation: 'The P vs NP problem is one of the seven Millennium Prize Problems, concerning the relationship between problems that can be solved quickly and those that can be verified quickly.'
+  },
+  {
+    id: 'sci42',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Birch and Swinnerton-Dyer conjecture in mathematics?',
+    options: [
+      'It concerns the number of rational points on elliptic curves',
+      'It describes the behavior of prime numbers',
+      'It explains the nature of infinity',
+      'It defines the properties of complex numbers'
+    ],
+    correctAnswer: 'It concerns the number of rational points on elliptic curves',
+    explanation: 'The Birch and Swinnerton-Dyer conjecture is one of the seven Millennium Prize Problems, concerning the number of rational points on elliptic curves.'
+  },
+  {
+    id: 'sci43',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Hodge conjecture in algebraic geometry?',
+    options: [
+      'It concerns the relationship between algebraic cycles and cohomology classes',
+      'It describes the behavior of geometric shapes',
+      'It explains the nature of symmetry',
+      'It defines the properties of topological spaces'
+    ],
+    correctAnswer: 'It concerns the relationship between algebraic cycles and cohomology classes',
+    explanation: 'The Hodge conjecture is one of the seven Millennium Prize Problems, concerning the relationship between algebraic cycles and cohomology classes.'
+  },
+  {
+    id: 'sci44',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Poincaré conjecture in topology?',
+    options: [
+      'It concerns the classification of three-dimensional manifolds',
+      'It describes the behavior of geometric shapes',
+      'It explains the nature of space',
+      'It defines the properties of surfaces'
+    ],
+    correctAnswer: 'It concerns the classification of three-dimensional manifolds',
+    explanation: 'The Poincaré conjecture is one of the seven Millennium Prize Problems, concerning the classification of three-dimensional manifolds.'
+  },
+  {
+    id: 'sci45',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the quantum chromodynamics (QCD) in particle physics?',
+    options: [
+      'It describes the strong interaction between quarks and gluons',
+      'It explains the nature of dark matter',
+      'It describes the behavior of elementary particles',
+      'It predicts the existence of new fundamental forces'
+    ],
+    correctAnswer: 'It describes the strong interaction between quarks and gluons',
+    explanation: 'Quantum chromodynamics (QCD) is the theory of the strong interaction between quarks and gluons.'
+  },
+  {
+    id: 'sci46',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical symbol for carbon?',
+    options: ['C', 'Ca', 'Co', 'Cr'],
+    correctAnswer: 'C',
+    explanation: 'Carbon is represented by the chemical symbol C, derived from the Latin word "carbo" meaning coal.'
+  },
+  {
+    id: 'sci47',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the largest organ in the human body?',
+    options: ['Skin', 'Liver', 'Heart', 'Brain'],
+    correctAnswer: 'Skin',
+    explanation: 'The skin is the largest organ in the human body, covering an area of about 20 square feet in adults.'
+  },
+  {
+    id: 'sci48',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the process by which plants release water vapor?',
+    options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Evaporation'],
+    correctAnswer: 'Transpiration',
+    explanation: 'Transpiration is the process by which plants release water vapor through their stomata.'
+  },
+  {
+    id: 'sci49',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of electric current in the International System of Units (SI)?',
+    options: ['Ampere', 'Volt', 'Ohm', 'Watt'],
+    correctAnswer: 'Ampere',
+    explanation: 'The ampere (A) is the SI unit of electric current, named after André-Marie Ampère.'
+  },
+  {
+    id: 'sci50',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for carbon dioxide?',
+    options: ['CO2', 'CO', 'C2O', 'CO3'],
+    correctAnswer: 'CO2',
+    explanation: 'Carbon dioxide is composed of one carbon atom and two oxygen atoms, hence the formula CO2.'
+  },
+  {
+    id: 'sci51',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants convert light energy into chemical energy?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'Photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose.'
+  },
+  {
+    id: 'sci52',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the theory that explains the evolution of species?',
+    options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
+    correctAnswer: 'Natural Selection',
+    explanation: 'Natural selection is the process by which organisms better adapted to their environment tend to survive and produce more offspring.'
+  },
+  {
+    id: 'sci53',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which rocks are formed from sediments?',
+    options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
+    correctAnswer: 'Lithification',
+    explanation: 'Lithification is the process by which sediments are compacted and cemented to form sedimentary rocks.'
+  },
+  {
+    id: 'sci54',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants respond to light?',
+    options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
+    correctAnswer: 'Phototropism',
+    explanation: 'Phototropism is the process by which plants grow toward or away from light.'
+  },
+  {
+    id: 'sci55',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the force that opposes the motion of objects through fluids?',
+    options: ['Drag', 'Gravity', 'Friction', 'Tension'],
+    correctAnswer: 'Drag',
+    explanation: 'Drag is the force that opposes the motion of objects through fluids, such as air or water.'
+  },
+  {
+    id: 'sci56',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci57',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci58',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the double helix?',
+    options: [
+      'It explained how genetic information is stored and transmitted',
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci59',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci60',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci61',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci62',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci63',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the double helix?',
+    options: [
+      'It explained how genetic information is stored and transmitted',
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci64',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci65',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci66',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical symbol for nitrogen?',
+    options: ['N', 'Ni', 'Na', 'Ne'],
+    correctAnswer: 'N',
+    explanation: 'Nitrogen is represented by the chemical symbol N, derived from the Greek word "nitron" meaning native soda.'
+  },
+  {
+    id: 'sci67',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the smallest unit of life?',
+    options: ['Cell', 'Atom', 'Molecule', 'Organelle'],
+    correctAnswer: 'Cell',
+    explanation: 'The cell is the smallest unit of life, capable of performing all the functions necessary for life.'
+  },
+  {
+    id: 'sci68',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the process by which plants take in carbon dioxide?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'During photosynthesis, plants take in carbon dioxide and release oxygen.'
+  },
+  {
+    id: 'sci69',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of energy in the International System of Units (SI)?',
+    options: ['Joule', 'Watt', 'Newton', 'Pascal'],
+    correctAnswer: 'Joule',
+    explanation: 'The joule (J) is the SI unit of energy, named after James Prescott Joule.'
+  },
+  {
+    id: 'sci70',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for methane?',
+    options: ['CH4', 'CO2', 'H2O', 'NH3'],
+    correctAnswer: 'CH4',
+    explanation: 'Methane is composed of one carbon atom and four hydrogen atoms, hence the formula CH4.'
+  },
+  {
+    id: 'sci71',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants convert light energy into chemical energy?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'Photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose.'
+  },
+  {
+    id: 'sci72',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the theory that explains the evolution of species?',
+    options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
+    correctAnswer: 'Natural Selection',
+    explanation: 'Natural selection is the process by which organisms better adapted to their environment tend to survive and produce more offspring.'
+  },
+  {
+    id: 'sci73',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which rocks are formed from sediments?',
+    options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
+    correctAnswer: 'Lithification',
+    explanation: 'Lithification is the process by which sediments are compacted and cemented to form sedimentary rocks.'
+  },
+  {
+    id: 'sci74',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants respond to light?',
+    options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
+    correctAnswer: 'Phototropism',
+    explanation: 'Phototropism is the process by which plants grow toward or away from light.'
+  },
+  {
+    id: 'sci75',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the force that opposes the motion of objects through fluids?',
+    options: ['Drag', 'Gravity', 'Friction', 'Tension'],
+    correctAnswer: 'Drag',
+    explanation: 'Drag is the force that opposes the motion of objects through fluids, such as air or water.'
+  },
+  {
+    id: 'sci76',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci77',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci78',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the double helix?',
+    options: [
+      'It explained how genetic information is stored and transmitted',
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci79',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci80',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci81',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci82',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci83',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the double helix?',
+    options: [
+      'It explained how genetic information is stored and transmitted',
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci84',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci85',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci86',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical symbol for hydrogen?',
+    options: ['H', 'He', 'Hy', 'Hg'],
+    correctAnswer: 'H',
+    explanation: 'Hydrogen is represented by the chemical symbol H, derived from the Greek word "hydro" meaning water.'
+  },
+  {
+    id: 'sci87',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the largest organ in the human body?',
+    options: ['Skin', 'Liver', 'Heart', 'Brain'],
+    correctAnswer: 'Skin',
+    explanation: 'The skin is the largest organ in the human body, covering an area of about 20 square feet in adults.'
+  },
+  {
+    id: 'sci88',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the process by which plants release oxygen?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'During photosynthesis, plants release oxygen as a byproduct of converting carbon dioxide and water into glucose.'
+  },
+  {
+    id: 'sci89',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of power in the International System of Units (SI)?',
+    options: ['Watt', 'Joule', 'Newton', 'Pascal'],
+    correctAnswer: 'Watt',
+    explanation: 'The watt (W) is the SI unit of power, named after James Watt.'
+  },
+  {
+    id: 'sci90',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for ammonia?',
+    options: ['NH3', 'NO2', 'N2O', 'NO'],
+    correctAnswer: 'NH3',
+    explanation: 'Ammonia is composed of one nitrogen atom and three hydrogen atoms, hence the formula NH3.'
+  },
+  {
+    id: 'sci91',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants convert light energy into chemical energy?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'Photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose.'
+  },
+  {
+    id: 'sci92',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the theory that explains the evolution of species?',
+    options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
+    correctAnswer: 'Natural Selection',
+    explanation: 'Natural selection is the process by which organisms better adapted to their environment tend to survive and produce more offspring.'
+  },
+  {
+    id: 'sci93',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which rocks are formed from sediments?',
+    options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
+    correctAnswer: 'Lithification',
+    explanation: 'Lithification is the process by which sediments are compacted and cemented to form sedimentary rocks.'
+  },
+  {
+    id: 'sci94',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the process by which plants respond to light?',
+    options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
+    correctAnswer: 'Phototropism',
+    explanation: 'Phototropism is the process by which plants grow toward or away from light.'
+  },
+  {
+    id: 'sci95',
+    category: 'Science',
+    difficulty: 'medium',
+    question: 'What is the name of the force that opposes the motion of objects through fluids?',
+    options: ['Drag', 'Gravity', 'Friction', 'Tension'],
+    correctAnswer: 'Drag',
+    explanation: 'Drag is the force that opposes the motion of objects through fluids, such as air or water.'
+  },
+  {
+    id: 'sci96',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci97',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+  {
+    id: 'sci98',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the double helix?',
+    options: [
+      'It explained how genetic information is stored and transmitted',
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci99',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci100',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
   // Add more science questions here...
 
   // History Questions (100)
