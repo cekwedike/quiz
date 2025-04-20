@@ -83,6 +83,9 @@ function App() {
   const [stats, setStats] = useState(storageManager.getStats());
   const [selectedDifficulty, setSelectedDifficulty] = useState<'all' | 'simple' | 'complex' | 'extremely complex'>('all');
   const [highScores, setHighScores] = useState(storageManager.getHighScores());
+  const [enhancedStats, setEnhancedStats] = useState(storageManager.getEnhancedStats());
+  const [showAchievements, setShowAchievements] = useState(false);
+  const [showLearningProgress, setShowLearningProgress] = useState(false);
 
   useEffect(() => {
     if (currentQuestion) {
@@ -240,16 +243,17 @@ function App() {
       date: new Date().toISOString()
     });
 
-    // Update statistics
-    storageManager.updateStats(
+    // Update enhanced statistics
+    storageManager.updateEnhancedStats(
       score,
       quizQuestions.length,
       finalResults,
-      selectedCategories
+      selectedCategories.length ? selectedCategories : categories
     );
 
     // Update local stats state
-    setStats(storageManager.getStats());
+    setEnhancedStats(storageManager.getEnhancedStats());
+    setHighScores(storageManager.getHighScores());
   };
 
   const restartQuiz = () => {
@@ -310,6 +314,50 @@ function App() {
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
+
+  // Add achievement notification component
+  const AchievementNotification = ({ achievement }: { achievement: Achievement }) => (
+    <div className="achievement-notification">
+      <div className="achievement-icon">{achievement.icon}</div>
+      <div className="achievement-content">
+        <h3>New Achievement Unlocked!</h3>
+        <p className="achievement-name">{achievement.name}</p>
+        <p className="achievement-description">{achievement.description}</p>
+      </div>
+    </div>
+  );
+
+  // Add learning progress component
+  const LearningProgress = () => (
+    <div className="learning-progress">
+      <h3>Learning Progress</h3>
+      <div className="progress-grid">
+        {Object.entries(enhancedStats.learningProgress).map(([category, progress]) => (
+          <div key={category} className="progress-card">
+            <div className="progress-header">
+              <span className="category-icon">{getCategoryIcon(category)}</span>
+              <span>{category}</span>
+            </div>
+            <div className="progress-content">
+              <div className="progress-bar">
+                <div 
+                  className="progress-fill"
+                  style={{ width: `${((progress.correct / progress.total) * 100)}%` }}
+                />
+              </div>
+              <p>{((progress.correct / progress.total) * 100).toFixed(1)}%</p>
+              <p className="progress-detail">
+                {progress.correct}/{progress.total} correct
+              </p>
+              <p className="progress-date">
+                Last studied: {new Date(progress.lastStudied).toLocaleDateString()}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <div className="App">
@@ -391,62 +439,119 @@ function App() {
                 <h2>Your Quiz Statistics</h2>
                 <p>Track your progress and achievements</p>
               </div>
-              <div className="stats-content">
-                <div className="stats-overview">
-                  <div className="stat-card">
-                    <h3>Games Played</h3>
-                    <p className="stat-value">{stats.gamesPlayed}</p>
-                  </div>
-                  <div className="stat-card">
-                    <h3>Average Score</h3>
-                    <p className="stat-value">{(stats.averageScore * 100).toFixed(1)}%</p>
-                  </div>
-                  <div className="stat-card">
-                    <h3>Total Questions</h3>
-                    <p className="stat-value">{stats.totalQuestions}</p>
-                  </div>
-                </div>
-
-                <div className="stats-section">
-                  <h3>Category Performance</h3>
-                  <div className="category-stats">
-                    {Object.entries(stats.categoryStats).map(([category, results]) => (
-                      <div key={category} className="category-stat-card">
-                        <div className="category-stat-header">
-                          <span className="category-icon">{getCategoryIcon(category)}</span>
-                          <span>{category}</span>
-                        </div>
-                        <div className="category-stat-content">
-                          <div className="progress-bar">
-                            <div 
-                              className="progress-fill"
-                              style={{ width: `${((results.correct / results.total) * 100)}%` }}
-                            />
-                          </div>
-                          <p>{((results.correct / results.total) * 100).toFixed(1)}%</p>
-                          <p className="stat-detail">{results.correct}/{results.total} correct</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="stats-section">
-                  <h3>Recent High Scores</h3>
-                  <div className="high-scores-list">
-                    {highScores.map((score, index) => (
-                      <div key={index} className="high-score-card">
-                        <div className="score-rank">#{index + 1}</div>
-                        <div className="score-details">
-                          <p className="score-main">{score.score}/{score.totalQuestions}</p>
-                          <p className="score-time">{formatTime(score.timeSpent)}</p>
-                          <p className="score-date">{new Date(score.date).toLocaleDateString()}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              
+              <div className="stats-tabs">
+                <button 
+                  className={`stats-tab ${!showAchievements && !showLearningProgress ? 'active' : ''}`}
+                  onClick={() => {
+                    setShowAchievements(false);
+                    setShowLearningProgress(false);
+                  }}
+                >
+                  Overview
+                </button>
+                <button 
+                  className={`stats-tab ${showAchievements ? 'active' : ''}`}
+                  onClick={() => {
+                    setShowAchievements(true);
+                    setShowLearningProgress(false);
+                  }}
+                >
+                  Achievements
+                </button>
+                <button 
+                  className={`stats-tab ${showLearningProgress ? 'active' : ''}`}
+                  onClick={() => {
+                    setShowAchievements(false);
+                    setShowLearningProgress(true);
+                  }}
+                >
+                  Learning Progress
+                </button>
               </div>
+
+              {showAchievements ? (
+                <div className="achievements-grid">
+                  {enhancedStats.achievements.map(achievement => (
+                    <div 
+                      key={achievement.id}
+                      className={`achievement-card ${achievement.unlocked ? 'unlocked' : 'locked'}`}
+                    >
+                      <div className="achievement-icon">{achievement.icon}</div>
+                      <div className="achievement-info">
+                        <h3>{achievement.name}</h3>
+                        <p>{achievement.description}</p>
+                        {achievement.unlocked && achievement.dateUnlocked && (
+                          <p className="achievement-date">
+                            Unlocked: {new Date(achievement.dateUnlocked).toLocaleDateString()}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : showLearningProgress ? (
+                <LearningProgress />
+              ) : (
+                <div className="stats-content">
+                  <div className="stats-overview">
+                    <div className="stat-card">
+                      <h3>Games Played</h3>
+                      <p className="stat-value">{enhancedStats.gamesPlayed}</p>
+                    </div>
+                    <div className="stat-card">
+                      <h3>Average Score</h3>
+                      <p className="stat-value">{(enhancedStats.averageScore * 100).toFixed(1)}%</p>
+                    </div>
+                    <div className="stat-card">
+                      <h3>Current Streak</h3>
+                      <p className="stat-value">{enhancedStats.streaks.current} days</p>
+                      <p className="stat-detail">Longest: {enhancedStats.streaks.longest} days</p>
+                    </div>
+                  </div>
+
+                  <div className="stats-section">
+                    <h3>Category Performance</h3>
+                    <div className="category-stats">
+                      {Object.entries(enhancedStats.categoryStats).map(([category, results]) => (
+                        <div key={category} className="category-stat-card">
+                          <div className="category-stat-header">
+                            <span className="category-icon">{getCategoryIcon(category)}</span>
+                            <span>{category}</span>
+                          </div>
+                          <div className="category-stat-content">
+                            <div className="progress-bar">
+                              <div 
+                                className="progress-fill"
+                                style={{ width: `${((results.correct / results.total) * 100)}%` }}
+                              />
+                            </div>
+                            <p>{((results.correct / results.total) * 100).toFixed(1)}%</p>
+                            <p className="stat-detail">{results.correct}/{results.total} correct</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="stats-section">
+                    <h3>Recent High Scores</h3>
+                    <div className="high-scores-list">
+                      {highScores.map((score, index) => (
+                        <div key={index} className="high-score-card">
+                          <div className="score-rank">#{index + 1}</div>
+                          <div className="score-details">
+                            <p className="score-main">{score.score}/{score.totalQuestions}</p>
+                            <p className="score-time">{formatTime(score.timeSpent)}</p>
+                            <p className="score-date">{new Date(score.date).toLocaleDateString()}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <button 
                 className="primary-button"
                 onClick={() => {
@@ -470,8 +575,8 @@ function App() {
                 className="delete-stats-button"
                 onClick={() => {
                   if (window.confirm('Are you sure you want to delete all statistics? This action cannot be undone.')) {
-                    storageManager.clearStats();
-                    setStats(storageManager.getStats());
+                    storageManager.clearAllData();
+                    setEnhancedStats(storageManager.getEnhancedStats());
                   }
                 }}
                 style={{ marginTop: '1rem' }}
@@ -550,6 +655,11 @@ function App() {
                 View All Stats
               </button>
             </div>
+            {enhancedStats.achievements
+              .filter(a => a.unlocked && new Date(a.dateUnlocked!).toDateString() === new Date().toDateString())
+              .map(achievement => (
+                <AchievementNotification key={achievement.id} achievement={achievement} />
+              ))}
           </div>
         ) : (
           <div className="quiz-content">
@@ -652,7 +762,7 @@ function App() {
 function getCategoryIcon(category: string): string {
   const icons: { [key: string]: string } = {
     Science: '🔬',
-    History: '📚',
+    History: '��',
     Geography: '🌍',
     Technology: '💻',
     Sports: '⚽',
