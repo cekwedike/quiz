@@ -762,7 +762,7 @@ function App() {
 function getCategoryIcon(category: string): string {
   const icons: { [key: string]: string } = {
     Science: '🔬',
-    History: '��',
+    History: '📜',
     Geography: '🌍',
     Technology: '💻',
     Sports: '⚽',
