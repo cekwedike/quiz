@@ -2,76 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { soundManager } from './sounds';
 import { storageManager, Achievement } from './storage';
+import { getRandomQuestionsForQuiz, Question } from './questionBank';
 
-interface Question {
-  id: number;
-  question: string;
-  options: string[];
-  correctAnswer: string;
-  category: string;
-  difficulty: 'simple' | 'complex' | 'extremely complex';
-}
-
-const questions: Question[] = [
-  // Simple Questions
-  { id: 1, question: "What is the chemical symbol for gold?", options: ["Au", "Ag", "Fe", "Cu"], correctAnswer: "Au", category: "Science", difficulty: "simple" },
-  { id: 2, question: "Which planet is known as the Red Planet?", options: ["Venus", "Mars", "Jupiter", "Saturn"], correctAnswer: "Mars", category: "Science", difficulty: "simple" },
-  { id: 3, question: "What is the capital of Japan?", options: ["Seoul", "Beijing", "Tokyo", "Bangkok"], correctAnswer: "Tokyo", category: "Geography", difficulty: "simple" },
-  { id: 4, question: "Who painted the Mona Lisa?", options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"], correctAnswer: "Leonardo da Vinci", category: "History", difficulty: "simple" },
-  { id: 5, question: "What does CPU stand for?", options: ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility", "Computer Processing Unit"], correctAnswer: "Central Processing Unit", category: "Technology", difficulty: "simple" },
-  { id: 6, question: "In which sport would you perform a slam dunk?", options: ["Football", "Basketball", "Tennis", "Golf"], correctAnswer: "Basketball", category: "Sports", difficulty: "simple" },
-  { id: 7, question: "Who played Iron Man in the Marvel Cinematic Universe?", options: ["Chris Evans", "Chris Hemsworth", "Robert Downey Jr.", "Mark Ruffalo"], correctAnswer: "Robert Downey Jr.", category: "Entertainment", difficulty: "simple" },
-  { id: 8, question: "What is the largest ocean on Earth?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], correctAnswer: "Pacific", category: "Geography", difficulty: "simple" },
-  { id: 9, question: "Which gas do plants absorb from the atmosphere?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], correctAnswer: "Carbon Dioxide", category: "Science", difficulty: "simple" },
-  { id: 10, question: "What year was the first iPhone released?", options: ["2005", "2006", "2007", "2008"], correctAnswer: "2007", category: "Technology", difficulty: "simple" },
-
-  // Complex Questions
-  { id: 11, question: "Which programming language is known as the 'mother of all languages'?", options: ["Python", "Java", "C", "Assembly"], correctAnswer: "C", category: "Technology", difficulty: "complex" },
-  { id: 12, question: "What is the name of the process by which plants convert sunlight into energy?", options: ["Photosynthesis", "Respiration", "Transpiration", "Germination"], correctAnswer: "Photosynthesis", category: "Science", difficulty: "complex" },
-  { id: 13, question: "Which ancient civilization built the Machu Picchu?", options: ["Aztec", "Maya", "Inca", "Olmec"], correctAnswer: "Inca", category: "History", difficulty: "complex" },
-  { id: 14, question: "What is the name of the largest desert in the world?", options: ["Sahara", "Antarctic", "Arabian", "Gobi"], correctAnswer: "Antarctic", category: "Geography", difficulty: "complex" },
-  { id: 15, question: "In which year did the Berlin Wall fall?", options: ["1987", "1989", "1991", "1993"], correctAnswer: "1989", category: "History", difficulty: "complex" },
-  { id: 16, question: "What is the name of the first artificial satellite launched into space?", options: ["Sputnik 1", "Explorer 1", "Vanguard 1", "Telstar 1"], correctAnswer: "Sputnik 1", category: "Science", difficulty: "complex" },
-  { id: 17, question: "Which country won the first FIFA World Cup?", options: ["Brazil", "Uruguay", "Argentina", "Italy"], correctAnswer: "Uruguay", category: "Sports", difficulty: "complex" },
-  { id: 18, question: "What is the name of the first computer programmer?", options: ["Alan Turing", "Ada Lovelace", "Charles Babbage", "Grace Hopper"], correctAnswer: "Ada Lovelace", category: "Technology", difficulty: "complex" },
-  { id: 19, question: "Which movie won the first Academy Award for Best Picture?", options: ["Wings", "Sunrise", "The Jazz Singer", "Metropolis"], correctAnswer: "Wings", category: "Entertainment", difficulty: "complex" },
-  { id: 20, question: "What is the name of the highest mountain in Africa?", options: ["Mount Kilimanjaro", "Mount Kenya", "Mount Stanley", "Mount Meru"], correctAnswer: "Mount Kilimanjaro", category: "Geography", difficulty: "complex" },
-
-  // Extremely Complex Questions
-  { id: 21, question: "What is the name of the theorem that states that no three positive integers a, b, and c satisfy the equation aⁿ + bⁿ = cⁿ for any integer value of n greater than 2?", options: ["Fermat's Last Theorem", "Pythagorean Theorem", "Euler's Theorem", "Gauss's Theorem"], correctAnswer: "Fermat's Last Theorem", category: "Science", difficulty: "extremely complex" },
-  { id: 22, question: "Which ancient language is considered the ancestor of most modern European languages?", options: ["Latin", "Sanskrit", "Proto-Indo-European", "Ancient Greek"], correctAnswer: "Proto-Indo-European", category: "History", difficulty: "extremely complex" },
-  { id: 23, question: "What is the name of the quantum phenomenon where particles can be connected regardless of distance?", options: ["Quantum Tunneling", "Quantum Entanglement", "Quantum Superposition", "Quantum Decoherence"], correctAnswer: "Quantum Entanglement", category: "Science", difficulty: "extremely complex" },
-  { id: 24, question: "Which algorithm is used to find the shortest path between nodes in a graph?", options: ["Dijkstra's Algorithm", "Kruskal's Algorithm", "Prim's Algorithm", "Bellman-Ford Algorithm"], correctAnswer: "Dijkstra's Algorithm", category: "Technology", difficulty: "extremely complex" },
-  { id: 25, question: "What is the name of the ancient trade route that connected the East and West?", options: ["Silk Road", "Spice Route", "Amber Road", "Incense Route"], correctAnswer: "Silk Road", category: "History", difficulty: "extremely complex" },
-  { id: 26, question: "Which mathematical concept describes the behavior of dynamic systems that are highly sensitive to initial conditions?", options: ["Fractal Geometry", "Chaos Theory", "Game Theory", "Graph Theory"], correctAnswer: "Chaos Theory", category: "Science", difficulty: "extremely complex" },
-  { id: 27, question: "What is the name of the first computer virus ever created?", options: ["Creeper", "Elk Cloner", "Brain", "Morris Worm"], correctAnswer: "Creeper", category: "Technology", difficulty: "extremely complex" },
-  { id: 28, question: "Which ancient civilization developed the concept of zero?", options: ["Babylonian", "Egyptian", "Mayan", "Indian"], correctAnswer: "Indian", category: "History", difficulty: "extremely complex" },
-  { id: 29, question: "What is the name of the paradox that states that a faster-than-light signal would violate causality?", options: ["Twin Paradox", "Grandfather Paradox", "Bootstrap Paradox", "Tachyonic Antitelephone"], correctAnswer: "Tachyonic Antitelephone", category: "Science", difficulty: "extremely complex" },
-  { id: 30, question: "Which programming paradigm is based on the concept of 'objects'?", options: ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], correctAnswer: "Object-Oriented Programming", category: "Technology", difficulty: "extremely complex" },
-
-  // Additional Simple Questions
-  { id: 31, question: "What is the largest mammal on Earth?", options: ["Elephant", "Blue Whale", "Giraffe", "Polar Bear"], correctAnswer: "Blue Whale", category: "Science", difficulty: "simple" },
-  { id: 32, question: "Which country is home to the kangaroo?", options: ["New Zealand", "Australia", "South Africa", "Brazil"], correctAnswer: "Australia", category: "Geography", difficulty: "simple" },
-  { id: 33, question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], correctAnswer: "Paris", category: "Geography", difficulty: "simple" },
-  { id: 34, question: "Who wrote 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], correctAnswer: "William Shakespeare", category: "History", difficulty: "simple" },
-  { id: 35, question: "What is the main ingredient in guacamole?", options: ["Tomato", "Avocado", "Onion", "Lime"], correctAnswer: "Avocado", category: "Entertainment", difficulty: "simple" },
-
-  // Additional Complex Questions
-  { id: 36, question: "Which element has the chemical symbol 'O'?", options: ["Oxygen", "Osmium", "Oganesson", "Osmium"], correctAnswer: "Oxygen", category: "Science", difficulty: "complex" },
-  { id: 37, question: "In which year did the Titanic sink?", options: ["1910", "1912", "1914", "1916"], correctAnswer: "1912", category: "History", difficulty: "complex" },
-  { id: 38, question: "What is the largest organ in the human body?", options: ["Heart", "Liver", "Skin", "Brain"], correctAnswer: "Skin", category: "Science", difficulty: "complex" },
-  { id: 39, question: "Which planet has the most moons?", options: ["Jupiter", "Saturn", "Uranus", "Neptune"], correctAnswer: "Saturn", category: "Science", difficulty: "complex" },
-  { id: 40, question: "Who painted 'The Starry Night'?", options: ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Salvador Dalí"], correctAnswer: "Vincent van Gogh", category: "History", difficulty: "complex" },
-
-  // Additional Extremely Complex Questions
-  { id: 41, question: "What is the name of the theory that describes the behavior of matter at the atomic and subatomic level?", options: ["Quantum Mechanics", "Relativity Theory", "String Theory", "Chaos Theory"], correctAnswer: "Quantum Mechanics", category: "Science", difficulty: "extremely complex" },
-  { id: 42, question: "Which ancient civilization developed the concept of zero independently?", options: ["Mayan", "Egyptian", "Roman", "Greek"], correctAnswer: "Mayan", category: "History", difficulty: "extremely complex" },
-  { id: 43, question: "What is the name of the paradox that questions whether a computer can determine if a program will halt or run forever?", options: ["Turing's Paradox", "Halting Problem", "Infinite Loop Paradox", "Computability Paradox"], correctAnswer: "Halting Problem", category: "Technology", difficulty: "extremely complex" },
-  { id: 44, question: "Which mathematical concept describes the study of properties that are preserved under continuous deformations?", options: ["Topology", "Algebra", "Calculus", "Geometry"], correctAnswer: "Topology", category: "Science", difficulty: "extremely complex" },
-  { id: 45, question: "What is the name of the first computer virus to spread in the wild?", options: ["Creeper", "Elk Cloner", "Brain", "Morris Worm"], correctAnswer: "Brain", category: "Technology", difficulty: "extremely complex" }
-];
-
-const categories = Array.from(new Set(questions.map(q => q.category)));
+const categories = ['Science', 'History', 'Geography', 'Technology', 'Sports', 'Entertainment'];
 
 interface Lifelines {
   fiftyFifty: number;
@@ -79,11 +12,11 @@ interface Lifelines {
   skip: number;
 }
 
-function App() {
+const App: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [quizQuestions, setQuizQuestions] = useState<Question[]>(questions);
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -96,7 +29,8 @@ function App() {
     hint: 1,
     skip: 1
   });
-  const [availableOptions, setAvailableOptions] = useState<string[]>([]);
+  const [usedLifelines, setUsedLifelines] = useState<Set<string>>(new Set());
+  const [availableOptions, setAvailableOptions] = useState<Set<string>>(new Set(['1', '2', '3', '4']));
   const [showHint, setShowHint] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [showStats, setShowStats] = useState(false);
@@ -111,9 +45,9 @@ function App() {
 
   useEffect(() => {
     if (currentQuestion) {
-      setAvailableOptions([...currentQuestion.options]);
+      setAvailableOptions(new Set(currentQuestion.options));
     }
-  }, [currentQuestionIndex, quizQuestions]);
+  }, [currentQuestionIndex, questions]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -147,7 +81,7 @@ function App() {
     updateCategoryResults(false);
     
     setTimeout(() => {
-      if (currentQuestionIndex < quizQuestions.length - 1) {
+      if (currentQuestionIndex < questions.length - 1) {
         nextQuestion();
       } else {
         endQuiz();
@@ -175,42 +109,34 @@ function App() {
   };
 
   const startQuiz = () => {
-    let filteredQuestions = questions;
-    
-    // Filter by selected categories
-    if (selectedCategories.length > 0) {
-      filteredQuestions = filteredQuestions.filter(q => selectedCategories.includes(q.category));
+    if (selectedCategories.length === 0) {
+      alert('Please select at least one category');
+      return;
     }
-    
-    // Filter by selected difficulty
-    if (selectedDifficulty !== 'all') {
-      filteredQuestions = filteredQuestions.filter(q => q.difficulty === selectedDifficulty);
-    }
-    
-    // Improved randomization
-    const shuffled = [...filteredQuestions]
-      .sort(() => Math.random() - 0.5)
-      .map(q => ({
-        ...q,
-        options: [...q.options].sort(() => Math.random() - 0.5)
-      }))
-      .slice(0, 10); // Limit to 10 questions per quiz
-    
-    setQuizQuestions(shuffled);
-    setIsStarted(true);
-    setTimeLeft(30);
-    setTotalTime(0);
-    setCategoryResults({});
-    setLifelines({
-      fiftyFifty: 1,
-      hint: 1,
-      skip: 1
-    });
+
+    // Get 50 random questions based on selected categories
+    const quizQuestions = getRandomQuestionsForQuiz(
+      selectedCategories,
+      50, // Total questions per quiz
+      {
+        easy: 15,    // 30% easy questions
+        medium: 20,  // 40% medium questions
+        hard: 10,    // 20% hard questions
+        'extremely complex': 5 // 10% extremely complex questions
+      }
+    );
+
+    setQuestions(quizQuestions);
     setCurrentQuestionIndex(0);
     setScore(0);
+    setTimeLeft(30);
     setSelectedAnswer(null);
-    setIsAnswered(false);
-    setShowHint(false);
+    setIsStarted(true);
+    setShowResult(false);
+    setShowStats(false);
+    setUsedLifelines(new Set());
+    setAvailableOptions(new Set(['1', '2', '3', '4']));
+    setCategoryResults({});
   };
 
   const handleAnswerSelect = (answer: string) => {
@@ -230,7 +156,7 @@ function App() {
     updateCategoryResults(isCorrect);
 
     setTimeout(() => {
-      if (currentQuestionIndex < quizQuestions.length - 1) {
+      if (currentQuestionIndex < questions.length - 1) {
         nextQuestion();
       } else {
         endQuiz();
@@ -244,7 +170,7 @@ function App() {
     setIsAnswered(false);
     setTimeLeft(30);
     setShowHint(false);
-    setAvailableOptions(quizQuestions[currentQuestionIndex + 1].options);
+    setAvailableOptions(new Set(questions[currentQuestionIndex + 1].options));
   };
 
   const endQuiz = () => {
@@ -254,7 +180,7 @@ function App() {
     // Calculate final category results
     const finalResults: { [key: string]: { correct: number, total: number } } = {};
     categories.forEach(category => {
-      const categoryQuestions = quizQuestions.filter(q => q.category === category);
+      const categoryQuestions = questions.filter(q => q.category === category);
       const correctAnswers = categoryResults[category]?.correct || 0;
       if (categoryQuestions.length > 0) {
         finalResults[category] = {
@@ -267,7 +193,7 @@ function App() {
     // Save high score
     storageManager.addHighScore({
       score,
-      totalQuestions: quizQuestions.length,
+      totalQuestions: questions.length,
       categories: selectedCategories.length ? selectedCategories : categories,
       timeSpent: totalTime,
       date: new Date().toISOString()
@@ -276,7 +202,7 @@ function App() {
     // Update enhanced statistics
     storageManager.updateEnhancedStats(
       score,
-      quizQuestions.length,
+      questions.length,
       finalResults,
       selectedCategories.length ? selectedCategories : categories
     );
@@ -318,7 +244,7 @@ function App() {
     const correctAnswer = currentQuestion.correctAnswer;
     const wrongOptions = currentQuestion.options.filter(opt => opt !== correctAnswer);
     const remainingWrong = wrongOptions.sort(() => Math.random() - 0.5).slice(0, 2);
-    const newOptions = [correctAnswer, ...remainingWrong].sort(() => Math.random() - 0.5);
+    const newOptions = new Set([correctAnswer, ...remainingWrong].sort(() => Math.random() - 0.5));
     
     setAvailableOptions(newOptions);
     setLifelines(prev => ({ ...prev, fiftyFifty: 0 }));
@@ -333,7 +259,7 @@ function App() {
   const useSkip = () => {
     if (lifelines.skip === 0 || isAnswered) return;
     setLifelines(prev => ({ ...prev, skip: 0 }));
-    if (currentQuestionIndex < quizQuestions.length - 1) {
+    if (currentQuestionIndex < questions.length - 1) {
       nextQuestion();
     } else {
       endQuiz();
@@ -345,7 +271,7 @@ function App() {
     setIsMuted(isMuted);
   };
 
-  const currentQuestion = quizQuestions[currentQuestionIndex];
+  const currentQuestion = questions[currentQuestionIndex];
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -718,10 +644,10 @@ function App() {
               <div className="score-overview">
                 <div className="score-circle">
                   <div className="score-number">{score}</div>
-                  <div className="score-total">out of {quizQuestions.length}</div>
+                  <div className="score-total">out of {questions.length}</div>
                 </div>
                 <p className="score-percentage">
-                  {((score / quizQuestions.length) * 100).toFixed(1)}%
+                  {((score / questions.length) * 100).toFixed(1)}%
                 </p>
                 <p className="completion-time">Time: {formatTime(totalTime)}</p>
               </div>
@@ -778,10 +704,10 @@ function App() {
                 <div className="progress-bar">
                   <div 
                     className="progress-fill"
-                    style={{ width: `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%` }}
+                    style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
                   />
                 </div>
-                <p>Question {currentQuestionIndex + 1} of {quizQuestions.length}</p>
+                <p>Question {currentQuestionIndex + 1} of {questions.length}</p>
               </div>
               <div className="quiz-info">
                 <p className="category-badge">{currentQuestion.category}</p>
@@ -811,7 +737,7 @@ function App() {
             </div>
 
             <div className="options-grid">
-              {availableOptions.map((option, index) => (
+              {Array.from(availableOptions).map((option, index) => (
                 <button
                   key={index}
                   className={`option-button ${
