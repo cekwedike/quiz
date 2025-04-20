@@ -3918,6 +3918,566 @@ export const questionBank: Question[] = [
     correctAnswer: 'Selous Game Reserve',
     explanation: 'Selous Game Reserve in Tanzania is the largest protected area for African wild dogs in Africa.'
   },
+  {
+    id: 'geo_hard_1',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of orographic precipitation?',
+    options: [
+      'Precipitation caused by the lifting of air over mountains',
+      'Precipitation caused by the convergence of air masses',
+      'Precipitation caused by the cooling of air over water bodies',
+      'Precipitation caused by the heating of air over deserts'
+    ],
+    correctAnswer: 'Precipitation caused by the lifting of air over mountains',
+    explanation: 'Orographic precipitation occurs when moist air is forced to rise over a mountain range, cooling and condensing to form precipitation on the windward side.'
+  },
+  {
+    id: 'geo_hard_2',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the Coriolis effect?',
+    options: [
+      'The Earth\'s rotation',
+      'The Earth\'s revolution around the Sun',
+      'The tilt of the Earth\'s axis',
+      'The gravitational pull of the Moon'
+    ],
+    correctAnswer: 'The Earth\'s rotation',
+    explanation: 'The Coriolis effect is caused by the Earth\'s rotation, which deflects moving objects to the right in the Northern Hemisphere and to the left in the Southern Hemisphere.'
+  },
+  {
+    id: 'geo_hard_3',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of isostasy?',
+    options: [
+      'The equilibrium between the Earth\'s crust and mantle',
+      'The movement of tectonic plates',
+      'The formation of mountain ranges',
+      'The erosion of landforms'
+    ],
+    correctAnswer: 'The equilibrium between the Earth\'s crust and mantle',
+    explanation: 'Isostasy refers to the gravitational equilibrium between the Earth\'s crust and mantle, where the crust "floats" on the denser mantle below.'
+  },
+  {
+    id: 'geo_hard_4',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a rain shadow?',
+    options: [
+      'The presence of a mountain range',
+      'The proximity to an ocean',
+      'The latitude of the location',
+      'The altitude of the location'
+    ],
+    correctAnswer: 'The presence of a mountain range',
+    explanation: 'A rain shadow is formed when moist air rises over a mountain range, causing precipitation on the windward side and creating a dry area on the leeward side.'
+  },
+  {
+    id: 'geo_hard_5',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of thermohaline circulation?',
+    options: [
+      'The global ocean circulation driven by temperature and salinity differences',
+      'The movement of air masses in the atmosphere',
+      'The flow of rivers and streams',
+      'The movement of tectonic plates'
+    ],
+    correctAnswer: 'The global ocean circulation driven by temperature and salinity differences',
+    explanation: 'Thermohaline circulation is the global ocean circulation driven by differences in water density, which is affected by temperature (thermo) and salinity (haline).'
+  },
+  {
+    id: 'geo_hard_6',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a fjord?',
+    options: [
+      'Glacial erosion',
+      'River erosion',
+      'Wind erosion',
+      'Wave erosion'
+    ],
+    correctAnswer: 'Glacial erosion',
+    explanation: 'Fjords are formed by glacial erosion, where glaciers carve deep, U-shaped valleys that are later flooded by rising sea levels.'
+  },
+  {
+    id: 'geo_hard_7',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of desertification?',
+    options: [
+      'The transformation of fertile land into desert',
+      'The expansion of existing deserts',
+      'The formation of new deserts',
+      'The movement of sand dunes'
+    ],
+    correctAnswer: 'The transformation of fertile land into desert',
+    explanation: 'Desertification is the process by which fertile land becomes desert, typically as a result of drought, deforestation, or inappropriate agriculture.'
+  },
+  {
+    id: 'geo_hard_8',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a karst landscape?',
+    options: [
+      'The dissolution of soluble rocks',
+      'The deposition of sediments',
+      'The movement of glaciers',
+      'The action of wind'
+    ],
+    correctAnswer: 'The dissolution of soluble rocks',
+    explanation: 'Karst landscapes are formed by the dissolution of soluble rocks, such as limestone, creating features like sinkholes, caves, and underground drainage systems.'
+  },
+  {
+    id: 'geo_hard_9',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of plate tectonics?',
+    options: [
+      'The movement of the Earth\'s lithospheric plates',
+      'The formation of mountains',
+      'The creation of ocean basins',
+      'The erosion of landforms'
+    ],
+    correctAnswer: 'The movement of the Earth\'s lithospheric plates',
+    explanation: 'Plate tectonics is the theory that describes the movement of the Earth\'s lithospheric plates, which float on the semi-fluid asthenosphere below.'
+  },
+  {
+    id: 'geo_hard_10',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a delta?',
+    options: [
+      'The deposition of sediments at a river mouth',
+      'The erosion of a coastline',
+      'The movement of sand dunes',
+      'The action of waves'
+    ],
+    correctAnswer: 'The deposition of sediments at a river mouth',
+    explanation: 'Deltas are formed when a river deposits sediments at its mouth, creating a fan-shaped landform that extends into a body of water.'
+  },
+  {
+    id: 'geo_hard_11',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of soil formation?',
+    options: [
+      'The weathering of parent material and organic matter accumulation',
+      'The deposition of sediments',
+      'The erosion of rocks',
+      'The movement of water'
+    ],
+    correctAnswer: 'The weathering of parent material and organic matter accumulation',
+    explanation: 'Soil formation involves the weathering of parent material, accumulation of organic matter, and the action of living organisms over time.'
+  },
+  {
+    id: 'geo_hard_12',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a meander?',
+    options: [
+      'The erosion and deposition of river banks',
+      'The slope of the river bed',
+      'The volume of water',
+      'The type of sediment'
+    ],
+    correctAnswer: 'The erosion and deposition of river banks',
+    explanation: 'Meanders are formed by the erosion of the outer bank and deposition on the inner bank of a river, creating a sinuous course.'
+  },
+  {
+    id: 'geo_hard_13',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of glacial retreat?',
+    options: [
+      'The melting of a glacier\'s terminus',
+      'The movement of a glacier',
+      'The formation of a glacier',
+      'The erosion by a glacier'
+    ],
+    correctAnswer: 'The melting of a glacier\'s terminus',
+    explanation: 'Glacial retreat occurs when a glacier\'s terminus melts faster than new ice can form, causing the glacier to shrink in size.'
+  },
+  {
+    id: 'geo_hard_14',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a tsunami?',
+    options: [
+      'Underwater earthquakes or volcanic eruptions',
+      'Strong winds',
+      'Tidal forces',
+      'Ocean currents'
+    ],
+    correctAnswer: 'Underwater earthquakes or volcanic eruptions',
+    explanation: 'Tsunamis are primarily caused by underwater earthquakes or volcanic eruptions that displace large volumes of water.'
+  },
+  {
+    id: 'geo_hard_15',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of coastal erosion?',
+    options: [
+      'The wearing away of land by wave action',
+      'The deposition of sediments',
+      'The formation of beaches',
+      'The movement of sand dunes'
+    ],
+    correctAnswer: 'The wearing away of land by wave action',
+    explanation: 'Coastal erosion is the process by which land is worn away by wave action, currents, and other coastal processes.'
+  },
+  {
+    id: 'geo_hard_16',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a tornado?',
+    options: [
+      'The interaction of warm, moist air with cold, dry air',
+      'The movement of ocean currents',
+      'The rotation of the Earth',
+      'The presence of mountains'
+    ],
+    correctAnswer: 'The interaction of warm, moist air with cold, dry air',
+    explanation: 'Tornadoes form when warm, moist air interacts with cold, dry air, creating instability and rotation in the atmosphere.'
+  },
+  {
+    id: 'geo_hard_17',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of urbanization?',
+    options: [
+      'The growth of cities and towns',
+      'The movement of people to rural areas',
+      'The development of agriculture',
+      'The formation of natural landscapes'
+    ],
+    correctAnswer: 'The growth of cities and towns',
+    explanation: 'Urbanization is the process by which cities and towns grow, typically through migration from rural areas and natural population increase.'
+  },
+  {
+    id: 'geo_hard_18',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a rift valley?',
+    options: [
+      'The pulling apart of tectonic plates',
+      'The collision of tectonic plates',
+      'The erosion of a mountain range',
+      'The deposition of sediments'
+    ],
+    correctAnswer: 'The pulling apart of tectonic plates',
+    explanation: 'Rift valleys are formed when tectonic plates pull apart, creating a depression in the Earth\'s surface.'
+  },
+  {
+    id: 'geo_hard_19',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of metamorphism?',
+    options: [
+      'The transformation of rocks under heat and pressure',
+      'The formation of sedimentary rocks',
+      'The erosion of rocks',
+      'The movement of tectonic plates'
+    ],
+    correctAnswer: 'The transformation of rocks under heat and pressure',
+    explanation: 'Metamorphism is the process by which rocks are transformed under heat and pressure, changing their mineral composition and structure.'
+  },
+  {
+    id: 'geo_hard_20',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a coral reef?',
+    options: [
+      'The growth of coral polyps in warm, shallow water',
+      'The deposition of sediments',
+      'The movement of ocean currents',
+      'The action of waves'
+    ],
+    correctAnswer: 'The growth of coral polyps in warm, shallow water',
+    explanation: 'Coral reefs are formed by the growth of coral polyps in warm, shallow water, typically in tropical regions.'
+  },
+  {
+    id: 'geo_hard_21',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of mass wasting?',
+    options: [
+      'The downslope movement of rock and soil under gravity',
+      'The erosion of rocks by water',
+      'The deposition of sediments',
+      'The formation of mountains'
+    ],
+    correctAnswer: 'The downslope movement of rock and soil under gravity',
+    explanation: 'Mass wasting refers to the downslope movement of rock and soil under the influence of gravity, including processes like landslides, mudflows, and rockfalls.'
+  },
+  {
+    id: 'geo_hard_22',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a cirque?',
+    options: [
+      'Glacial erosion in a mountain valley',
+      'River erosion',
+      'Wind erosion',
+      'Wave erosion'
+    ],
+    correctAnswer: 'Glacial erosion in a mountain valley',
+    explanation: 'A cirque is formed by glacial erosion in a mountain valley, creating a bowl-shaped depression with steep walls.'
+  },
+  {
+    id: 'geo_hard_23',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of isostatic rebound?',
+    options: [
+      'The rise of land after the removal of ice sheets',
+      'The sinking of land under the weight of ice',
+      'The movement of tectonic plates',
+      'The formation of mountains'
+    ],
+    correctAnswer: 'The rise of land after the removal of ice sheets',
+    explanation: 'Isostatic rebound is the rise of land after the removal of ice sheets, as the Earth\'s crust returns to equilibrium.'
+  },
+  {
+    id: 'geo_hard_24',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a drumlin?',
+    options: [
+      'Glacial deposition',
+      'River deposition',
+      'Wind deposition',
+      'Wave deposition'
+    ],
+    correctAnswer: 'Glacial deposition',
+    explanation: 'Drumlins are formed by glacial deposition, creating elongated hills with a steep side facing the direction from which the ice advanced.'
+  },
+  {
+    id: 'geo_hard_25',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of saltation?',
+    options: [
+      'The bouncing movement of sand grains in wind or water',
+      'The dissolution of rocks',
+      'The formation of salt deposits',
+      'The movement of glaciers'
+    ],
+    correctAnswer: 'The bouncing movement of sand grains in wind or water',
+    explanation: 'Saltation is the bouncing movement of sand grains in wind or water, where particles are lifted briefly and then fall back to the surface.'
+  },
+  {
+    id: 'geo_hard_26',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a hanging valley?',
+    options: [
+      'The differential erosion by glaciers',
+      'The movement of tectonic plates',
+      'The action of rivers',
+      'The formation of mountains'
+    ],
+    correctAnswer: 'The differential erosion by glaciers',
+    explanation: 'Hanging valleys are formed when a smaller glacier erodes a valley less deeply than a larger glacier, creating a valley that "hangs" above the main valley.'
+  },
+  {
+    id: 'geo_hard_27',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of periglacial activity?',
+    options: [
+      'Geomorphic processes in areas adjacent to glaciers',
+      'The movement of glaciers',
+      'The formation of ice sheets',
+      'The melting of permafrost'
+    ],
+    correctAnswer: 'Geomorphic processes in areas adjacent to glaciers',
+    explanation: 'Periglacial activity refers to geomorphic processes that occur in areas adjacent to glaciers, including freeze-thaw cycles and patterned ground formation.'
+  },
+  {
+    id: 'geo_hard_28',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a tarn?',
+    options: [
+      'Glacial erosion in a cirque',
+      'River erosion',
+      'Wind erosion',
+      'Wave erosion'
+    ],
+    correctAnswer: 'Glacial erosion in a cirque',
+    explanation: 'A tarn is formed by glacial erosion in a cirque, creating a small mountain lake.'
+  },
+  {
+    id: 'geo_hard_29',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of aeolian transport?',
+    options: [
+      'The movement of sediment by wind',
+      'The movement of water',
+      'The movement of glaciers',
+      'The movement of tectonic plates'
+    ],
+    correctAnswer: 'The movement of sediment by wind',
+    explanation: 'Aeolian transport is the movement of sediment by wind, including processes like saltation, suspension, and surface creep.'
+  },
+  {
+    id: 'geo_hard_30',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a roche moutonnée?',
+    options: [
+      'Glacial abrasion and plucking',
+      'River erosion',
+      'Wind erosion',
+      'Wave erosion'
+    ],
+    correctAnswer: 'Glacial abrasion and plucking',
+    explanation: 'A roche moutonnée is formed by glacial abrasion on the upstream side and plucking on the downstream side, creating an asymmetrical hill.'
+  },
+  {
+    id: 'geo_hard_31',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of solifluction?',
+    options: [
+      'The slow downslope movement of waterlogged soil',
+      'The rapid movement of rock and soil',
+      'The formation of soil',
+      'The erosion of rocks'
+    ],
+    correctAnswer: 'The slow downslope movement of waterlogged soil',
+    explanation: 'Solifluction is the slow downslope movement of waterlogged soil, typically occurring in periglacial environments.'
+  },
+  {
+    id: 'geo_hard_32',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a kame?',
+    options: [
+      'Glacial deposition in a depression',
+      'River deposition',
+      'Wind deposition',
+      'Wave deposition'
+    ],
+    correctAnswer: 'Glacial deposition in a depression',
+    explanation: 'A kame is formed by glacial deposition in a depression, creating a mound or hill of stratified drift.'
+  },
+  {
+    id: 'geo_hard_33',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of deflation?',
+    options: [
+      'The removal of fine particles by wind',
+      'The deposition of sediments',
+      'The formation of dunes',
+      'The movement of sand'
+    ],
+    correctAnswer: 'The removal of fine particles by wind',
+    explanation: 'Deflation is the removal of fine particles by wind, leaving behind coarser material and creating desert pavement.'
+  },
+  {
+    id: 'geo_hard_34',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a pingo?',
+    options: [
+      'The freezing of water in permafrost',
+      'The melting of ice',
+      'The movement of glaciers',
+      'The formation of lakes'
+    ],
+    correctAnswer: 'The freezing of water in permafrost',
+    explanation: 'A pingo is formed by the freezing of water in permafrost, creating a mound of ice-covered earth.'
+  },
+  {
+    id: 'geo_hard_35',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of thermokarst?',
+    options: [
+      'The melting of permafrost and subsequent ground collapse',
+      'The formation of karst landscapes',
+      'The movement of glaciers',
+      'The erosion of rocks'
+    ],
+    correctAnswer: 'The melting of permafrost and subsequent ground collapse',
+    explanation: 'Thermokarst is the process of melting permafrost and subsequent ground collapse, creating depressions and irregular terrain.'
+  },
+  {
+    id: 'geo_hard_36',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a esker?',
+    options: [
+      'Glacial deposition in a subglacial tunnel',
+      'River deposition',
+      'Wind deposition',
+      'Wave deposition'
+    ],
+    correctAnswer: 'Glacial deposition in a subglacial tunnel',
+    explanation: 'An esker is formed by glacial deposition in a subglacial tunnel, creating a long, winding ridge of stratified drift.'
+  },
+  {
+    id: 'geo_hard_37',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of nivation?',
+    options: [
+      'Erosion by snow and ice in a hollow',
+      'The formation of snow',
+      'The movement of glaciers',
+      'The melting of ice'
+    ],
+    correctAnswer: 'Erosion by snow and ice in a hollow',
+    explanation: 'Nivation is the process of erosion by snow and ice in a hollow, contributing to the formation of cirques.'
+  },
+  {
+    id: 'geo_hard_38',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary factor that determines the formation of a kettled hole?',
+    options: [
+      'The melting of a buried ice block',
+      'The movement of glaciers',
+      'The formation of lakes',
+      'The erosion of rocks'
+    ],
+    correctAnswer: 'The melting of a buried ice block',
+    explanation: 'A kettled hole is formed by the melting of a buried ice block, creating a depression in glacial deposits.'
+  },
+  {
+    id: 'geo_hard_39',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'Which of the following best describes the process of gelifluction?',
+    options: [
+      'The slow movement of waterlogged soil in permafrost',
+      'The rapid movement of rock and soil',
+      'The formation of soil',
+      'The erosion of rocks'
+    ],
+    correctAnswer: 'The slow movement of waterlogged soil in permafrost',
+    explanation: 'Gelifluction is the slow movement of waterlogged soil in permafrost, a type of solifluction specific to cold environments.'
+  },
+  {
+    id: 'geo_hard_40',
+    category: 'Geography',
+    difficulty: 'hard',
+    question: 'What is the primary cause of the formation of a moraine?',
+    options: [
+      'Glacial deposition of rock and soil',
+      'River deposition',
+      'Wind deposition',
+      'Wave deposition'
+    ],
+    correctAnswer: 'Glacial deposition of rock and soil',
+    explanation: 'A moraine is formed by glacial deposition of rock and soil, creating ridges or mounds of unsorted material.'
+  },
 ];
 
 // Helper function to get questions by category and difficulty
