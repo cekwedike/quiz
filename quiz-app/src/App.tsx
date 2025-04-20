@@ -12,12 +12,38 @@ interface Lifelines {
   skip: number;
 }
 
+interface CategoryResults {
+  [category: string]: {
+    correct: number;
+    total: number;
+    difficulties: {
+      [difficulty: string]: {
+        correct: number;
+        total: number;
+      };
+    };
+  };
+}
+
+interface Question {
+  id: string;
+  category: string;
+  difficulty: string;
+  question: string;
+  options: string[];
+  correctAnswer: number;
+  explanation?: string;
+}
+
 const App: React.FC = () => {
   const [isStarted, setIsStarted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [showAnswer, setShowAnswer] = useState<boolean>(false);
+  const [quizFinished, setQuizFinished] = useState<boolean>(false);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
@@ -34,7 +60,7 @@ const App: React.FC = () => {
   const [showHint, setShowHint] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [showStats, setShowStats] = useState(false);
-  const [categoryResults, setCategoryResults] = useState<{[key: string]: {correct: number, total: number}}>({});
+  const [categoryResults, setCategoryResults] = useState<CategoryResults>({});
   const [stats, setStats] = useState(storageManager.getStats());
   const [selectedDifficulty, setSelectedDifficulty] = useState<'all' | 'simple' | 'complex' | 'extremely complex'>('all');
   const [highScores, setHighScores] = useState(storageManager.getHighScores());
@@ -91,14 +117,33 @@ const App: React.FC = () => {
   };
 
   const updateCategoryResults = (isCorrect: boolean) => {
+    if (!currentQuestion) return;
     const category = currentQuestion.category;
-    setCategoryResults(prev => ({
-      ...prev,
-      [category]: {
-        correct: (prev[category]?.correct || 0) + (isCorrect ? 1 : 0),
-        total: (prev[category]?.total || 0) + 1
+    const difficulty = currentQuestion.difficulty;
+    
+    setCategoryResults(prev => {
+      const newResults = { ...prev };
+      if (!newResults[category]) {
+        newResults[category] = {
+          correct: 0,
+          total: 0,
+          difficulties: {}
+        };
       }
-    }));
+      if (!newResults[category].difficulties[difficulty]) {
+        newResults[category].difficulties[difficulty] = {
+          correct: 0,
+          total: 0
+        };
+      }
+      
+      newResults[category].correct += isCorrect ? 1 : 0;
+      newResults[category].total += 1;
+      newResults[category].difficulties[difficulty].correct += isCorrect ? 1 : 0;
+      newResults[category].difficulties[difficulty].total += 1;
+      
+      return newResults;
+    });
   };
 
   const toggleCategory = (category: string) => {
@@ -166,38 +211,95 @@ const App: React.FC = () => {
     setCategoryResults({});
   };
 
-  const handleAnswerSelect = (answer: string) => {
-    if (isAnswered) return;
-    
-    setSelectedAnswer(answer);
-    setIsAnswered(true);
-    
-    const isCorrect = answer === currentQuestion.correctAnswer;
-    if (isCorrect) {
-      setScore(score + 1);
-      soundManager.playSound('correct');
-    } else {
-      soundManager.playSound('incorrect');
-    }
-    
-    updateCategoryResults(isCorrect);
+  const saveResults = () => {
+    if (!currentQuestion) return;
+    // Save results logic here
+  };
 
-    setTimeout(() => {
-      if (currentQuestionIndex < questions.length - 1) {
-        nextQuestion();
-      } else {
-        endQuiz();
-      }
-    }, 1000);
+  const handleAnswerSelect = (index: number) => {
+    if (!currentQuestion) return;
+    setSelectedAnswer(index);
+    setShowAnswer(true);
+    
+    const isCorrect = index === (currentQuestion.correctAnswer as number);
+    const category = currentQuestion.category;
+    const difficulty = currentQuestion.difficulty;
+    
+    setCategoryResults(prev => {
+      const categoryData = prev[category] || { correct: 0, total: 0, difficulties: {} };
+      const difficultyData = categoryData.difficulties[difficulty] || { correct: 0, total: 0 };
+
+      return {
+        ...prev,
+        [category]: {
+          correct: categoryData.correct + (isCorrect ? 1 : 0),
+          total: categoryData.total + 1,
+          difficulties: {
+            ...categoryData.difficulties,
+            [difficulty]: {
+              correct: difficultyData.correct + (isCorrect ? 1 : 0),
+              total: difficultyData.total + 1
+            }
+          }
+        }
+      };
+    });
+  };
+
+  const handleNextQuestion = () => {
+    if (!currentQuestion) return;
+    
+    if (currentQuestionIndex === questions.length - 1) {
+      setQuizFinished(true);
+      saveResults();
+      return;
+    }
+
+    setCurrentQuestionIndex(prev => prev + 1);
+    setSelectedAnswer(null);
+    setShowAnswer(false);
+  };
+
+  const handleSkip = () => {
+    if (!currentQuestion) return;
+    
+    const category = currentQuestion.category;
+    const difficulty = currentQuestion.difficulty;
+    
+    setCategoryResults(prev => {
+      const categoryData = prev[category] || { correct: 0, total: 0, difficulties: {} };
+      const difficultyData = categoryData.difficulties[difficulty] || { correct: 0, total: 0 };
+
+      return {
+        ...prev,
+        [category]: {
+          correct: categoryData.correct,
+          total: categoryData.total + 1,
+          difficulties: {
+            ...categoryData.difficulties,
+            [difficulty]: {
+              correct: difficultyData.correct,
+              total: difficultyData.total + 1
+            }
+          }
+        }
+      };
+    });
+    setShowAnswer(true);
   };
 
   const nextQuestion = () => {
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-    setSelectedAnswer(null);
-    setIsAnswered(false);
-    setTimeLeft(30);
-    setShowHint(false);
-    setAvailableOptions(new Set(questions[currentQuestionIndex + 1].options));
+    if (!currentQuestion) return;
+    if (currentQuestionIndex === questions.length - 1) {
+      endQuiz();
+    } else {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelectedAnswer(null);
+      setIsAnswered(false);
+      setTimeLeft(30);
+      setShowHint(false);
+      setAvailableOptions(new Set(questions[currentQuestionIndex + 1].options));
+    }
   };
 
   const endQuiz = () => {
@@ -275,7 +377,7 @@ const App: React.FC = () => {
     
     const correctAnswer = currentQuestion.correctAnswer;
     const wrongOptions = currentQuestion.options.filter(opt => opt !== correctAnswer);
-    const remainingWrong = wrongOptions.sort(() => Math.random() - 0.5).slice(0, 2);
+    const remainingWrong = wrongOptions.sort(() => Math.random() - 0.5).slice(0, 1);
     const newOptions = new Set([correctAnswer, ...remainingWrong].sort(() => Math.random() - 0.5));
     
     setAvailableOptions(newOptions);
@@ -288,22 +390,10 @@ const App: React.FC = () => {
     setLifelines(prev => ({ ...prev, hint: 0 }));
   };
 
-  const useSkip = () => {
-    if (lifelines.skip === 0 || isAnswered) return;
-    setLifelines(prev => ({ ...prev, skip: 0 }));
-    if (currentQuestionIndex < questions.length - 1) {
-      nextQuestion();
-    } else {
-      endQuiz();
-    }
-  };
-
   const toggleMute = () => {
     const isMuted = soundManager.toggleMute();
     setIsMuted(isMuted);
   };
-
-  const currentQuestion = questions[currentQuestionIndex];
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -786,13 +876,13 @@ const App: React.FC = () => {
                 <button
                   key={index}
                   className={`option-button ${
-                    selectedAnswer === option 
+                    selectedAnswer === index 
                       ? option === currentQuestion.correctAnswer 
                         ? 'correct' 
                         : 'incorrect'
                       : ''
                   } ${isAnswered && option === currentQuestion.correctAnswer ? 'correct' : ''}`}
-                  onClick={() => handleAnswerSelect(option)}
+                  onClick={() => handleAnswerSelect(index)}
                   disabled={isAnswered}
                 >
                   <span className="option-letter">{String.fromCharCode(65 + index)}</span>
@@ -819,7 +909,7 @@ const App: React.FC = () => {
                 </button>
                 <button
                   className={`lifeline-button ${lifelines.skip === 0 ? 'used' : ''}`}
-                  onClick={useSkip}
+                  onClick={handleSkip}
                   disabled={lifelines.skip === 0 || isAnswered}
                 >
                   <span className="lifeline-icon">⏭️</span>

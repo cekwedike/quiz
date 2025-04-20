@@ -1,10 +1,10 @@
 export interface Question {
   id: string;
   category: string;
-  difficulty: 'easy' | 'complex' | 'hard' | 'extremely complex';
+  difficulty: string;
   question: string;
   options: string[];
-  correctAnswer: string;
+  correctAnswer: number;
   explanation?: string;
 }
 
@@ -17,7 +17,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical symbol for gold?',
     options: ['Ag', 'Au', 'Fe', 'Cu'],
-    correctAnswer: 'Au',
+    correctAnswer: 1,
     explanation: 'Gold is represented by the chemical symbol Au, derived from the Latin word "aurum".'
   },
   {
@@ -26,7 +26,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the largest planet in our solar system?',
     options: ['Saturn', 'Jupiter', 'Neptune', 'Earth'],
-    correctAnswer: 'Jupiter',
+    correctAnswer: 1,
     explanation: 'Jupiter is the largest planet in our solar system, with a diameter of about 86,881 miles.'
   },
   {
@@ -35,7 +35,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the process by which plants convert sunlight into energy?',
     options: ['Respiration', 'Transpiration', 'Photosynthesis', 'Fermentation'],
-    correctAnswer: 'Photosynthesis',
+    correctAnswer: 2,
     explanation: 'Photosynthesis is the process by which plants convert sunlight, carbon dioxide, and water into glucose and oxygen.'
   },
   {
@@ -49,7 +49,7 @@ export const questionBank: Question[] = [
       'The speed of light is constant in a vacuum',
       'It is impossible to know both position and momentum of a particle simultaneously'
     ],
-    correctAnswer: 'It is impossible to know both position and momentum of a particle simultaneously',
+    correctAnswer: 3,
     explanation: 'The Heisenberg Uncertainty Principle states that the more precisely the position of a particle is determined, the less precisely its momentum can be known, and vice versa.'
   },
   {
@@ -63,7 +63,7 @@ export const questionBank: Question[] = [
       'It explains dark matter',
       'It gives mass to elementary particles'
     ],
-    correctAnswer: 'It gives mass to elementary particles',
+    correctAnswer: 3,
     explanation: 'The Higgs boson is associated with the Higgs field, which gives mass to elementary particles through the Higgs mechanism.'
   },
   {
@@ -72,7 +72,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the smallest unit of matter?',
     options: ['Atom', 'Molecule', 'Cell', 'Electron'],
-    correctAnswer: 'Atom',
+    correctAnswer: 0,
     explanation: 'An atom is the smallest unit of matter that retains the properties of an element.'
   },
   {
@@ -81,7 +81,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical formula for water?',
     options: ['H2O', 'CO2', 'O2', 'H2O2'],
-    correctAnswer: 'H2O',
+    correctAnswer: 0,
     explanation: 'Water is composed of two hydrogen atoms and one oxygen atom, hence the formula H2O.'
   },
   {
@@ -90,7 +90,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'Which planet is known as the Red Planet?',
     options: ['Mars', 'Venus', 'Jupiter', 'Saturn'],
-    correctAnswer: 'Mars',
+    correctAnswer: 0,
     explanation: 'Mars is called the Red Planet due to its reddish appearance caused by iron oxide on its surface.'
   },
   {
@@ -99,7 +99,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the main component of the Sun?',
     options: ['Hydrogen', 'Helium', 'Oxygen', 'Carbon'],
-    correctAnswer: 'Hydrogen',
+    correctAnswer: 0,
     explanation: 'The Sun is primarily composed of hydrogen (about 70%) and helium (about 28%).'
   },
   {
@@ -108,7 +108,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the unit of electrical resistance?',
     options: ['Ohm', 'Volt', 'Ampere', 'Watt'],
-    correctAnswer: 'Ohm',
+    correctAnswer: 0,
     explanation: 'The ohm (Ω) is the unit of electrical resistance, named after Georg Simon Ohm.'
   },
   {
@@ -117,7 +117,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the process by which cells divide to create new cells?',
     options: ['Mitosis', 'Meiosis', 'Photosynthesis', 'Respiration'],
-    correctAnswer: 'Mitosis',
+    correctAnswer: 0,
     explanation: 'Mitosis is the process of cell division that results in two identical daughter cells.'
   },
   {
@@ -126,7 +126,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the chemical process that breaks down food to release energy?',
     options: ['Cellular Respiration', 'Photosynthesis', 'Fermentation', 'Digestion'],
-    correctAnswer: 'Cellular Respiration',
+    correctAnswer: 0,
     explanation: 'Cellular respiration is the process by which cells convert nutrients into energy (ATP).'
   },
   {
@@ -135,7 +135,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the theory that explains the movement of Earth\'s continents?',
     options: ['Plate Tectonics', 'Continental Drift', 'Seafloor Spreading', 'Mantle Convection'],
-    correctAnswer: 'Plate Tectonics',
+    correctAnswer: 0,
     explanation: 'Plate tectonics theory explains how Earth\'s lithosphere is divided into plates that move over the asthenosphere.'
   },
   {
@@ -144,7 +144,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which plants lose water through their leaves?',
     options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Osmosis'],
-    correctAnswer: 'Transpiration',
+    correctAnswer: 0,
     explanation: 'Transpiration is the process by which plants lose water vapor through their stomata.'
   },
   {
@@ -153,7 +153,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the force that opposes motion between two surfaces in contact?',
     options: ['Friction', 'Gravity', 'Tension', 'Normal Force'],
-    correctAnswer: 'Friction',
+    correctAnswer: 0,
     explanation: 'Friction is the force that opposes the relative motion of two surfaces in contact.'
   },
   {
@@ -167,7 +167,7 @@ export const questionBank: Question[] = [
       'It enables rapid cell division',
       'It protects DNA from environmental damage'
     ],
-    correctAnswer: 'It allows for accurate replication of genetic information',
+    correctAnswer: 0,
     explanation: 'The double-helix structure of DNA enables accurate replication through complementary base pairing.'
   },
   {
@@ -181,7 +181,7 @@ export const questionBank: Question[] = [
       'Radioactive decay',
       'Particle acceleration'
     ],
-    correctAnswer: 'Controlled nuclear fission',
+    correctAnswer: 0,
     explanation: 'Nuclear reactors operate by controlling the rate of nuclear fission reactions to produce heat.'
   },
   {
@@ -195,7 +195,7 @@ export const questionBank: Question[] = [
       'It demonstrated the wave nature of light',
       'It confirmed Newton\'s theory of gravity'
     ],
-    correctAnswer: 'It failed to detect the existence of the luminiferous aether',
+    correctAnswer: 0,
     explanation: 'The Michelson-Morley experiment\'s failure to detect the aether led to the development of special relativity.'
   },
   {
@@ -209,7 +209,7 @@ export const questionBank: Question[] = [
       'It catalyzes the formation of peptide bonds',
       'It transports amino acids to the ribosome'
     ],
-    correctAnswer: 'It carries genetic information from DNA to ribosomes',
+    correctAnswer: 0,
     explanation: 'mRNA carries the genetic code from DNA to ribosomes, where it serves as a template for protein synthesis.'
   },
   {
@@ -223,7 +223,7 @@ export const questionBank: Question[] = [
       'It confirmed the existence of the aether',
       'It demonstrated the existence of dark matter'
     ],
-    correctAnswer: 'It demonstrated the particle nature of light',
+    correctAnswer: 0,
     explanation: 'The photoelectric effect showed that light can behave as particles (photons), supporting quantum theory.'
   },
   {
@@ -237,7 +237,7 @@ export const questionBank: Question[] = [
       'It explains the nature of infinity',
       'It defines the properties of fractals'
     ],
-    correctAnswer: 'It concerns the distribution of prime numbers',
+    correctAnswer: 0,
     explanation: 'The Riemann Hypothesis is a conjecture about the distribution of the zeros of the Riemann zeta function, which is deeply connected to the distribution of prime numbers.'
   },
   {
@@ -251,7 +251,7 @@ export const questionBank: Question[] = [
       'It describes the behavior of quantum particles',
       'It predicts the existence of parallel universes'
     ],
-    correctAnswer: 'It suggests that the information in a volume of space can be encoded on its boundary',
+    correctAnswer: 0,
     explanation: 'The holographic principle suggests that the information in a volume of space can be represented as a theory on the boundary of that space.'
   },
   {
@@ -265,7 +265,7 @@ export const questionBank: Question[] = [
       'It describes the behavior of black holes',
       'It predicts the existence of extra dimensions'
     ],
-    correctAnswer: 'It establishes a duality between a gravity theory and a quantum field theory',
+    correctAnswer: 0,
     explanation: 'The AdS/CFT correspondence is a conjectured relationship between two kinds of physical theories: a quantum field theory and a gravity theory.'
   },
   {
@@ -279,7 +279,7 @@ export const questionBank: Question[] = [
       'It explains the nature of turbulence',
       'It predicts weather patterns'
     ],
-    correctAnswer: 'It concerns the mathematical properties of fluid flow equations',
+    correctAnswer: 0,
     explanation: 'The Navier-Stokes existence and smoothness problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of solutions to the Navier-Stokes equations.'
   },
   {
@@ -293,7 +293,7 @@ export const questionBank: Question[] = [
       'It describes the behavior of elementary particles',
       'It predicts the existence of new fundamental forces'
     ],
-    correctAnswer: 'It concerns the mathematical properties of quantum field theory',
+    correctAnswer: 0,
     explanation: 'The Yang-Mills existence and mass gap problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of quantum field theory.'
   },
   {
@@ -302,7 +302,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical symbol for oxygen?',
     options: ['O', 'Ox', 'O2', 'Oy'],
-    correctAnswer: 'O',
+    correctAnswer: 0,
     explanation: 'Oxygen is represented by the chemical symbol O, derived from the Greek word "oxys" meaning sharp or acid.'
   },
   {
@@ -311,7 +311,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the smallest bone in the human body?',
     options: ['Stapes', 'Femur', 'Tibia', 'Radius'],
-    correctAnswer: 'Stapes',
+    correctAnswer: 0,
     explanation: 'The stapes, located in the middle ear, is the smallest bone in the human body, measuring about 2.8-3.5 mm.'
   },
   {
@@ -320,7 +320,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the state of matter that has a definite volume but no definite shape?',
     options: ['Liquid', 'Solid', 'Gas', 'Plasma'],
-    correctAnswer: 'Liquid',
+    correctAnswer: 0,
     explanation: 'Liquids have a definite volume but take the shape of their container, unlike solids which have both definite volume and shape.'
   },
   {
@@ -329,7 +329,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the unit of force in the International System of Units (SI)?',
     options: ['Newton', 'Joule', 'Watt', 'Pascal'],
-    correctAnswer: 'Newton',
+    correctAnswer: 0,
     explanation: 'The newton (N) is the SI unit of force, named after Sir Isaac Newton.'
   },
   {
@@ -338,7 +338,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical formula for table salt?',
     options: ['NaCl', 'H2O', 'CO2', 'O2'],
-    correctAnswer: 'NaCl',
+    correctAnswer: 0,
     explanation: 'Table salt is sodium chloride (NaCl), composed of sodium (Na) and chlorine (Cl) ions.'
   },
   {
@@ -347,7 +347,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the process by which genetic traits are passed from parents to offspring?',
     options: ['Inheritance', 'Evolution', 'Mutation', 'Adaptation'],
-    correctAnswer: 'Inheritance',
+    correctAnswer: 0,
     explanation: 'Inheritance is the biological process by which traits are passed from parents to their offspring through genes.'
   },
   {
@@ -356,7 +356,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the theory that explains the origin of the universe?',
     options: ['Big Bang Theory', 'Steady State Theory', 'String Theory', 'Quantum Theory'],
-    correctAnswer: 'Big Bang Theory',
+    correctAnswer: 0,
     explanation: 'The Big Bang Theory is the prevailing cosmological model explaining the existence of the observable universe.'
   },
   {
@@ -365,7 +365,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which rocks are broken down into smaller pieces?',
     options: ['Weathering', 'Erosion', 'Deposition', 'Sedimentation'],
-    correctAnswer: 'Weathering',
+    correctAnswer: 0,
     explanation: 'Weathering is the process by which rocks are broken down into smaller pieces by physical or chemical means.'
   },
   {
@@ -374,7 +374,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which plants reproduce without seeds?',
     options: ['Vegetative Propagation', 'Pollination', 'Fertilization', 'Germination'],
-    correctAnswer: 'Vegetative Propagation',
+    correctAnswer: 0,
     explanation: 'Vegetative propagation is a form of asexual reproduction in plants where new plants grow from vegetative parts.'
   },
   {
@@ -383,7 +383,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the force that keeps planets in orbit around the sun?',
     options: ['Gravity', 'Magnetism', 'Friction', 'Tension'],
-    correctAnswer: 'Gravity',
+    correctAnswer: 0,
     explanation: 'Gravity is the force that attracts two bodies toward each other, keeping planets in orbit around the sun.'
   },
   {
@@ -397,7 +397,7 @@ export const questionBank: Question[] = [
       'It confirmed Newton\'s laws of motion',
       'It demonstrated the photoelectric effect'
     ],
-    correctAnswer: 'It demonstrated wave-particle duality',
+    correctAnswer: 0,
     explanation: 'The double-slit experiment showed that particles can exhibit both wave-like and particle-like behavior.'
   },
   {
@@ -411,7 +411,7 @@ export const questionBank: Question[] = [
       'It demonstrated the existence of genes',
       'It explained the process of protein synthesis'
     ],
-    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    correctAnswer: 0,
     explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
   },
   {
@@ -425,7 +425,7 @@ export const questionBank: Question[] = [
       'It demonstrated the expansion of the universe',
       'It explained the formation of galaxies'
     ],
-    correctAnswer: 'It provided evidence for the Big Bang theory',
+    correctAnswer: 0,
     explanation: 'The discovery of cosmic microwave background radiation provided strong evidence for the Big Bang theory.'
   },
   {
@@ -439,7 +439,7 @@ export const questionBank: Question[] = [
       'It demonstrated the existence of viruses',
       'It explained the process of immunity'
     ],
-    correctAnswer: 'It revolutionized the treatment of bacterial infections',
+    correctAnswer: 0,
     explanation: 'The discovery of penicillin revolutionized medicine by providing an effective treatment for bacterial infections.'
   },
   {
@@ -453,7 +453,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of chemical bonds',
       'It explained the process of nuclear reactions'
     ],
-    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    correctAnswer: 0,
     explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
   },
   {
@@ -467,7 +467,7 @@ export const questionBank: Question[] = [
       'It describes the behavior of artificial intelligence',
       'It predicts the future of computing technology'
     ],
-    correctAnswer: 'It concerns the relationship between problems that can be solved quickly and those that can be verified quickly',
+    correctAnswer: 0,
     explanation: 'The P vs NP problem is one of the seven Millennium Prize Problems, concerning the relationship between problems that can be solved quickly and those that can be verified quickly.'
   },
   {
@@ -481,7 +481,7 @@ export const questionBank: Question[] = [
       'It explains the nature of infinity',
       'It defines the properties of complex numbers'
     ],
-    correctAnswer: 'It concerns the number of rational points on elliptic curves',
+    correctAnswer: 0,
     explanation: 'The Birch and Swinnerton-Dyer conjecture is one of the seven Millennium Prize Problems, concerning the number of rational points on elliptic curves.'
   },
   {
@@ -495,7 +495,7 @@ export const questionBank: Question[] = [
       'It explains the nature of symmetry',
       'It defines the properties of topological spaces'
     ],
-    correctAnswer: 'It concerns the relationship between algebraic cycles and cohomology classes',
+    correctAnswer: 0,
     explanation: 'The Hodge conjecture is one of the seven Millennium Prize Problems, concerning the relationship between algebraic cycles and cohomology classes.'
   },
   {
@@ -509,7 +509,7 @@ export const questionBank: Question[] = [
       'It explains the nature of space',
       'It defines the properties of surfaces'
     ],
-    correctAnswer: 'It concerns the classification of three-dimensional manifolds',
+    correctAnswer: 0,
     explanation: 'The Poincaré conjecture is one of the seven Millennium Prize Problems, concerning the classification of three-dimensional manifolds.'
   },
   {
@@ -523,8 +523,8 @@ export const questionBank: Question[] = [
       'It describes the behavior of elementary particles',
       'It predicts the existence of new fundamental forces'
     ],
-    correctAnswer: 'It describes the strong interaction between quarks and gluons',
-    explanation: 'Quantum chromodynamics (QCD) is the theory of the strong interaction between quarks and gluons.'
+    correctAnswer: 0,
+    explanation: 'Quantum chromodynamics (QCD) is the theory of the strong interaction between quarks and gluons, the fundamental particles that make up composite hadrons.'
   },
   {
     id: 'sci46',
@@ -532,7 +532,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical symbol for carbon?',
     options: ['C', 'Ca', 'Co', 'Cr'],
-    correctAnswer: 'C',
+    correctAnswer: 0,
     explanation: 'Carbon is represented by the chemical symbol C, derived from the Latin word "carbo" meaning coal.'
   },
   {
@@ -541,7 +541,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the largest organ in the human body?',
     options: ['Skin', 'Liver', 'Heart', 'Brain'],
-    correctAnswer: 'Skin',
+    correctAnswer: 0,
     explanation: 'The skin is the largest organ in the human body, covering an area of about 20 square feet in adults.'
   },
   {
@@ -550,7 +550,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the basic unit of life?',
     options: ['Cell', 'Atom', 'Molecule', 'Tissue'],
-    correctAnswer: 'Cell',
+    correctAnswer: 0,
     explanation: 'The cell is the basic structural and functional unit of all known living organisms.'
   },
   {
@@ -559,7 +559,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the unit of electric current in the International System of Units (SI)?',
     options: ['Ampere', 'Volt', 'Ohm', 'Watt'],
-    correctAnswer: 'Ampere',
+    correctAnswer: 0,
     explanation: 'The ampere (A) is the SI unit of electric current, named after André-Marie Ampère.'
   },
   {
@@ -568,7 +568,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical formula for carbon dioxide?',
     options: ['CO2', 'CO', 'C2O', 'CO3'],
-    correctAnswer: 'CO2',
+    correctAnswer: 0,
     explanation: 'Carbon dioxide is composed of one carbon atom and two oxygen atoms, hence the formula CO2.'
   },
   {
@@ -577,7 +577,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which plants convert light energy into chemical energy?',
     options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
-    correctAnswer: 'Photosynthesis',
+    correctAnswer: 0,
     explanation: 'Photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose.'
   },
   {
@@ -586,7 +586,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the theory that explains the evolution of species?',
     options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
-    correctAnswer: 'Natural Selection',
+    correctAnswer: 0,
     explanation: 'Natural selection is the process by which organisms better adapted to their environment tend to survive and produce more offspring.'
   },
   {
@@ -595,7 +595,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which rocks are formed from sediments?',
     options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
-    correctAnswer: 'Lithification',
+    correctAnswer: 0,
     explanation: 'Lithification is the process by which sediments are compacted and cemented to form sedimentary rocks.'
   },
   {
@@ -604,7 +604,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which plants respond to light?',
     options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
-    correctAnswer: 'Phototropism',
+    correctAnswer: 0,
     explanation: 'Phototropism is the process by which plants grow toward or away from light.'
   },
   {
@@ -613,7 +613,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the force that opposes the motion of objects through fluids?',
     options: ['Drag', 'Gravity', 'Friction', 'Tension'],
-    correctAnswer: 'Drag',
+    correctAnswer: 0,
     explanation: 'Drag is the force that opposes the motion of objects through fluids, such as air or water.'
   },
   {
@@ -627,7 +627,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of genetic code',
       'It explained the process of DNA replication'
     ],
-    correctAnswer: 'It explained how proteins are synthesized',
+    correctAnswer: 0,
     explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
   },
   {
@@ -641,7 +641,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of chemical bonds',
       'It explained the process of nuclear reactions'
     ],
-    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    correctAnswer: 0,
     explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
   },
   {
@@ -655,7 +655,7 @@ export const questionBank: Question[] = [
       'It demonstrated the existence of genes',
       'It explained the process of protein synthesis'
     ],
-    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    correctAnswer: 0,
     explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
   },
   {
@@ -669,7 +669,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of genetic code',
       'It explained the process of DNA replication'
     ],
-    correctAnswer: 'It explained how proteins are synthesized',
+    correctAnswer: 0,
     explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
   },
   {
@@ -683,7 +683,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of chemical bonds',
       'It explained the process of nuclear reactions'
     ],
-    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    correctAnswer: 0,
     explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
   },
   {
@@ -697,7 +697,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of genetic code',
       'It explained the process of DNA replication'
     ],
-    correctAnswer: 'It explained how proteins are synthesized',
+    correctAnswer: 0,
     explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
   },
   {
@@ -711,7 +711,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of chemical bonds',
       'It explained the process of nuclear reactions'
     ],
-    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    correctAnswer: 0,
     explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
   },
   {
@@ -725,7 +725,7 @@ export const questionBank: Question[] = [
       'It demonstrated the existence of genes',
       'It explained the process of protein synthesis'
     ],
-    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    correctAnswer: 0,
     explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
   },
   {
@@ -739,7 +739,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of genetic code',
       'It explained the process of DNA replication'
     ],
-    correctAnswer: 'It explained how proteins are synthesized',
+    correctAnswer: 0,
     explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
   },
   {
@@ -753,7 +753,7 @@ export const questionBank: Question[] = [
       'It demonstrated the nature of chemical bonds',
       'It explained the process of nuclear reactions'
     ],
-    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    correctAnswer: 0,
     explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
   },
   {
@@ -762,7 +762,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical symbol for nitrogen?',
     options: ['N', 'Ni', 'Na', 'Ne'],
-    correctAnswer: 'N',
+    correctAnswer: 0,
     explanation: 'Nitrogen is represented by the chemical symbol N, derived from the Greek word "nitron" meaning native soda.'
   },
   {
@@ -771,7 +771,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the smallest unit of life?',
     options: ['Cell', 'Atom', 'Molecule', 'Organelle'],
-    correctAnswer: 'Cell',
+    correctAnswer: 0,
     explanation: 'The cell is the smallest unit of life, capable of performing all the functions necessary for life.'
   },
   {
@@ -780,7 +780,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the process by which plants take in carbon dioxide?',
     options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
-    correctAnswer: 'Photosynthesis',
+    correctAnswer: 0,
     explanation: 'During photosynthesis, plants take in carbon dioxide and release oxygen.'
   },
   {
@@ -789,7 +789,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the unit of energy in the International System of Units (SI)?',
     options: ['Joule', 'Watt', 'Newton', 'Pascal'],
-    correctAnswer: 'Joule',
+    correctAnswer: 0,
     explanation: 'The joule (J) is the SI unit of energy, named after James Prescott Joule.'
   },
   {
@@ -798,7 +798,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical formula for methane?',
     options: ['CH4', 'CO2', 'H2O', 'NH3'],
-    correctAnswer: 'CH4',
+    correctAnswer: 0,
     explanation: 'Methane is composed of one carbon atom and four hydrogen atoms, hence the formula CH4.'
   },
   {
@@ -807,7 +807,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the role of enzymes in chemical reactions?',
     options: ['They lower activation energy', 'They increase reaction temperature', 'They add more reactants', 'They change the products'],
-    correctAnswer: 'They lower activation energy',
+    correctAnswer: 0,
     explanation: 'Enzymes are biological catalysts that lower the activation energy required for chemical reactions to occur.'
   },
   {
@@ -816,7 +816,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the function of mitochondria in cells?',
     options: ['Energy production', 'Protein synthesis', 'DNA replication', 'Cell division'],
-    correctAnswer: 'Energy production',
+    correctAnswer: 0,
     explanation: 'Mitochondria are often called the powerhouse of the cell because they produce most of the cell\'s energy through cellular respiration.'
   },
   {
@@ -825,7 +825,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the principle behind magnetic resonance imaging (MRI)?',
     options: ['Nuclear magnetic resonance', 'X-ray diffraction', 'Ultrasound waves', 'Radioactive decay'],
-    correctAnswer: 'Nuclear magnetic resonance',
+    correctAnswer: 0,
     explanation: 'MRI uses strong magnetic fields and radio waves to create detailed images of the body based on the principle of nuclear magnetic resonance.'
   },
   {
@@ -834,7 +834,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the role of neurotransmitters in the nervous system?',
     options: ['Chemical signal transmission', 'Energy production', 'Waste removal', 'Blood circulation'],
-    correctAnswer: 'Chemical signal transmission',
+    correctAnswer: 0,
     explanation: 'Neurotransmitters are chemicals that transmit signals across synapses between neurons.'
   },
   {
@@ -843,7 +843,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the greenhouse effect?',
     options: ['Trapping of heat by atmospheric gases', 'Plant growth in greenhouses', 'Formation of clouds', 'Ocean warming'],
-    correctAnswer: 'Trapping of heat by atmospheric gases',
+    correctAnswer: 0,
     explanation: 'The greenhouse effect is a natural process where certain gases in Earth\'s atmosphere trap heat, keeping the planet warm enough for life.'
   },
   {
@@ -857,7 +857,7 @@ export const questionBank: Question[] = [
       'It causes radioactive decay',
       'It generates gravitational waves'
     ],
-    correctAnswer: 'It gives mass to elementary particles',
+    correctAnswer: 0,
     explanation: 'The Higgs field is a quantum field that gives mass to elementary particles through their interaction with it.'
   },
   {
@@ -871,7 +871,7 @@ export const questionBank: Question[] = [
       'It splits atoms',
       'It generates light'
     ],
-    correctAnswer: 'It allows particles to pass through energy barriers',
+    correctAnswer: 0,
     explanation: 'Quantum tunneling is a quantum mechanical phenomenon where particles can pass through potential barriers that they classically could not overcome.'
   },
   {
@@ -885,7 +885,7 @@ export const questionBank: Question[] = [
       'Force equals mass times acceleration',
       'Matter cannot be created or destroyed'
     ],
-    correctAnswer: 'The entropy of an isolated system always increases',
+    correctAnswer: 0,
     explanation: 'The second law of thermodynamics states that the total entropy of an isolated system always increases over time.'
   },
   {
@@ -899,7 +899,7 @@ export const questionBank: Question[] = [
       'It creates stars',
       'It generates cosmic rays'
     ],
-    correctAnswer: 'It explains galactic rotation curves',
+    correctAnswer: 0,
     explanation: 'Dark matter was proposed to explain the observed rotation curves of galaxies, which suggest the presence of unseen mass.'
   },
   {
@@ -913,7 +913,7 @@ export const questionBank: Question[] = [
       'It digests food',
       'It fights infections'
     ],
-    correctAnswer: 'It influences health and disease',
+    correctAnswer: 0,
     explanation: 'The human microbiome plays crucial roles in health and disease, affecting metabolism, immunity, and even behavior.'
   },
   {
@@ -927,7 +927,7 @@ export const questionBank: Question[] = [
       'It describes atomic structure',
       'It explains chemical bonding'
     ],
-    correctAnswer: 'It predicts partner particles for known particles',
+    correctAnswer: 0,
     explanation: 'Supersymmetry is a theoretical symmetry that predicts the existence of partner particles for all known elementary particles.'
   },
   {
@@ -941,7 +941,7 @@ export const questionBank: Question[] = [
       'It describes cellular processes',
       'It explains evolution'
     ],
-    correctAnswer: 'It attempts to unify quantum mechanics and gravity',
+    correctAnswer: 0,
     explanation: 'String theory is a theoretical framework attempting to unify quantum mechanics and gravity by describing particles as one-dimensional strings.'
   },
   {
@@ -955,7 +955,7 @@ export const questionBank: Question[] = [
       'It describes electricity',
       'It explains magnetism'
     ],
-    correctAnswer: 'It describes the strong nuclear force',
+    correctAnswer: 0,
     explanation: 'Quantum chromodynamics is the theory of the strong interaction between quarks and gluons, the fundamental particles that make up composite hadrons.'
   },
   {
@@ -969,7 +969,7 @@ export const questionBank: Question[] = [
       'It describes cellular division',
       'It explains evolution'
     ],
-    correctAnswer: 'It attempts to reconcile quantum mechanics with general relativity',
+    correctAnswer: 0,
     explanation: 'Loop quantum gravity is a theory that attempts to merge quantum mechanics and general relativity to explain gravity at the quantum level.'
   },
   {
@@ -983,7 +983,7 @@ export const questionBank: Question[] = [
       'It describes quantum mechanics',
       'It explains gravity'
     ],
-    correctAnswer: 'It suggests the universe might be a hologram',
+    correctAnswer: 0,
     explanation: 'The holographic principle suggests that the information content of a region of space can be described by a theory that lives only on the boundary of that region.'
   },
   // Additional Easy Questions
@@ -993,7 +993,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical symbol for sodium?',
     options: ['Na', 'So', 'Sd', 'No'],
-    correctAnswer: 'Na',
+    correctAnswer: 0,
     explanation: 'Sodium is represented by the chemical symbol Na, derived from the Latin word "natrium".'
   },
   {
@@ -1002,7 +1002,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the smallest unit of life?',
     options: ['Cell', 'Atom', 'Molecule', 'Organelle'],
-    correctAnswer: 'Cell',
+    correctAnswer: 0,
     explanation: 'The cell is the smallest unit of life, capable of performing all the functions necessary for life.'
   },
   {
@@ -1011,7 +1011,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the process by which plants take in carbon dioxide?',
     options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
-    correctAnswer: 'Photosynthesis',
+    correctAnswer: 0,
     explanation: 'During photosynthesis, plants take in carbon dioxide and release oxygen.'
   },
   {
@@ -1020,7 +1020,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the unit of energy in the International System of Units (SI)?',
     options: ['Joule', 'Watt', 'Newton', 'Pascal'],
-    correctAnswer: 'Joule',
+    correctAnswer: 0,
     explanation: 'The joule (J) is the SI unit of energy, named after James Prescott Joule.'
   },
   {
@@ -1029,7 +1029,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical formula for methane?',
     options: ['CH4', 'CO2', 'H2O', 'NH3'],
-    correctAnswer: 'CH4',
+    correctAnswer: 0,
     explanation: 'Methane is composed of one carbon atom and four hydrogen atoms, hence the formula CH4.'
   },
 
@@ -1040,7 +1040,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which plants convert light energy into chemical energy?',
     options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
-    correctAnswer: 'Photosynthesis',
+    correctAnswer: 0,
     explanation: 'Photosynthesis is the process by which plants convert light energy into chemical energy stored in glucose.'
   },
   {
@@ -1049,7 +1049,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the theory that explains the evolution of species?',
     options: ['Natural Selection', 'Genetic Drift', 'Mutation', 'Gene Flow'],
-    correctAnswer: 'Natural Selection',
+    correctAnswer: 0,
     explanation: 'Natural selection is the process by which organisms better adapted to their environment tend to survive and produce more offspring.'
   },
   {
@@ -1058,7 +1058,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which rocks are formed from sediments?',
     options: ['Lithification', 'Weathering', 'Erosion', 'Deposition'],
-    correctAnswer: 'Lithification',
+    correctAnswer: 0,
     explanation: 'Lithification is the process by which sediments are compacted and cemented to form sedimentary rocks.'
   },
   {
@@ -1067,7 +1067,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the process by which plants respond to light?',
     options: ['Phototropism', 'Gravitropism', 'Thigmotropism', 'Hydrotropism'],
-    correctAnswer: 'Phototropism',
+    correctAnswer: 0,
     explanation: 'Phototropism is the process by which plants grow toward or away from light.'
   },
   {
@@ -1076,7 +1076,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the name of the force that opposes the motion of objects through fluids?',
     options: ['Drag', 'Gravity', 'Friction', 'Tension'],
-    correctAnswer: 'Drag',
+    correctAnswer: 0,
     explanation: 'Drag is the force that opposes the motion of objects through fluids, such as air or water.'
   },
 
@@ -1092,7 +1092,7 @@ export const questionBank: Question[] = [
       'It explained how proteins are synthesized',
       'It explained the process of DNA replication'
     ],
-    correctAnswer: 'It explained how proteins are synthesized',
+    correctAnswer: 0,
     explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
   },
   {
@@ -1106,7 +1106,7 @@ export const questionBank: Question[] = [
       'It explained the behavior of matter at the atomic level',
       'It explained the process of nuclear reactions'
     ],
-    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    correctAnswer: 0,
     explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
   },
   {
@@ -1120,7 +1120,7 @@ export const questionBank: Question[] = [
       'It explained how genetic information is stored and transmitted',
       'It explained the process of protein synthesis'
     ],
-    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    correctAnswer: 0,
     explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
   },
   {
@@ -1134,7 +1134,7 @@ export const questionBank: Question[] = [
       'It provided evidence for the Big Bang theory',
       'It explained the formation of galaxies'
     ],
-    correctAnswer: 'It provided evidence for the Big Bang theory',
+    correctAnswer: 0,
     explanation: 'The discovery of cosmic microwave background radiation provided strong evidence for the Big Bang theory.'
   },
   {
@@ -1148,7 +1148,7 @@ export const questionBank: Question[] = [
       'It explained the process of immunity',
       'It revolutionized the treatment of bacterial infections'
     ],
-    correctAnswer: 'It revolutionized the treatment of bacterial infections',
+    correctAnswer: 0,
     explanation: 'The discovery of penicillin revolutionized medicine by providing an effective treatment for bacterial infections.'
   },
 
@@ -1164,7 +1164,7 @@ export const questionBank: Question[] = [
       'It defines the properties of complex numbers',
       'It concerns the number of rational points on elliptic curves'
     ],
-    correctAnswer: 'It concerns the number of rational points on elliptic curves',
+    correctAnswer: 0,
     explanation: 'The Birch and Swinnerton-Dyer conjecture is one of the seven Millennium Prize Problems, concerning the number of rational points on elliptic curves.'
   },
   {
@@ -1178,7 +1178,7 @@ export const questionBank: Question[] = [
       'It defines the properties of topological spaces',
       'It concerns the relationship between algebraic cycles and cohomology classes'
     ],
-    correctAnswer: 'It concerns the relationship between algebraic cycles and cohomology classes',
+    correctAnswer: 0,
     explanation: 'The Hodge conjecture is one of the seven Millennium Prize Problems, concerning the relationship between algebraic cycles and cohomology classes.'
   },
   {
@@ -1192,7 +1192,7 @@ export const questionBank: Question[] = [
       'It defines the properties of surfaces',
       'It concerns the classification of three-dimensional manifolds'
     ],
-    correctAnswer: 'It concerns the classification of three-dimensional manifolds',
+    correctAnswer: 0,
     explanation: 'The Poincaré conjecture is one of the seven Millennium Prize Problems, concerning the classification of three-dimensional manifolds.'
   },
   {
@@ -1206,7 +1206,7 @@ export const questionBank: Question[] = [
       'It predicts weather patterns',
       'It concerns the mathematical properties of fluid flow equations'
     ],
-    correctAnswer: 'It concerns the mathematical properties of fluid flow equations',
+    correctAnswer: 0,
     explanation: 'The Navier-Stokes existence and smoothness problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of solutions to the Navier-Stokes equations.'
   },
   {
@@ -1220,7 +1220,7 @@ export const questionBank: Question[] = [
       'It predicts the existence of new fundamental forces',
       'It concerns the mathematical properties of quantum field theory'
     ],
-    correctAnswer: 'It concerns the mathematical properties of quantum field theory',
+    correctAnswer: 0,
     explanation: 'The Yang-Mills existence and mass gap problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of quantum field theory.'
   },
 
@@ -1231,7 +1231,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the chemical symbol for calcium?',
     options: ['Ca', 'Cl', 'C', 'Cu'],
-    correctAnswer: 'Ca',
+    correctAnswer: 0,
     explanation: 'Calcium is represented by the chemical symbol Ca, derived from the Latin word "calx" meaning lime.'
   },
   {
@@ -1240,7 +1240,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the pH of pure water at room temperature?',
     options: ['7', '0', '14', '10'],
-    correctAnswer: '7',
+    correctAnswer: 0,
     explanation: 'Pure water has a pH of 7 at room temperature, making it neutral (neither acidic nor basic).'
   },
   {
@@ -1249,7 +1249,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the most abundant gas in Earth\'s atmosphere?',
     options: ['Nitrogen', 'Oxygen', 'Carbon dioxide', 'Argon'],
-    correctAnswer: 'Nitrogen',
+    correctAnswer: 0,
     explanation: 'Nitrogen makes up about 78% of Earth\'s atmosphere, making it the most abundant gas.'
   },
   {
@@ -1258,7 +1258,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the name of the smallest unit of an element that retains its properties?',
     options: ['Atom', 'Molecule', 'Cell', 'Proton'],
-    correctAnswer: 'Atom',
+    correctAnswer: 0,
     explanation: 'An atom is the smallest unit of an element that retains the chemical properties of that element.'
   },
   {
@@ -1267,7 +1267,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the main function of red blood cells?',
     options: ['Transport oxygen', 'Fight infection', 'Clot blood', 'Produce antibodies'],
-    correctAnswer: 'Transport oxygen',
+    correctAnswer: 0,
     explanation: 'Red blood cells contain hemoglobin, which allows them to transport oxygen throughout the body.'
   },
 
@@ -1278,7 +1278,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the role of telomeres in chromosomes?',
     options: ['Protect chromosome ends', 'Replicate DNA', 'Produce proteins', 'Store genetic information'],
-    correctAnswer: 'Protect chromosome ends',
+    correctAnswer: 0,
     explanation: 'Telomeres are repetitive DNA sequences that protect the ends of chromosomes from damage and degradation.'
   },
   {
@@ -1287,7 +1287,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the function of the Golgi apparatus in cells?',
     options: ['Package and transport proteins', 'Produce energy', 'Break down waste', 'Store water'],
-    correctAnswer: 'Package and transport proteins',
+    correctAnswer: 0,
     explanation: 'The Golgi apparatus modifies, packages, and distributes proteins and lipids to their final destinations.'
   },
   {
@@ -1296,7 +1296,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the principle behind gel electrophoresis?',
     options: ['Separate molecules by size', 'Generate electricity', 'Create chemical reactions', 'Measure temperature'],
-    correctAnswer: 'Separate molecules by size',
+    correctAnswer: 0,
     explanation: 'Gel electrophoresis uses an electric field to separate molecules (like DNA fragments) based on their size and charge.'
   },
   {
@@ -1305,7 +1305,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the role of neurotransmitters in the nervous system?',
     options: ['Chemical signal transmission', 'Energy production', 'Waste removal', 'Blood circulation'],
-    correctAnswer: 'Chemical signal transmission',
+    correctAnswer: 0,
     explanation: 'Neurotransmitters are chemicals that transmit signals between neurons across synapses.'
   },
   {
@@ -1314,7 +1314,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the principle behind chromatography?',
     options: ['Separate mixtures', 'Generate heat', 'Create light', 'Measure mass'],
-    correctAnswer: 'Separate mixtures',
+    correctAnswer: 0,
     explanation: 'Chromatography is a technique used to separate mixtures based on different rates of migration through a medium.'
   },
   {
@@ -1328,7 +1328,7 @@ export const questionBank: Question[] = [
       'It discovered radioactivity',
       'It showed wave-particle duality'
     ],
-    correctAnswer: 'It demonstrated electron spin',
+    correctAnswer: 0,
     explanation: 'The Stern-Gerlach experiment provided evidence for the quantization of angular momentum and electron spin.'
   },
   {
@@ -1342,7 +1342,7 @@ export const questionBank: Question[] = [
       'It discovered DNA',
       'It showed cell division'
     ],
-    correctAnswer: 'It demonstrated abiotic synthesis of organic compounds',
+    correctAnswer: 0,
     explanation: 'The Miller-Urey experiment showed that organic compounds could be created from inorganic materials under conditions simulating early Earth.'
   },
   {
@@ -1356,7 +1356,7 @@ export const questionBank: Question[] = [
       'It showed protein synthesis',
       'It demonstrated evolution'
     ],
-    correctAnswer: 'It proved DNA replication is semiconservative',
+    correctAnswer: 0,
     explanation: 'The Meselson-Stahl experiment demonstrated that DNA replication occurs through a semiconservative mechanism.'
   },
   {
@@ -1370,7 +1370,7 @@ export const questionBank: Question[] = [
       'It proved atomic theory',
       'It showed gravity waves'
     ],
-    correctAnswer: 'It disproved the existence of the luminiferous ether',
+    correctAnswer: 0,
     explanation: 'The Michelson-Morley experiment failed to detect the hypothetical luminiferous ether, leading to the development of special relativity.'
   },
   {
@@ -1384,7 +1384,7 @@ export const questionBank: Question[] = [
       'It showed atomic structure',
       'It proved quantum theory'
     ],
-    correctAnswer: 'It measured the charge of an electron',
+    correctAnswer: 0,
     explanation: 'The Millikan oil drop experiment precisely measured the elementary electric charge of the electron.'
   },
   {
@@ -1398,7 +1398,7 @@ export const questionBank: Question[] = [
       'It describes atomic structure',
       'It predicts new particles'
     ],
-    correctAnswer: 'It unifies different versions of string theory',
+    correctAnswer: 0,
     explanation: 'M-theory is a theory that unifies all consistent versions of superstring theory, suggesting they are all different limits of the same theory.'
   },
 
@@ -1414,7 +1414,7 @@ export const questionBank: Question[] = [
       'It produces ethanol from pyruvate',
       'It synthesizes glucose from CO2'
     ],
-    correctAnswer: 'It generates ATP and CO2 from the oxidation of acetyl-CoA',
+    correctAnswer: 0,
     explanation: 'The Krebs cycle is a key metabolic pathway that generates energy through the oxidation of acetyl-CoA.'
   },
   {
@@ -1428,7 +1428,7 @@ export const questionBank: Question[] = [
       'It explains the origin of multicellular organisms',
       'It describes the evolution of sexual reproduction'
     ],
-    correctAnswer: 'It explains the origin of mitochondria and chloroplasts',
+    correctAnswer: 0,
     explanation: 'The endosymbiotic theory proposes that mitochondria and chloroplasts evolved from ancient bacteria that were engulfed by early eukaryotic cells.'
   },
   {
@@ -1442,7 +1442,7 @@ export const questionBank: Question[] = [
       'It describes the uncertainty principle',
       'It explains quantum tunneling'
     ],
-    correctAnswer: 'It describes the instantaneous correlation between quantum states of particles',
+    correctAnswer: 0,
     explanation: 'Quantum entanglement is a phenomenon where particles become correlated in such a way that the quantum state of each particle cannot be described independently.'
   },
   {
@@ -1456,7 +1456,7 @@ export const questionBank: Question[] = [
       'It explains the origin of cosmic rays',
       'It describes the formation of galaxies'
     ],
-    correctAnswer: 'It explains the accelerating expansion of the universe',
+    correctAnswer: 0,
     explanation: 'Dark energy is a hypothetical form of energy that permeates all of space and tends to accelerate the expansion of the universe.'
   },
   {
@@ -1465,7 +1465,7 @@ export const questionBank: Question[] = [
     difficulty: 'easy',
     question: 'What is the speed of light in a vacuum?',
     options: ['299,792,458 meters per second', '300,000,000 meters per second', '250,000,000 meters per second', '350,000,000 meters per second'],
-    correctAnswer: '299,792,458 meters per second',
+    correctAnswer: 0,
     explanation: 'The speed of light in a vacuum is exactly 299,792,458 meters per second, a fundamental constant of nature.'
   },
   {
@@ -1474,7 +1474,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the role of antibodies in the immune system?',
     options: ['They identify and neutralize pathogens', 'They produce energy', 'They digest food', 'They transport oxygen'],
-    correctAnswer: 'They identify and neutralize pathogens',
+    correctAnswer: 0,
     explanation: 'Antibodies are proteins produced by the immune system to identify and neutralize foreign substances like bacteria and viruses.'
   },
   {
@@ -1483,7 +1483,7 @@ export const questionBank: Question[] = [
     difficulty: 'complex',
     question: 'What is the function of the endoplasmic reticulum in cells?',
     options: ['Protein synthesis and transport', 'Energy production', 'Cell division', 'Waste removal'],
-    correctAnswer: 'Protein synthesis and transport',
+    correctAnswer: 0,
     explanation: 'The endoplasmic reticulum is involved in protein synthesis, folding, modification, and transport within cells.'
   },
   {
