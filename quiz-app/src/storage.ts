@@ -367,49 +367,18 @@ export class StorageManager {
   }
 
   private getAchievements(): Achievement[] {
-    const defaultAchievements: Achievement[] = [
-      {
-        id: 'first_win',
-        name: 'First Victory',
-        description: 'Complete your first quiz',
-        icon: '🏆',
-        unlocked: false
-      },
-      {
-        id: 'perfect_score',
-        name: 'Perfect Score',
-        description: 'Get all questions correct in a quiz',
-        icon: '💯',
-        unlocked: false
-      },
-      {
-        id: 'category_master',
-        name: 'Category Master',
-        description: 'Achieve 100% in any category',
-        icon: '🎯',
-        unlocked: false
-      },
-      {
-        id: 'streak_7',
-        name: 'Weekly Warrior',
-        description: 'Maintain a 7-day streak',
-        icon: '🔥',
-        unlocked: false
-      },
-      {
-        id: 'lifeline_saver',
-        name: 'Lifeline Saver',
-        description: 'Complete a quiz without using any lifelines',
-        icon: '🛡️',
-        unlocked: false
-      }
-    ];
-
     const storedAchievements = localStorage.getItem(this.ACHIEVEMENTS_KEY);
-    return storedAchievements ? JSON.parse(storedAchievements) : defaultAchievements;
+    if (storedAchievements) {
+      return JSON.parse(storedAchievements);
+    }
+    
+    // Initialize with all achievements if none are stored
+    localStorage.setItem(this.ACHIEVEMENTS_KEY, JSON.stringify(this.ACHIEVEMENTS));
+    return this.ACHIEVEMENTS;
   }
 
   private checkAchievements(score: number, totalQuestions: number, categoryResults: { [key: string]: { correct: number, total: number } }, timeSpent: number): Achievement[] {
+    const achievements = this.getAchievements();
     const unlockedAchievements: Achievement[] = [];
     const stats = this.getEnhancedStats();
     const currentDate = new Date();
@@ -417,7 +386,7 @@ export class StorageManager {
     const isWeekend = currentDate.getDay() === 0 || currentDate.getDay() === 6;
 
     // Check each achievement condition
-    this.ACHIEVEMENTS.forEach(achievement => {
+    achievements.forEach(achievement => {
       if (achievement.unlocked) return;
 
       let shouldUnlock = false;
@@ -498,6 +467,11 @@ export class StorageManager {
         unlockedAchievements.push(achievement);
       }
     });
+
+    // Save updated achievements to localStorage
+    if (unlockedAchievements.length > 0) {
+      localStorage.setItem(this.ACHIEVEMENTS_KEY, JSON.stringify(achievements));
+    }
 
     return unlockedAchievements;
   }
