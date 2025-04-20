@@ -1384,6 +1384,482 @@ export const questionBank: Question[] = [
     explanation: 'The Yang-Mills existence and mass gap problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of quantum field theory.'
   },
 
+  // Additional Easy Questions
+  {
+    id: 'sci261',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical symbol for calcium?',
+    options: ['Ca', 'Cl', 'C', 'Cu'],
+    correctAnswer: 'Ca',
+    explanation: 'Calcium is represented by the chemical symbol Ca, derived from the Latin word "calx" meaning lime.'
+  },
+  {
+    id: 'sci262',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the process by which plants make their own food?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Digestion'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'Photosynthesis is the process by which plants convert sunlight, carbon dioxide, and water into glucose and oxygen.'
+  },
+  {
+    id: 'sci263',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of force in the International System of Units (SI)?',
+    options: ['Newton', 'Joule', 'Watt', 'Pascal'],
+    correctAnswer: 'Newton',
+    explanation: 'The newton (N) is the SI unit of force, named after Sir Isaac Newton.'
+  },
+  {
+    id: 'sci264',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for table salt?',
+    options: ['NaCl', 'H2O', 'CO2', 'O2'],
+    correctAnswer: 'NaCl',
+    explanation: 'Table salt is sodium chloride (NaCl), composed of sodium (Na) and chlorine (Cl) ions.'
+  },
+  {
+    id: 'sci265',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical symbol for nitrogen?',
+    options: ['N', 'Ni', 'Na', 'Ne'],
+    correctAnswer: 'N',
+    explanation: 'Nitrogen is represented by the chemical symbol N, derived from the Greek word "nitron" meaning native soda.'
+  },
+
+  // Additional Complex Questions
+  {
+    id: 'sci266',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the process by which water moves through a plant?',
+    options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Osmosis'],
+    correctAnswer: 'Transpiration',
+    explanation: 'Transpiration is the process by which water moves through a plant and evaporates from its leaves.'
+  },
+  {
+    id: 'sci267',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the theory that explains the origin of the universe?',
+    options: ['Big Bang Theory', 'Steady State Theory', 'String Theory', 'Quantum Theory'],
+    correctAnswer: 'Big Bang Theory',
+    explanation: 'The Big Bang Theory is the prevailing cosmological model explaining the existence of the observable universe.'
+  },
+  {
+    id: 'sci268',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the process by which rocks are broken down into smaller pieces?',
+    options: ['Weathering', 'Erosion', 'Deposition', 'Sedimentation'],
+    correctAnswer: 'Weathering',
+    explanation: 'Weathering is the process by which rocks are broken down into smaller pieces by physical or chemical means.'
+  },
+  {
+    id: 'sci269',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the process by which plants reproduce without seeds?',
+    options: ['Vegetative Propagation', 'Pollination', 'Fertilization', 'Germination'],
+    correctAnswer: 'Vegetative Propagation',
+    explanation: 'Vegetative propagation is a form of asexual reproduction in plants where new plants grow from vegetative parts.'
+  },
+  {
+    id: 'sci270',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the force that keeps planets in orbit around the sun?',
+    options: ['Gravity', 'Magnetism', 'Friction', 'Tension'],
+    correctAnswer: 'Gravity',
+    explanation: 'Gravity is the force that attracts two bodies toward each other, keeping planets in orbit around the sun.'
+  },
+
+  // Additional Hard Questions
+  {
+    id: 'sci271',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the double-slit experiment in quantum mechanics?',
+    options: [
+      'It demonstrated wave-particle duality',
+      'It proved the existence of the aether',
+      'It confirmed Newton\'s laws of motion',
+      'It demonstrated the photoelectric effect'
+    ],
+    correctAnswer: 'It demonstrated wave-particle duality',
+    explanation: 'The double-slit experiment showed that particles can exhibit both wave-like and particle-like behavior.'
+  },
+  {
+    id: 'sci272',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of DNA?',
+    options: [
+      'It explained how genetic information is stored and transmitted',
+      'It proved the theory of evolution',
+      'It demonstrated the existence of genes',
+      'It explained the process of protein synthesis'
+    ],
+    correctAnswer: 'It explained how genetic information is stored and transmitted',
+    explanation: 'The discovery of DNA\'s double-helix structure explained how genetic information is stored and transmitted.'
+  },
+  {
+    id: 'sci273',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the cosmic microwave background radiation?',
+    options: [
+      'It provided evidence for the Big Bang theory',
+      'It proved the existence of dark matter',
+      'It demonstrated the expansion of the universe',
+      'It explained the formation of galaxies'
+    ],
+    correctAnswer: 'It provided evidence for the Big Bang theory',
+    explanation: 'The discovery of cosmic microwave background radiation provided strong evidence for the Big Bang theory.'
+  },
+  {
+    id: 'sci274',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of penicillin?',
+    options: [
+      'It revolutionized the treatment of bacterial infections',
+      'It proved the germ theory of disease',
+      'It demonstrated the existence of viruses',
+      'It explained the process of immunity'
+    ],
+    correctAnswer: 'It revolutionized the treatment of bacterial infections',
+    explanation: 'The discovery of penicillin revolutionized medicine by providing an effective treatment for bacterial infections.'
+  },
+  {
+    id: 'sci275',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+
+  // Additional Extremely Complex Questions
+  {
+    id: 'sci276',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the P vs NP problem in computer science?',
+    options: [
+      'It concerns the relationship between problems that can be solved quickly and those that can be verified quickly',
+      'It explains the nature of quantum computing',
+      'It describes the behavior of artificial intelligence',
+      'It predicts the future of computing technology'
+    ],
+    correctAnswer: 'It concerns the relationship between problems that can be solved quickly and those that can be verified quickly',
+    explanation: 'The P vs NP problem is one of the seven Millennium Prize Problems, concerning the relationship between problems that can be solved quickly and those that can be verified quickly.'
+  },
+  {
+    id: 'sci277',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Birch and Swinnerton-Dyer conjecture in mathematics?',
+    options: [
+      'It concerns the number of rational points on elliptic curves',
+      'It describes the behavior of prime numbers',
+      'It explains the nature of infinity',
+      'It defines the properties of complex numbers'
+    ],
+    correctAnswer: 'It concerns the number of rational points on elliptic curves',
+    explanation: 'The Birch and Swinnerton-Dyer conjecture is one of the seven Millennium Prize Problems, concerning the number of rational points on elliptic curves.'
+  },
+  {
+    id: 'sci278',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Hodge conjecture in algebraic geometry?',
+    options: [
+      'It concerns the relationship between algebraic cycles and cohomology classes',
+      'It describes the behavior of geometric shapes',
+      'It explains the nature of symmetry',
+      'It defines the properties of topological spaces'
+    ],
+    correctAnswer: 'It concerns the relationship between algebraic cycles and cohomology classes',
+    explanation: 'The Hodge conjecture is one of the seven Millennium Prize Problems, concerning the relationship between algebraic cycles and cohomology classes.'
+  },
+  {
+    id: 'sci279',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Poincaré conjecture in topology?',
+    options: [
+      'It concerns the classification of three-dimensional manifolds',
+      'It describes the behavior of geometric shapes',
+      'It explains the nature of space',
+      'It defines the properties of surfaces'
+    ],
+    correctAnswer: 'It concerns the classification of three-dimensional manifolds',
+    explanation: 'The Poincaré conjecture is one of the seven Millennium Prize Problems, concerning the classification of three-dimensional manifolds.'
+  },
+  {
+    id: 'sci280',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the quantum chromodynamics (QCD) in particle physics?',
+    options: [
+      'It describes the strong interaction between quarks and gluons',
+      'It explains the nature of dark matter',
+      'It describes the behavior of elementary particles',
+      'It predicts the existence of new fundamental forces'
+    ],
+    correctAnswer: 'It describes the strong interaction between quarks and gluons',
+    explanation: 'Quantum chromodynamics (QCD) is the theory of the strong interaction between quarks and gluons.'
+  },
+
+  // Additional Easy Questions
+  {
+    id: 'sci281',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical symbol for potassium?',
+    options: ['K', 'P', 'Po', 'Pt'],
+    correctAnswer: 'K',
+    explanation: 'Potassium is represented by the chemical symbol K, derived from the Latin word "kalium".'
+  },
+  {
+    id: 'sci282',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the smallest bone in the human body?',
+    options: ['Stapes', 'Femur', 'Tibia', 'Radius'],
+    correctAnswer: 'Stapes',
+    explanation: 'The stapes, located in the middle ear, is the smallest bone in the human body, measuring about 2.8-3.5 mm.'
+  },
+  {
+    id: 'sci283',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the process by which plants release oxygen?',
+    options: ['Photosynthesis', 'Respiration', 'Transpiration', 'Fermentation'],
+    correctAnswer: 'Photosynthesis',
+    explanation: 'During photosynthesis, plants release oxygen as a byproduct of converting carbon dioxide and water into glucose.'
+  },
+  {
+    id: 'sci284',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the unit of power in the International System of Units (SI)?',
+    options: ['Watt', 'Joule', 'Newton', 'Pascal'],
+    correctAnswer: 'Watt',
+    explanation: 'The watt (W) is the SI unit of power, named after James Watt.'
+  },
+  {
+    id: 'sci285',
+    category: 'Science',
+    difficulty: 'easy',
+    question: 'What is the chemical formula for carbon dioxide?',
+    options: ['CO2', 'CO', 'C2O', 'CO3'],
+    correctAnswer: 'CO2',
+    explanation: 'Carbon dioxide is composed of one carbon atom and two oxygen atoms, hence the formula CO2.'
+  },
+
+  // Additional Complex Questions
+  {
+    id: 'sci286',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the process by which cells divide to create new cells?',
+    options: ['Mitosis', 'Meiosis', 'Photosynthesis', 'Respiration'],
+    correctAnswer: 'Mitosis',
+    explanation: 'Mitosis is the process of cell division that results in two identical daughter cells.'
+  },
+  {
+    id: 'sci287',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the chemical process that breaks down food to release energy?',
+    options: ['Cellular Respiration', 'Photosynthesis', 'Fermentation', 'Digestion'],
+    correctAnswer: 'Cellular Respiration',
+    explanation: 'Cellular respiration is the process by which cells convert nutrients into energy (ATP).'
+  },
+  {
+    id: 'sci288',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the theory that explains the movement of Earth\'s continents?',
+    options: ['Plate Tectonics', 'Continental Drift', 'Seafloor Spreading', 'Mantle Convection'],
+    correctAnswer: 'Plate Tectonics',
+    explanation: 'Plate tectonics theory explains how Earth\'s lithosphere is divided into plates that move over the asthenosphere.'
+  },
+  {
+    id: 'sci289',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the process by which plants lose water through their leaves?',
+    options: ['Transpiration', 'Photosynthesis', 'Respiration', 'Osmosis'],
+    correctAnswer: 'Transpiration',
+    explanation: 'Transpiration is the process by which plants lose water vapor through their stomata.'
+  },
+  {
+    id: 'sci290',
+    category: 'Science',
+    difficulty: 'complex',
+    question: 'What is the name of the force that opposes motion between two surfaces in contact?',
+    options: ['Friction', 'Gravity', 'Tension', 'Normal Force'],
+    correctAnswer: 'Friction',
+    explanation: 'Friction is the force that opposes the relative motion of two surfaces in contact.'
+  },
+
+  // Additional Hard Questions
+  {
+    id: 'sci291',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the Heisenberg Uncertainty Principle?',
+    options: [
+      'Energy cannot be created or destroyed',
+      'Every action has an equal and opposite reaction',
+      'The speed of light is constant in a vacuum',
+      'It is impossible to know both position and momentum of a particle simultaneously'
+    ],
+    correctAnswer: 'It is impossible to know both position and momentum of a particle simultaneously',
+    explanation: 'The Heisenberg Uncertainty Principle states that the more precisely the position of a particle is determined, the less precisely its momentum can be known, and vice versa.'
+  },
+  {
+    id: 'sci292',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the Michelson-Morley experiment?',
+    options: [
+      'It failed to detect the existence of the luminiferous aether',
+      'It proved the existence of the luminiferous aether',
+      'It demonstrated the wave nature of light',
+      'It confirmed Newton\'s theory of gravity'
+    ],
+    correctAnswer: 'It failed to detect the existence of the luminiferous aether',
+    explanation: 'The Michelson-Morley experiment\'s failure to detect the aether led to the development of special relativity.'
+  },
+  {
+    id: 'sci293',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the photoelectric effect in quantum mechanics?',
+    options: [
+      'It demonstrated the particle nature of light',
+      'It proved the wave nature of light',
+      'It confirmed the existence of the aether',
+      'It demonstrated the existence of dark matter'
+    ],
+    correctAnswer: 'It demonstrated the particle nature of light',
+    explanation: 'The photoelectric effect showed that light can behave as particles (photons), supporting quantum theory.'
+  },
+  {
+    id: 'sci294',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the ribosome?',
+    options: [
+      'It explained how proteins are synthesized',
+      'It proved the existence of RNA',
+      'It demonstrated the nature of genetic code',
+      'It explained the process of DNA replication'
+    ],
+    correctAnswer: 'It explained how proteins are synthesized',
+    explanation: 'The discovery of the ribosome\'s structure explained how proteins are synthesized from mRNA templates.'
+  },
+  {
+    id: 'sci295',
+    category: 'Science',
+    difficulty: 'hard',
+    question: 'What is the significance of the discovery of the structure of the atom?',
+    options: [
+      'It explained the behavior of matter at the atomic level',
+      'It proved the existence of subatomic particles',
+      'It demonstrated the nature of chemical bonds',
+      'It explained the process of nuclear reactions'
+    ],
+    correctAnswer: 'It explained the behavior of matter at the atomic level',
+    explanation: 'The discovery of the atom\'s structure explained the behavior of matter at the atomic level.'
+  },
+
+  // Additional Extremely Complex Questions
+  {
+    id: 'sci296',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Riemann Hypothesis in mathematics?',
+    options: [
+      'It concerns the distribution of prime numbers',
+      'It describes the behavior of complex functions',
+      'It explains the nature of infinity',
+      'It defines the properties of fractals'
+    ],
+    correctAnswer: 'It concerns the distribution of prime numbers',
+    explanation: 'The Riemann Hypothesis is a conjecture about the distribution of the zeros of the Riemann zeta function, which is deeply connected to the distribution of prime numbers.'
+  },
+  {
+    id: 'sci297',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the holographic principle in theoretical physics?',
+    options: [
+      'It suggests that the information in a volume of space can be encoded on its boundary',
+      'It explains the nature of black holes',
+      'It describes the behavior of quantum particles',
+      'It predicts the existence of parallel universes'
+    ],
+    correctAnswer: 'It suggests that the information in a volume of space can be encoded on its boundary',
+    explanation: 'The holographic principle suggests that the information in a volume of space can be represented as a theory on the boundary of that space.'
+  },
+  {
+    id: 'sci298',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the AdS/CFT correspondence in string theory?',
+    options: [
+      'It establishes a duality between a gravity theory and a quantum field theory',
+      'It explains the nature of dark energy',
+      'It describes the behavior of black holes',
+      'It predicts the existence of extra dimensions'
+    ],
+    correctAnswer: 'It establishes a duality between a gravity theory and a quantum field theory',
+    explanation: 'The AdS/CFT correspondence is a conjectured relationship between two kinds of physical theories: a quantum field theory and a gravity theory.'
+  },
+  {
+    id: 'sci299',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Navier-Stokes existence and smoothness problem?',
+    options: [
+      'It concerns the mathematical properties of fluid flow equations',
+      'It describes the behavior of quantum particles',
+      'It explains the nature of turbulence',
+      'It predicts weather patterns'
+    ],
+    correctAnswer: 'It concerns the mathematical properties of fluid flow equations',
+    explanation: 'The Navier-Stokes existence and smoothness problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of solutions to the Navier-Stokes equations.'
+  },
+  {
+    id: 'sci300',
+    category: 'Science',
+    difficulty: 'extremely complex',
+    question: 'What is the significance of the Yang-Mills existence and mass gap problem?',
+    options: [
+      'It concerns the mathematical properties of quantum field theory',
+      'It explains the nature of dark matter',
+      'It describes the behavior of elementary particles',
+      'It predicts the existence of new fundamental forces'
+    ],
+    correctAnswer: 'It concerns the mathematical properties of quantum field theory',
+    explanation: 'The Yang-Mills existence and mass gap problem is one of the seven Millennium Prize Problems, concerning the mathematical properties of quantum field theory.'
+  },
+
   // ... existing questions from other categories ...
 ];
 
