@@ -282,7 +282,12 @@ export class StorageManager {
       timeSpent: 0,
       currentLifelinesUsed: 0,
       quickAnswers: 0,
-      difficultyStats: {},
+      difficultyStats: {
+        'easy': { played: 0, correct: 0, total: 0 },
+        'medium': { played: 0, correct: 0, total: 0 },
+        'hard': { played: 0, correct: 0, total: 0 },
+        'extremely complex': { played: 0, correct: 0, total: 0 }
+      },
       lifelinesUsed: {
         fiftyFifty: 0,
         hint: 0,
@@ -419,8 +424,8 @@ export class StorageManager {
           shouldUnlock = stats.quickAnswers >= 10;
           break;
         case 'difficulty_champion':
-          shouldUnlock = stats.difficultyStats['extremely complex'].played > 0 && 
-                        stats.difficultyStats['extremely complex'].correct === stats.difficultyStats['extremely complex'].total;
+          shouldUnlock = stats.difficultyStats['extremely complex']?.played > 0 && 
+                        stats.difficultyStats['extremely complex']?.correct === stats.difficultyStats['extremely complex']?.total;
           break;
         case 'quick_thinker':
           shouldUnlock = stats.quickAnswers >= 5;
