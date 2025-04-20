@@ -1,15 +1,17 @@
 :root {
   --primary-color: #e67e22;
   --primary-hover: #d35400;
-  --secondary-color: #95a5a6;
+  --secondary-color: #34495e;
   --success-color: #27ae60;
-  --error-color: #c0392b;
+  --error-color: #e74c3c;
   --warning-color: #f39c12;
   --background-color: #2c3e50;
   --text-primary: #ecf0f1;
   --text-secondary: #bdc3c7;
   --border-radius: 12px;
   --transition: all 0.3s ease;
+  --transition-speed: 0.3s;
+  --animation-duration: 0.5s;
 }
 
 .App {
@@ -20,6 +22,7 @@
   background-color: var(--background-color);
   padding: 2rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  animation: fadeIn var(--animation-duration) ease-out;
 }
 
 .App-logo {
@@ -64,11 +67,13 @@
   border-radius: var(--border-radius);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   padding: 2rem;
+  animation: scaleIn var(--animation-duration) ease-out;
 }
 
 .quiz-header-modern {
   text-align: center;
   margin-bottom: 2rem;
+  animation: fadeIn var(--animation-duration) ease-out;
 }
 
 .quiz-header-modern h1 {
@@ -105,11 +110,13 @@
   border-radius: var(--border-radius);
   background: #34495e;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition-speed) ease;
+  animation: fadeIn var(--animation-duration) ease-out;
 }
 
 .category-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border-color: var(--primary-color);
   background: #3d566e;
 }
@@ -118,6 +125,7 @@
   background: var(--primary-color);
   border-color: var(--primary-color);
   color: white;
+  animation: pulse 0.5s ease-in-out;
 }
 
 .category-icon {
@@ -145,12 +153,18 @@
   border: none;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition-speed) ease;
+  animation: fadeIn var(--animation-duration) ease-out;
 }
 
 .primary-button:hover {
   background: var(--primary-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button:active {
+  transform: translateY(1px);
 }
 
 .secondary-button {
@@ -161,12 +175,17 @@
   border: 2px solid var(--primary-color);
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition-speed) ease;
+  animation: fadeIn var(--animation-duration) ease-out;
 }
 
 .secondary-button:hover {
   background: var(--primary-color);
   color: white;
+}
+
+.secondary-button:active {
+  transform: translateY(1px);
 }
 
 /* Quiz Content */
@@ -180,12 +199,13 @@
   background: #2c3e50;
   border-radius: 4px;
   overflow: hidden;
+  transition: width 0.3s ease-out;
 }
 
 .progress-fill {
   height: 100%;
   background: var(--primary-color);
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-out;
 }
 
 .quiz-info {
@@ -228,6 +248,8 @@
   font-weight: bold;
   background: conic-gradient(var(--color) var(--progress), #e2e8f0 var(--progress));
   position: relative;
+  transition: all 0.1s linear;
+  animation: pulse 1s infinite;
 }
 
 .timer::before {
@@ -291,7 +313,8 @@
   border-radius: var(--border-radius);
   background: #34495e;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition-speed) ease;
+  animation: fadeIn var(--animation-duration) ease-out;
   font-size: 1rem;
   color: var(--text-primary);
 }
@@ -324,12 +347,20 @@
   background: var(--success-color);
   border-color: var(--success-color);
   color: white;
+  animation: pulse 0.5s ease-in-out;
 }
 
 .option-button.incorrect {
   background: var(--error-color);
   border-color: var(--error-color);
   color: white;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
 
 /* Quiz Controls */
@@ -353,17 +384,20 @@
   border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all var(--transition-speed) ease;
+  animation: fadeIn var(--animation-duration) ease-out;
 }
 
 .lifeline-button:hover:not(:disabled) {
   border-color: var(--primary-color);
   color: var(--primary-color);
+  transform: scale(1.1);
 }
 
 .lifeline-button.used {
   opacity: 0.5;
   cursor: not-allowed;
+  animation: fadeOut 0.5s ease-out;
 }
 
 .lifeline-icon {
@@ -396,6 +430,13 @@
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-speed) ease;
+  animation: fadeIn var(--animation-duration) ease-out;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .stat-card h3 {
@@ -567,6 +608,22 @@
   }
 }
 
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 .quiz-container > div {
   animation: fadeIn 0.3s ease-out;
 }
@@ -579,6 +636,7 @@
 
   .quiz-container {
     padding: 1rem;
+    animation: scaleIn 0.5s ease-out;
   }
 
   .categories-grid {
@@ -595,6 +653,30 @@
 
   .quiz-header-modern h2 {
     font-size: 1.5rem;
+  }
+
+  .category-button {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .option-button {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .stats-card {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .achievement-notification {
+    animation: slideIn 0.5s ease-out, fadeIn 0.5s ease-out;
+  }
+
+  /* Add touch feedback */
+  .category-button:active,
+  .option-button:active,
+  .primary-button:active,
+  .secondary-button:active {
+    transform: scale(0.95);
   }
 }
 
@@ -723,7 +805,13 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: var(--transition);
+  transition: all var(--transition-speed) ease;
+  animation: fadeIn var(--animation-duration) ease-out;
+}
+
+.achievement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .achievement-card.locked {
@@ -733,6 +821,7 @@
 
 .achievement-card.unlocked {
   border: 2px solid var(--primary-color);
+  animation: pulse 1s ease-in-out;
 }
 
 .achievement-icon {
@@ -777,19 +866,8 @@
   align-items: center;
   gap: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  animation: slideIn 0.3s ease-out;
+  animation: slideIn 0.5s ease-out, fadeIn 0.5s ease-out;
   z-index: 1000;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 .achievement-notification .achievement-icon {
@@ -854,4 +932,47 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   margin-top: 0.5rem;
+}
+
+/* Add smooth transitions for state changes */
+.quiz-content {
+  transition: opacity var(--transition-speed) ease;
+}
+
+.result-screen {
+  animation: fadeIn var(--animation-duration) ease-out;
+}
+
+.stats-screen {
+  animation: fadeIn var(--animation-duration) ease-out;
+}
+
+.welcome-screen {
+  animation: fadeIn var(--animation-duration) ease-out;
+}
+
+/* Add loading animation */
+@keyframes loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  animation: loading 1s linear infinite;
+}
+
+/* Add success animation */
+@keyframes success {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.success-animation {
+  animation: success 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
 }

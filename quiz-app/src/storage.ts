@@ -139,25 +139,50 @@ class StorageManager {
     const lastPlayed = new Date(stats.streaks.lastPlayed).toISOString().split('T')[0];
     
     // Update streak
-    const streak = today === lastPlayed ? stats.streaks.current : stats.streaks.current + 1;
+    const streak = today === lastPlayed ? stats.streaks.current + 1 : 1;
     
     // Update learning progress
     const learningProgress = { ...stats.learningProgress };
     Object.entries(categoryResults).forEach(([category, results]) => {
+      if (!learningProgress[category]) {
+        learningProgress[category] = {
+          correct: 0,
+          total: 0,
+          lastStudied: today
+        };
+      }
       learningProgress[category] = {
-        correct: (learningProgress[category]?.correct || 0) + results.correct,
-        total: (learningProgress[category]?.total || 0) + results.total,
+        correct: learningProgress[category].correct + results.correct,
+        total: learningProgress[category].total + results.total,
         lastStudied: today
       };
     });
 
+    // Update category stats
+    const categoryStats = { ...stats.categoryStats };
+    Object.entries(categoryResults).forEach(([category, results]) => {
+      if (!categoryStats[category]) {
+        categoryStats[category] = { correct: 0, total: 0 };
+      }
+      categoryStats[category] = {
+        correct: categoryStats[category].correct + results.correct,
+        total: categoryStats[category].total + results.total
+      };
+    });
+
+    // Calculate new average score
+    const newGamesPlayed = stats.gamesPlayed + 1;
+    const newTotalQuestions = stats.totalQuestions + totalQuestions;
+    const newTotalCorrect = (stats.averageScore * stats.gamesPlayed * stats.totalQuestions) + score;
+    const newAverageScore = newTotalCorrect / (newGamesPlayed * newTotalQuestions);
+
     // Check and unlock achievements
     const achievements = this.checkAchievements({
       ...stats,
-      gamesPlayed: stats.gamesPlayed + 1,
-      averageScore: (stats.averageScore * stats.gamesPlayed + score) / (stats.gamesPlayed + 1),
-      totalQuestions: stats.totalQuestions + totalQuestions,
-      categoryStats: this.mergeCategoryStats(stats.categoryStats, categoryResults),
+      gamesPlayed: newGamesPlayed,
+      averageScore: newAverageScore,
+      totalQuestions: newTotalQuestions,
+      categoryStats,
       preferredCategories: [...new Set([...stats.preferredCategories, ...preferredCategories])],
       streaks: {
         current: streak,
@@ -168,11 +193,10 @@ class StorageManager {
     });
 
     const updatedStats: EnhancedStats = {
-      ...stats,
-      gamesPlayed: stats.gamesPlayed + 1,
-      averageScore: (stats.averageScore * stats.gamesPlayed + score) / (stats.gamesPlayed + 1),
-      totalQuestions: stats.totalQuestions + totalQuestions,
-      categoryStats: this.mergeCategoryStats(stats.categoryStats, categoryResults),
+      gamesPlayed: newGamesPlayed,
+      averageScore: newAverageScore,
+      totalQuestions: newTotalQuestions,
+      categoryStats,
       preferredCategories: [...new Set([...stats.preferredCategories, ...preferredCategories])],
       streaks: {
         current: streak,
@@ -184,6 +208,7 @@ class StorageManager {
     };
 
     localStorage.setItem(this.STATS_KEY, JSON.stringify(updatedStats));
+    return updatedStats;
   }
 
   private getAchievements(): Achievement[] {
