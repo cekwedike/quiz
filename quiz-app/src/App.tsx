@@ -47,7 +47,28 @@ const questions: Question[] = [
   { id: 27, question: "What is the name of the first computer virus ever created?", options: ["Creeper", "Elk Cloner", "Brain", "Morris Worm"], correctAnswer: "Creeper", category: "Technology", difficulty: "extremely complex" },
   { id: 28, question: "Which ancient civilization developed the concept of zero?", options: ["Babylonian", "Egyptian", "Mayan", "Indian"], correctAnswer: "Indian", category: "History", difficulty: "extremely complex" },
   { id: 29, question: "What is the name of the paradox that states that a faster-than-light signal would violate causality?", options: ["Twin Paradox", "Grandfather Paradox", "Bootstrap Paradox", "Tachyonic Antitelephone"], correctAnswer: "Tachyonic Antitelephone", category: "Science", difficulty: "extremely complex" },
-  { id: 30, question: "Which programming paradigm is based on the concept of 'objects'?", options: ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], correctAnswer: "Object-Oriented Programming", category: "Technology", difficulty: "extremely complex" }
+  { id: 30, question: "Which programming paradigm is based on the concept of 'objects'?", options: ["Functional Programming", "Object-Oriented Programming", "Procedural Programming", "Logic Programming"], correctAnswer: "Object-Oriented Programming", category: "Technology", difficulty: "extremely complex" },
+
+  // Additional Simple Questions
+  { id: 31, question: "What is the largest mammal on Earth?", options: ["Elephant", "Blue Whale", "Giraffe", "Polar Bear"], correctAnswer: "Blue Whale", category: "Science", difficulty: "simple" },
+  { id: 32, question: "Which country is home to the kangaroo?", options: ["New Zealand", "Australia", "South Africa", "Brazil"], correctAnswer: "Australia", category: "Geography", difficulty: "simple" },
+  { id: 33, question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], correctAnswer: "Paris", category: "Geography", difficulty: "simple" },
+  { id: 34, question: "Who wrote 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], correctAnswer: "William Shakespeare", category: "History", difficulty: "simple" },
+  { id: 35, question: "What is the main ingredient in guacamole?", options: ["Tomato", "Avocado", "Onion", "Lime"], correctAnswer: "Avocado", category: "Entertainment", difficulty: "simple" },
+
+  // Additional Complex Questions
+  { id: 36, question: "Which element has the chemical symbol 'O'?", options: ["Oxygen", "Osmium", "Oganesson", "Osmium"], correctAnswer: "Oxygen", category: "Science", difficulty: "complex" },
+  { id: 37, question: "In which year did the Titanic sink?", options: ["1910", "1912", "1914", "1916"], correctAnswer: "1912", category: "History", difficulty: "complex" },
+  { id: 38, question: "What is the largest organ in the human body?", options: ["Heart", "Liver", "Skin", "Brain"], correctAnswer: "Skin", category: "Science", difficulty: "complex" },
+  { id: 39, question: "Which planet has the most moons?", options: ["Jupiter", "Saturn", "Uranus", "Neptune"], correctAnswer: "Saturn", category: "Science", difficulty: "complex" },
+  { id: 40, question: "Who painted 'The Starry Night'?", options: ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Salvador Dalí"], correctAnswer: "Vincent van Gogh", category: "History", difficulty: "complex" },
+
+  // Additional Extremely Complex Questions
+  { id: 41, question: "What is the name of the theory that describes the behavior of matter at the atomic and subatomic level?", options: ["Quantum Mechanics", "Relativity Theory", "String Theory", "Chaos Theory"], correctAnswer: "Quantum Mechanics", category: "Science", difficulty: "extremely complex" },
+  { id: 42, question: "Which ancient civilization developed the concept of zero independently?", options: ["Mayan", "Egyptian", "Roman", "Greek"], correctAnswer: "Mayan", category: "History", difficulty: "extremely complex" },
+  { id: 43, question: "What is the name of the paradox that questions whether a computer can determine if a program will halt or run forever?", options: ["Turing's Paradox", "Halting Problem", "Infinite Loop Paradox", "Computability Paradox"], correctAnswer: "Halting Problem", category: "Technology", difficulty: "extremely complex" },
+  { id: 44, question: "Which mathematical concept describes the study of properties that are preserved under continuous deformations?", options: ["Topology", "Algebra", "Calculus", "Geometry"], correctAnswer: "Topology", category: "Science", difficulty: "extremely complex" },
+  { id: 45, question: "What is the name of the first computer virus to spread in the wild?", options: ["Creeper", "Elk Cloner", "Brain", "Morris Worm"], correctAnswer: "Brain", category: "Technology", difficulty: "extremely complex" }
 ];
 
 const categories = Array.from(new Set(questions.map(q => q.category)));
@@ -166,7 +187,15 @@ function App() {
       filteredQuestions = filteredQuestions.filter(q => q.difficulty === selectedDifficulty);
     }
     
-    const shuffled = [...filteredQuestions].sort(() => Math.random() - 0.5);
+    // Improved randomization
+    const shuffled = [...filteredQuestions]
+      .sort(() => Math.random() - 0.5)
+      .map(q => ({
+        ...q,
+        options: [...q.options].sort(() => Math.random() - 0.5)
+      }))
+      .slice(0, 10); // Limit to 10 questions per quiz
+    
     setQuizQuestions(shuffled);
     setIsStarted(true);
     setTimeLeft(30);
@@ -633,37 +662,37 @@ function App() {
 
               {renderStatsContent()}
 
-              <button 
-                className="primary-button"
-                onClick={() => {
-                  setShowStats(false);
-                  setIsSelectingCategories(true);
-                }}
-              >
-                Back to Categories
-              </button>
-              <button 
-                className="secondary-button"
-                onClick={() => {
-                  setShowStats(false);
-                  setIsSelectingCategories(false);
-                }}
-                style={{ marginTop: '1rem' }}
-              >
-                Back to Main Menu
-              </button>
-              <button 
-                className="delete-stats-button"
-                onClick={() => {
-                  if (window.confirm('Are you sure you want to delete all statistics? This action cannot be undone.')) {
-                    storageManager.clearAllData();
-                    setEnhancedStats(storageManager.getEnhancedStats());
-                  }
-                }}
-                style={{ marginTop: '1rem' }}
-              >
-                Delete Statistics
-              </button>
+              <div className="action-buttons">
+                <button 
+                  className="primary-button"
+                  onClick={() => {
+                    setShowStats(false);
+                    setIsSelectingCategories(true);
+                  }}
+                >
+                  Back to Categories
+                </button>
+                <button 
+                  className="secondary-button"
+                  onClick={() => {
+                    setShowStats(false);
+                    setIsSelectingCategories(false);
+                  }}
+                >
+                  Back to Main Menu
+                </button>
+                <button 
+                  className="delete-stats-button"
+                  onClick={() => {
+                    if (window.confirm('Are you sure you want to delete all statistics? This action cannot be undone.')) {
+                      storageManager.clearAllData();
+                      setEnhancedStats(storageManager.getEnhancedStats());
+                    }
+                  }}
+                >
+                  Delete Statistics
+                </button>
+              </div>
             </div>
           ) : (
             <div className="welcome-screen">

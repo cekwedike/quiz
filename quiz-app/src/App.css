@@ -1111,3 +1111,17 @@
   box-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
   animation: slideIn 0.5s ease-out, fadeIn 0.5s ease-out, pulseGlow 2s infinite ease-in-out;
 }
+
+.stats-screen .action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stats-screen .primary-button,
+.stats-screen .secondary-button,
+.stats-screen .delete-stats-button {
+  width: 100%;
+  margin: 0;
+}
