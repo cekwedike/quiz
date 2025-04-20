@@ -5877,6 +5877,356 @@ export const questionBank: Question[] = [
     ],
     correctAnswer: 'Structured Query Language',
     explanation: 'SQL stands for Structured Query Language, which is a programming language designed for managing data in relational database management systems.'
+  },
+  {
+    id: 'tech51',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the primary difference between TCP and UDP protocols?',
+    options: [
+      'TCP is connection-oriented while UDP is connectionless',
+      'TCP is faster than UDP',
+      'UDP provides error checking while TCP does not',
+      'TCP is used for video streaming while UDP is used for web browsing'
+    ],
+    correctAnswer: 'TCP is connection-oriented while UDP is connectionless',
+    explanation: 'TCP (Transmission Control Protocol) is connection-oriented, ensuring reliable data delivery, while UDP (User Datagram Protocol) is connectionless and faster but less reliable.'
+  },
+  {
+    id: 'tech52',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is NOT a characteristic of a NoSQL database?',
+    options: [
+      'Strict schema enforcement',
+      'Horizontal scalability',
+      'Flexible data models',
+      'High availability'
+    ],
+    correctAnswer: 'Strict schema enforcement',
+    explanation: 'NoSQL databases are known for their flexible data models and lack of strict schema enforcement, unlike traditional relational databases.'
+  },
+  {
+    id: 'tech53',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a reverse proxy server?',
+    options: [
+      'To protect backend servers and provide load balancing',
+      'To hide the client\'s IP address',
+      'To cache web content',
+      'To encrypt network traffic'
+    ],
+    correctAnswer: 'To protect backend servers and provide load balancing',
+    explanation: 'A reverse proxy server sits in front of backend servers, providing load balancing, security, and caching services.'
+  },
+  {
+    id: 'tech54',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is a key feature of microservices architecture?',
+    options: [
+      'Independent deployment of services',
+      'Shared database across all services',
+      'Tight coupling between services',
+      'Single codebase for all services'
+    ],
+    correctAnswer: 'Independent deployment of services',
+    explanation: 'Microservices architecture allows each service to be developed, deployed, and scaled independently.'
+  },
+  {
+    id: 'tech55',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the primary purpose of Docker containers?',
+    options: [
+      'To package and isolate applications with their dependencies',
+      'To provide virtual machines',
+      'To manage cloud resources',
+      'To optimize database performance'
+    ],
+    correctAnswer: 'To package and isolate applications with their dependencies',
+    explanation: 'Docker containers package applications and their dependencies into isolated environments for consistent deployment.'
+  },
+  {
+    id: 'tech56',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is NOT a characteristic of RESTful APIs?',
+    options: [
+      'Stateful communication',
+      'Stateless communication',
+      'Resource-based URLs',
+      'Standard HTTP methods'
+    ],
+    correctAnswer: 'Stateful communication',
+    explanation: 'RESTful APIs are stateless, meaning each request contains all necessary information and doesn\'t rely on server-side state.'
+  },
+  {
+    id: 'tech57',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a CDN (Content Delivery Network)?',
+    options: [
+      'To distribute content geographically closer to users',
+      'To provide cloud storage',
+      'To manage database replication',
+      'To handle API requests'
+    ],
+    correctAnswer: 'To distribute content geographically closer to users',
+    explanation: 'CDNs distribute content across multiple servers worldwide to reduce latency and improve load times.'
+  },
+  {
+    id: 'tech58',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is a key feature of GraphQL?',
+    options: [
+      'Client-specified data requirements',
+      'Fixed response structure',
+      'Limited query capabilities',
+      'Server-determined data format'
+    ],
+    correctAnswer: 'Client-specified data requirements',
+    explanation: 'GraphQL allows clients to specify exactly what data they need, reducing over-fetching and under-fetching.'
+  },
+  {
+    id: 'tech59',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the primary purpose of Kubernetes?',
+    options: [
+      'To orchestrate containerized applications',
+      'To provide cloud storage',
+      'To manage virtual machines',
+      'To handle API requests'
+    ],
+    correctAnswer: 'To orchestrate containerized applications',
+    explanation: 'Kubernetes is a container orchestration platform that automates deployment, scaling, and management of containerized applications.'
+  },
+  {
+    id: 'tech60',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is NOT a characteristic of serverless computing?',
+    options: [
+      'Persistent server instances',
+      'Pay-per-use pricing',
+      'Automatic scaling',
+      'Managed infrastructure'
+    ],
+    correctAnswer: 'Persistent server instances',
+    explanation: 'Serverless computing doesn\'t maintain persistent server instances; functions are executed on-demand.'
+  },
+  {
+    id: 'tech61',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of OAuth 2.0?',
+    options: [
+      'To provide secure authorization',
+      'To encrypt data transmission',
+      'To manage database access',
+      'To handle file storage'
+    ],
+    correctAnswer: 'To provide secure authorization',
+    explanation: 'OAuth 2.0 is an authorization framework that enables applications to obtain limited access to user accounts.'
+  },
+  {
+    id: 'tech62',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is a key feature of blockchain technology?',
+    options: [
+      'Decentralized consensus',
+      'Centralized control',
+      'Mutable transactions',
+      'Single point of failure'
+    ],
+    correctAnswer: 'Decentralized consensus',
+    explanation: 'Blockchain technology uses decentralized consensus to validate transactions without a central authority.'
+  },
+  {
+    id: 'tech63',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a message queue in distributed systems?',
+    options: [
+      'To enable asynchronous communication between services',
+      'To store user data',
+      'To manage database connections',
+      'To handle web requests'
+    ],
+    correctAnswer: 'To enable asynchronous communication between services',
+    explanation: 'Message queues enable asynchronous communication between services, improving system reliability and scalability.'
+  },
+  {
+    id: 'tech64',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is NOT a characteristic of CI/CD pipelines?',
+    options: [
+      'Manual deployment approval for every change',
+      'Automated testing',
+      'Continuous integration',
+      'Automated deployment'
+    ],
+    correctAnswer: 'Manual deployment approval for every change',
+    explanation: 'CI/CD pipelines automate the software delivery process, including testing and deployment.'
+  },
+  {
+    id: 'tech65',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a circuit breaker pattern?',
+    options: [
+      'To prevent cascading failures in distributed systems',
+      'To manage database connections',
+      'To handle API requests',
+      'To encrypt network traffic'
+    ],
+    correctAnswer: 'To prevent cascading failures in distributed systems',
+    explanation: 'The circuit breaker pattern prevents a system from making calls to a failing service, thus preventing cascading failures.'
+  },
+  {
+    id: 'tech66',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is a key feature of event-driven architecture?',
+    options: [
+      'Loose coupling between components',
+      'Synchronous communication',
+      'Tight integration',
+      'Direct dependencies'
+    ],
+    correctAnswer: 'Loose coupling between components',
+    explanation: 'Event-driven architecture promotes loose coupling between components through asynchronous event-based communication.'
+  },
+  {
+    id: 'tech67',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a service mesh?',
+    options: [
+      'To manage service-to-service communication',
+      'To provide cloud storage',
+      'To handle database queries',
+      'To manage user authentication'
+    ],
+    correctAnswer: 'To manage service-to-service communication',
+    explanation: 'A service mesh provides infrastructure for service-to-service communication, including service discovery, load balancing, and security.'
+  },
+  {
+    id: 'tech68',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is NOT a characteristic of immutable infrastructure?',
+    options: [
+      'In-place updates',
+      'Versioned deployments',
+      'Consistent environments',
+      'Reproducible builds'
+    ],
+    correctAnswer: 'In-place updates',
+    explanation: 'Immutable infrastructure replaces components rather than updating them in place, ensuring consistency and reliability.'
+  },
+  {
+    id: 'tech69',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a distributed cache?',
+    options: [
+      'To improve application performance and reduce database load',
+      'To store permanent data',
+      'To manage database connections',
+      'To handle API requests'
+    ],
+    correctAnswer: 'To improve application performance and reduce database load',
+    explanation: 'Distributed caches store frequently accessed data in memory across multiple servers to improve performance.'
+  },
+  {
+    id: 'tech70',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is a key feature of infrastructure as code?',
+    options: [
+      'Version-controlled infrastructure',
+      'Manual server configuration',
+      'One-time deployment',
+      'Static infrastructure'
+    ],
+    correctAnswer: 'Version-controlled infrastructure',
+    explanation: 'Infrastructure as code allows infrastructure to be defined and managed through code, enabling version control and automation.'
+  },
+  {
+    id: 'tech71',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a load balancer?',
+    options: [
+      'To distribute traffic across multiple servers',
+      'To store user data',
+      'To manage database connections',
+      'To handle API requests'
+    ],
+    correctAnswer: 'To distribute traffic across multiple servers',
+    explanation: 'Load balancers distribute incoming network traffic across multiple servers to improve reliability and performance.'
+  },
+  {
+    id: 'tech72',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is NOT a characteristic of cloud-native applications?',
+    options: [
+      'Tight coupling with infrastructure',
+      'Containerized deployment',
+      'Microservices architecture',
+      'Dynamic scaling'
+    ],
+    correctAnswer: 'Tight coupling with infrastructure',
+    explanation: 'Cloud-native applications are designed to be loosely coupled with infrastructure, enabling flexibility and scalability.'
+  },
+  {
+    id: 'tech73',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a database index?',
+    options: [
+      'To improve query performance',
+      'To store additional data',
+      'To manage database connections',
+      'To handle API requests'
+    ],
+    correctAnswer: 'To improve query performance',
+    explanation: 'Database indexes improve query performance by providing faster access to specific data without scanning the entire table.'
+  },
+  {
+    id: 'tech74',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'Which of these is a key feature of event sourcing?',
+    options: [
+      'Storing state changes as a sequence of events',
+      'Direct state updates',
+      'Single source of truth',
+      'Immediate state persistence'
+    ],
+    correctAnswer: 'Storing state changes as a sequence of events',
+    explanation: 'Event sourcing stores state changes as a sequence of events, enabling audit trails and time-travel debugging.'
+  },
+  {
+    id: 'tech75',
+    category: 'Technology',
+    difficulty: 'complex',
+    question: 'What is the purpose of a reverse proxy?',
+    options: [
+      'To protect backend servers and provide load balancing',
+      'To hide the client\'s IP address',
+      'To cache web content',
+      'To encrypt network traffic'
+    ],
+    correctAnswer: 'To protect backend servers and provide load balancing',
+    explanation: 'A reverse proxy sits in front of backend servers, providing load balancing, security, and caching services.'
   }
 ];
 
