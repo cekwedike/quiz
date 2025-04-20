@@ -627,12 +627,6 @@
   to { transform: scale(1); opacity: 1; }
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
 .quiz-container > div {
   animation: fadeIn 0.3s ease-out;
 }
@@ -991,6 +985,20 @@
 }
 
 /* Cosmic Background Animations */
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 5s infinite ease-in-out;
+  animation-delay: calc(var(--star-delay) * 1s);
+}
+
 @keyframes shootingStar {
   0% {
     transform: translateX(-100px) translateY(-100px) rotate(45deg);
@@ -1008,41 +1016,6 @@
   }
 }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
-}
-
-@keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 5px rgba(231, 76, 60, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(231, 76, 60, 0.8); }
-  100% { box-shadow: 0 0 5px rgba(231, 76, 60, 0.5); }
-}
-
-/* Cosmic Background Elements */
-.cosmic-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.star {
-  position: absolute;
-  background-color: white;
-  border-radius: 50%;
-  animation: twinkle 4s infinite ease-in-out;
-}
-
 .shooting-star {
   position: absolute;
   width: 4px;
@@ -1050,12 +1023,13 @@
   background: linear-gradient(45deg, white, transparent);
   border-radius: 50%;
   animation: shootingStar 8s linear infinite;
+  animation-delay: calc(var(--shooting-delay) * 1s);
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Add floating animation to quiz container */
 .quiz-container {
-  animation: float 6s ease-in-out infinite, scaleIn var(--animation-duration) ease-out;
+  animation: scaleIn var(--animation-duration) ease-out;
 }
 
 /* Add glow effect to primary buttons */

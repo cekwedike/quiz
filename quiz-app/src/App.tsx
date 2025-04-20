@@ -469,8 +469,7 @@ function App() {
       star.style.height = `${size}px`;
       star.style.left = `${Math.random() * 100}%`;
       star.style.top = `${Math.random() * 100}%`;
-      star.style.animationDuration = `${Math.random() * 3 + 2}s`;
-      star.style.animationDelay = `${Math.random() * 2}s`;
+      star.style.setProperty('--star-delay', String(Math.random() * 5));
       return star;
     };
 
@@ -479,8 +478,7 @@ function App() {
       shootingStar.className = 'shooting-star';
       shootingStar.style.left = `${Math.random() * 100}%`;
       shootingStar.style.top = `${Math.random() * 100}%`;
-      shootingStar.style.animationDuration = `${Math.random() * 2 + 1}s`;
-      shootingStar.style.animationDelay = `${Math.random() * 5}s`;
+      shootingStar.style.setProperty('--shooting-delay', String(Math.random() * 8));
       return shootingStar;
     };
 
