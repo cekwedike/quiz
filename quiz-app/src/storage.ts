@@ -33,28 +33,185 @@ interface EnhancedStats {
   gamesPlayed: number;
   averageScore: number;
   totalQuestions: number;
-  categoryStats: { [key: string]: { correct: number; total: number } };
+  categoryStats: { [key: string]: { correct: number; total: number; played: number } };
   preferredCategories: string[];
-  achievements: Achievement[];
   streaks: {
     current: number;
     longest: number;
     lastPlayed: string;
   };
-  learningProgress: {
-    [category: string]: {
+  learningProgress: { [key: string]: { correct: number; total: number; lastStudied: string } };
+  achievements: Achievement[];
+  timeSpent: number;
+  currentLifelinesUsed: number;
+  quickAnswers: number;
+  difficultyStats: {
+    [key: string]: {
+      played: number;
       correct: number;
       total: number;
-      lastStudied: string;
     }
   };
+  lifelinesUsed: {
+    fiftyFifty: number;
+    hint: number;
+    skip: number;
+  };
+  weekendQuizzes: number;
+  quizzesToday: number;
+  perfectScoresInARow: number;
 }
 
-class StorageManager {
+const categories = ['Science', 'History', 'Geography', 'Technology', 'Sports', 'Entertainment'];
+
+export class StorageManager {
   private readonly HIGH_SCORES_KEY = 'quiz_high_scores';
   private readonly STATS_KEY = 'quiz_stats';
   private readonly ACHIEVEMENTS_KEY = 'quiz_achievements';
   private readonly MAX_HIGH_SCORES = 10;
+
+  private readonly ACHIEVEMENTS: Achievement[] = [
+    {
+      id: 'first_win',
+      name: 'First Victory',
+      description: 'Complete your first quiz',
+      icon: '🏆',
+      unlocked: false
+    },
+    {
+      id: 'perfect_score',
+      name: 'Perfect Score',
+      description: 'Get 100% on a quiz',
+      icon: '💯',
+      unlocked: false
+    },
+    {
+      id: 'speed_demon',
+      name: 'Speed Demon',
+      description: 'Complete a quiz in under 2 minutes',
+      icon: '⚡',
+      unlocked: false
+    },
+    {
+      id: 'category_master',
+      name: 'Category Master',
+      description: 'Get 100% in any category',
+      icon: '🎯',
+      unlocked: false
+    },
+    {
+      id: 'lifeline_saver',
+      name: 'Lifeline Saver',
+      description: 'Complete a quiz without using any lifelines',
+      icon: '🛡️',
+      unlocked: false
+    },
+    {
+      id: 'streak_master',
+      name: 'Streak Master',
+      description: 'Maintain a 5-day quiz streak',
+      icon: '🔥',
+      unlocked: false
+    },
+    {
+      id: 'jack_of_all',
+      name: 'Jack of All Trades',
+      description: 'Play quizzes in all categories',
+      icon: '🎭',
+      unlocked: false
+    },
+    {
+      id: 'time_master',
+      name: 'Time Master',
+      description: 'Answer 10 questions correctly with more than 20 seconds remaining',
+      icon: '⏱️',
+      unlocked: false
+    },
+    {
+      id: 'difficulty_champion',
+      name: 'Difficulty Champion',
+      description: 'Complete a quiz with only extremely complex questions',
+      icon: '🏅',
+      unlocked: false
+    },
+    {
+      id: 'quick_thinker',
+      name: 'Quick Thinker',
+      description: 'Answer 5 questions correctly within the first 5 seconds',
+      icon: '⚡',
+      unlocked: false
+    },
+    {
+      id: 'category_explorer',
+      name: 'Category Explorer',
+      description: 'Play at least 3 quizzes in each category',
+      icon: '🗺️',
+      unlocked: false
+    },
+    {
+      id: 'consistency_master',
+      name: 'Consistency Master',
+      description: 'Maintain an average score above 80% for 10 quizzes',
+      icon: '📊',
+      unlocked: false
+    },
+    {
+      id: 'lifeline_expert',
+      name: 'Lifeline Expert',
+      description: 'Use all lifelines effectively in a single quiz',
+      icon: '🎮',
+      unlocked: false
+    },
+    {
+      id: 'night_owl',
+      name: 'Night Owl',
+      description: 'Complete a quiz between 10 PM and 4 AM',
+      icon: '🌙',
+      unlocked: false
+    },
+    {
+      id: 'weekend_warrior',
+      name: 'Weekend Warrior',
+      description: 'Complete 5 quizzes on weekends',
+      icon: '🎉',
+      unlocked: false
+    },
+    {
+      id: 'early_bird',
+      name: 'Early Bird',
+      description: 'Complete a quiz between 5 AM and 9 AM',
+      icon: '🌅',
+      unlocked: false
+    },
+    {
+      id: 'marathon_runner',
+      name: 'Marathon Runner',
+      description: 'Complete 3 quizzes in a single day',
+      icon: '🏃',
+      unlocked: false
+    },
+    {
+      id: 'precision_master',
+      name: 'Precision Master',
+      description: 'Get 5 perfect scores in a row',
+      icon: '🎯',
+      unlocked: false
+    },
+    {
+      id: 'category_specialist',
+      name: 'Category Specialist',
+      description: 'Get 90% or higher in a specific category 5 times',
+      icon: '📚',
+      unlocked: false
+    },
+    {
+      id: 'quiz_legend',
+      name: 'Quiz Legend',
+      description: 'Complete 100 quizzes',
+      icon: '👑',
+      unlocked: false
+    }
+  ];
 
   getHighScores(): HighScore[] {
     const scores = localStorage.getItem(this.HIGH_SCORES_KEY);
@@ -121,7 +278,19 @@ class StorageManager {
         longest: 0,
         lastPlayed: new Date().toISOString()
       },
-      learningProgress: {}
+      learningProgress: {},
+      timeSpent: 0,
+      currentLifelinesUsed: 0,
+      quickAnswers: 0,
+      difficultyStats: {},
+      lifelinesUsed: {
+        fiftyFifty: 0,
+        hint: 0,
+        skip: 0
+      },
+      weekendQuizzes: 0,
+      quizzesToday: 0,
+      perfectScoresInARow: 0
     };
 
     const storedStats = localStorage.getItem(this.STATS_KEY);
@@ -159,16 +328,7 @@ class StorageManager {
     });
 
     // Update category stats
-    const categoryStats = { ...stats.categoryStats };
-    Object.entries(categoryResults).forEach(([category, results]) => {
-      if (!categoryStats[category]) {
-        categoryStats[category] = { correct: 0, total: 0 };
-      }
-      categoryStats[category] = {
-        correct: categoryStats[category].correct + results.correct,
-        total: categoryStats[category].total + results.total
-      };
-    });
+    const categoryStats = this.updateCategoryStats(stats, categoryResults);
 
     // Calculate new average score
     const newGamesPlayed = stats.gamesPlayed + 1;
@@ -177,20 +337,7 @@ class StorageManager {
     const newAverageScore = newTotalCorrect / (newGamesPlayed * newTotalQuestions);
 
     // Check and unlock achievements
-    const achievements = this.checkAchievements({
-      ...stats,
-      gamesPlayed: newGamesPlayed,
-      averageScore: newAverageScore,
-      totalQuestions: newTotalQuestions,
-      categoryStats,
-      preferredCategories: [...new Set([...stats.preferredCategories, ...preferredCategories])],
-      streaks: {
-        current: streak,
-        longest: Math.max(streak, stats.streaks.longest),
-        lastPlayed: today
-      },
-      learningProgress
-    });
+    const achievements = this.checkAchievements(score, totalQuestions, categoryResults, stats.timeSpent);
 
     const updatedStats: EnhancedStats = {
       gamesPlayed: newGamesPlayed,
@@ -204,7 +351,15 @@ class StorageManager {
         lastPlayed: today
       },
       learningProgress,
-      achievements
+      achievements,
+      timeSpent: stats.timeSpent + score,
+      currentLifelinesUsed: stats.currentLifelinesUsed,
+      quickAnswers: stats.quickAnswers,
+      difficultyStats: stats.difficultyStats,
+      lifelinesUsed: stats.lifelinesUsed,
+      weekendQuizzes: stats.weekendQuizzes,
+      quizzesToday: stats.quizzesToday,
+      perfectScoresInARow: stats.perfectScoresInARow
     };
 
     localStorage.setItem(this.STATS_KEY, JSON.stringify(updatedStats));
@@ -254,59 +409,112 @@ class StorageManager {
     return storedAchievements ? JSON.parse(storedAchievements) : defaultAchievements;
   }
 
-  private checkAchievements(stats: EnhancedStats): Achievement[] {
-    const achievements = stats.achievements;
-    
-    // First Victory
-    if (stats.gamesPlayed > 0) {
-      this.unlockAchievement(achievements, 'first_win');
-    }
+  private checkAchievements(score: number, totalQuestions: number, categoryResults: { [key: string]: { correct: number, total: number } }, timeSpent: number): Achievement[] {
+    const unlockedAchievements: Achievement[] = [];
+    const stats = this.getEnhancedStats();
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    const isWeekend = currentDate.getDay() === 0 || currentDate.getDay() === 6;
 
-    // Perfect Score
-    if (stats.categoryStats) {
-      Object.values(stats.categoryStats).forEach(category => {
-        if (category.correct === category.total && category.total > 0) {
-          this.unlockAchievement(achievements, 'perfect_score');
-        }
-      });
-    }
+    // Check each achievement condition
+    this.ACHIEVEMENTS.forEach(achievement => {
+      if (achievement.unlocked) return;
 
-    // Category Master
-    Object.entries(stats.learningProgress).forEach(([category, progress]) => {
-      if (progress.correct === progress.total && progress.total > 0) {
-        this.unlockAchievement(achievements, 'category_master');
+      let shouldUnlock = false;
+
+      switch (achievement.id) {
+        case 'first_win':
+          shouldUnlock = stats.gamesPlayed === 1;
+          break;
+        case 'perfect_score':
+          shouldUnlock = score === totalQuestions;
+          break;
+        case 'speed_demon':
+          shouldUnlock = timeSpent < 120; // 2 minutes
+          break;
+        case 'category_master':
+          shouldUnlock = Object.values(categoryResults).some(result => 
+            result.correct === result.total && result.total > 0
+          );
+          break;
+        case 'lifeline_saver':
+          shouldUnlock = stats.currentLifelinesUsed === 0;
+          break;
+        case 'streak_master':
+          shouldUnlock = stats.streaks.current >= 5;
+          break;
+        case 'jack_of_all':
+          shouldUnlock = Object.keys(stats.categoryStats).length === categories.length;
+          break;
+        case 'time_master':
+          shouldUnlock = stats.quickAnswers >= 10;
+          break;
+        case 'difficulty_champion':
+          shouldUnlock = stats.difficultyStats['extremely complex'].played > 0 && 
+                        stats.difficultyStats['extremely complex'].correct === stats.difficultyStats['extremely complex'].total;
+          break;
+        case 'quick_thinker':
+          shouldUnlock = stats.quickAnswers >= 5;
+          break;
+        case 'category_explorer':
+          shouldUnlock = Object.values(stats.categoryStats).every(stat => stat.played >= 3);
+          break;
+        case 'consistency_master':
+          shouldUnlock = stats.averageScore >= 0.8 && stats.gamesPlayed >= 10;
+          break;
+        case 'lifeline_expert':
+          shouldUnlock = stats.lifelinesUsed.fiftyFifty > 0 && 
+                        stats.lifelinesUsed.hint > 0 && 
+                        stats.lifelinesUsed.skip > 0;
+          break;
+        case 'night_owl':
+          shouldUnlock = currentHour >= 22 || currentHour < 4;
+          break;
+        case 'weekend_warrior':
+          shouldUnlock = isWeekend && stats.weekendQuizzes >= 5;
+          break;
+        case 'early_bird':
+          shouldUnlock = currentHour >= 5 && currentHour < 9;
+          break;
+        case 'marathon_runner':
+          shouldUnlock = stats.quizzesToday >= 3;
+          break;
+        case 'precision_master':
+          shouldUnlock = stats.perfectScoresInARow >= 5;
+          break;
+        case 'category_specialist':
+          shouldUnlock = Object.values(stats.categoryStats).some(stat => 
+            stat.correct / stat.total >= 0.9 && stat.played >= 5
+          );
+          break;
+        case 'quiz_legend':
+          shouldUnlock = stats.gamesPlayed >= 100;
+          break;
+      }
+
+      if (shouldUnlock) {
+        achievement.unlocked = true;
+        achievement.dateUnlocked = new Date().toISOString();
+        unlockedAchievements.push(achievement);
       }
     });
 
-    // Weekly Warrior
-    if (stats.streaks.current >= 7) {
-      this.unlockAchievement(achievements, 'streak_7');
-    }
-
-    localStorage.setItem(this.ACHIEVEMENTS_KEY, JSON.stringify(achievements));
-    return achievements;
+    return unlockedAchievements;
   }
 
-  private unlockAchievement(achievements: Achievement[], id: string) {
-    const achievement = achievements.find(a => a.id === id);
-    if (achievement && !achievement.unlocked) {
-      achievement.unlocked = true;
-      achievement.dateUnlocked = new Date().toISOString();
-    }
-  }
-
-  private mergeCategoryStats(
-    existing: { [key: string]: { correct: number; total: number } },
-    newResults: { [key: string]: { correct: number; total: number } }
-  ): { [key: string]: { correct: number; total: number } } {
-    const merged = { ...existing };
-    Object.entries(newResults).forEach(([category, results]) => {
-      merged[category] = {
-        correct: (merged[category]?.correct || 0) + results.correct,
-        total: (merged[category]?.total || 0) + results.total
-      };
+  private updateCategoryStats(stats: EnhancedStats, categoryResults: { [key: string]: { correct: number; total: number } }): { [key: string]: { correct: number; total: number; played: number } } {
+    const updatedStats = { ...stats.categoryStats };
+    
+    Object.entries(categoryResults).forEach(([category, result]) => {
+      if (!updatedStats[category]) {
+        updatedStats[category] = { correct: 0, total: 0, played: 0 };
+      }
+      updatedStats[category].correct += result.correct;
+      updatedStats[category].total += result.total;
+      updatedStats[category].played += 1;
     });
-    return merged;
+    
+    return updatedStats;
   }
 
   clearAllData() {
